@@ -60,7 +60,7 @@ API key gratis, tanpa kartu kredit: [Groq](https://console.groq.com/keys) (bawaa
 `llama-3.3-70b-versatile`) atau [Google Gemini](https://aistudio.google.com/apikey) (`gemini-3.5-flash-lite`).
 Tanpa secrets, key juga bisa diisi di sidebar untuk satu sesi. Halaman Datasets jalan tanpa key sama sekali.
 
-Buka `http://localhost:8501`. Jalankan tes dengan `python -m pytest tests/ -v` (63 tes, tanpa internet,
+Buka `http://localhost:8501`. Jalankan tes dengan `python -m pytest tests/ -v` (64 tes, tanpa internet,
 tanpa API key; otomatis jalan di GitHub Actions setiap push dan pull request).
 
 Memperbarui snapshot data dari ketujuh repo (butuh internet):
