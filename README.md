@@ -57,7 +57,7 @@ streamlit run app.py
 ```
 
 API key gratis, tanpa kartu kredit: [Groq](https://console.groq.com/keys) (bawaan, model
-`llama-3.3-70b-versatile`) atau [Google Gemini](https://aistudio.google.com/apikey) (`gemini-2.5-flash`).
+`llama-3.3-70b-versatile`) atau [Google Gemini](https://aistudio.google.com/apikey) (`gemini-3.5-flash-lite`).
 Tanpa secrets, key juga bisa diisi di sidebar untuk satu sesi. Halaman Datasets jalan tanpa key sama sekali.
 
 Buka `http://localhost:8501`. Jalankan tes dengan `python -m pytest tests/ -v` (63 tes, tanpa internet,

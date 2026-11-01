@@ -17,6 +17,7 @@ from __future__ import annotations
 
 import json
 import re
+import time
 from dataclasses import dataclass, field
 from typing import Any, Protocol
 
@@ -27,15 +28,19 @@ PROVIDER = {
         "nama": "Groq",
         "url": "https://api.groq.com/openai/v1",
         "model": "llama-3.3-70b-versatile",
+        "cadangan": ["openai/gpt-oss-120b", "llama-3.1-8b-instant"],
         "url_kunci": "https://console.groq.com/keys",
     },
     "gemini": {
         "nama": "Google Gemini",
         "url": "https://generativelanguage.googleapis.com/v1beta/openai",
-        "model": "gemini-2.5-flash",
+        "model": "gemini-3.5-flash-lite",
+        "cadangan": ["gemini-3.1-flash-lite", "gemini-3.8-flash"],
         "url_kunci": "https://aistudio.google.com/apikey",
     },
 }
+# Model cadangan dipakai bila model utama sedang penuh (HTTP 503) atau sudah ditarik (HTTP 404).
+TUNGGU_503_DETIK = (2, 4)
 MAKS_RIWAYAT = 8        # pesan lama yang ikut dikirim (hemat token: tier gratis dibatasi per menit)
 MAKS_PUTARAN = 4        # berapa kali LLM boleh memanggil alat untuk satu pertanyaan
 MAKS_TOKEN_JAWABAN = 1024
@@ -85,7 +90,9 @@ class Klien:
         self.url = PROVIDER[provider]["url"]
         self.api_key = api_key
         self.model = model or PROVIDER[provider]["model"]
+        self.cadangan = [m for m in PROVIDER[provider].get("cadangan", []) if m != self.model]
         self.timeout = timeout
+        self.model_terpakai = self.model   # model yang benar-benar menjawab permintaan terakhir
 
     @property
     def nama_provider(self) -> str:
@@ -95,11 +102,34 @@ class Klien:
         return {"Authorization": f"Bearer {self.api_key}", "Content-Type": "application/json"}
 
     def chat(self, messages: list[dict], tools: list[dict] | None = None, temperature: float = 0.1) -> dict:
-        """Kirim satu permintaan chat. Mengembalikan objek `message` dari pilihan pertama."""
+        """Kirim satu permintaan chat. Mengembalikan objek `message` dari pilihan pertama.
+
+        Bila model utama penuh (503) dicoba lagi dengan jeda, lalu beralih ke model cadangan; bila model
+        sudah tidak tersedia (404) langsung beralih ke cadangan.
+        """
+        galat_terakhir: GalatLLM | None = None
+        for model in [self.model] + self.cadangan:
+            for percobaan in range(len(TUNGGU_503_DETIK) + 1):
+                try:
+                    hasil = self._chat_sekali(model, messages, tools, temperature)
+                    self.model_terpakai = model
+                    return hasil
+                except GalatLLM as e:
+                    galat_terakhir = e
+                    if e.kode == 503 and percobaan < len(TUNGGU_503_DETIK):
+                        time.sleep(TUNGGU_503_DETIK[percobaan])
+                        continue
+                    if e.kode in (503, 404):
+                        break      # coba model berikutnya
+                    raise
+        assert galat_terakhir is not None
+        raise galat_terakhir
+
+    def _chat_sekali(self, model: str, messages: list[dict], tools: list[dict] | None, temperature: float) -> dict:
         if not self.api_key:
             raise KunciTidakValid("API key kosong.", 401)
         body: dict[str, Any] = {
-            "model": self.model,
+            "model": model,
             "messages": messages,
             "temperature": temperature,
             "max_tokens": MAKS_TOKEN_JAWABAN,

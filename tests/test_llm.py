@@ -175,3 +175,28 @@ def test_klien_jaringan_putus(monkeypatch):
     monkeypatch.setattr(requests, "post", post_gagal)
     with pytest.raises(llm.GalatLLM, match="ConnectionError"):
         llm.Klien("gemini", api_key="k").chat([])
+
+
+def test_klien_beralih_ke_model_cadangan(monkeypatch):
+    dipanggil = []
+
+    def post_palsu(url, headers, json, timeout):
+        dipanggil.append(json["model"])
+        if json["model"] == "utama":
+            return ResponsPalsu(503, "high demand")
+        if json["model"] == "cadangan-1":
+            return ResponsPalsu(404, "not found")
+        return ResponsPalsu(200, json_body={"choices": [{"message": {"content": "dari cadangan"}}]})
+
+    monkeypatch.setattr(requests, "post", post_palsu)
+    monkeypatch.setattr(llm.time, "sleep", lambda s: None)
+    klien = llm.Klien("gemini", api_key="k", model="utama")
+    klien.cadangan = ["cadangan-1", "cadangan-2"]
+    assert klien.chat([])["content"] == "dari cadangan"
+    assert dipanggil == ["utama"] * (len(llm.TUNGGU_503_DETIK) + 1) + ["cadangan-1", "cadangan-2"]
+    assert klien.model_terpakai == "cadangan-2"
+
+    klien.cadangan = []
+    with pytest.raises(llm.GalatLLM) as e:
+        klien.chat([])
+    assert e.value.kode == 503

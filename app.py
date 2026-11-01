@@ -335,7 +335,7 @@ for putaran in range(MAKS_PUTARAN):
 ```
 
 **Model dan biaya.** Memakai API yang kompatibel OpenAI, jadi provider bisa diganti lewat secrets:
-Groq (`llama-3.3-70b-versatile`) atau Google Gemini (`gemini-2.5-flash`). Keduanya punya tier gratis
+Groq (`llama-3.3-70b-versatile`) atau Google Gemini (`gemini-3.5-flash-lite`). Keduanya punya tier gratis
 dengan batas permintaan per menit dan per hari; kalau kena batas, aplikasi menampilkan saran tunggu.
 
 **Yang dijaga.** Kunci API hanya hidup di secrets atau di memori sesi, tidak pernah ikut ke repo.
