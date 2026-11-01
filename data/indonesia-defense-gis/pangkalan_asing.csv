@@ -1,0 +1,38 @@
+id,nama,negara_operator,negara_tuan_rumah,jenis,lat,lon,status,keterangan,sumber,url_sumber
+1,RAAF Base Darwin,Australia (+ AS rotasi),Australia,udara,-12.4147,130.8769,aktif,Marine Rotational Force-Darwin AS tiap tahun sejak 2012; AS bangun depot bahan bakar,Wikipedia: RAAF Base Darwin,https://en.wikipedia.org/wiki/RAAF_Base_Darwin
+2,Robertson Barracks,Australia (+ AS rotasi),Australia,darat,-12.4300,130.9800,aktif,Markas 1st Brigade; tuan rumah rotasi Marinir AS,Wikipedia: Robertson Barracks,https://en.wikipedia.org/wiki/Robertson_Barracks
+3,RAAF Base Tindal,Australia (+ AS),Australia,udara,-14.5211,132.3778,aktif,Fasilitas untuk pembom B-52 AS dibangun sejak 2022,Wikipedia: RAAF Base Tindal,https://en.wikipedia.org/wiki/RAAF_Base_Tindal
+4,RAAF Base Scherger,Australia,Australia,udara,-12.6239,142.0872,siaga (bare base),Pangkalan cadangan di Cape York,Wikipedia: RAAF Base Scherger,https://en.wikipedia.org/wiki/RAAF_Base_Scherger
+5,RAAF Base Learmonth,Australia,Australia,udara,-22.2356,114.0886,siaga (bare base),Pangkalan cadangan pantai barat,Wikipedia: RAAF Base Learmonth,https://en.wikipedia.org/wiki/RAAF_Base_Learmonth
+6,Cocos (Keeling) Islands Airport,Australia,Australia,udara,-12.1883,96.8339,aktif,Landasan diperpanjang untuk pesawat patroli P-8A (2023-),Wikipedia: Cocos Islands Airport,https://en.wikipedia.org/wiki/Cocos_(Keeling)_Islands_Airport
+7,HMAS Stirling,Australia (+ AS/Inggris AUKUS),Australia,laut,-32.2389,115.6900,aktif,Submarine Rotational Force-West (kapal selam nuklir AS/Inggris) mulai 2027,Wikipedia: HMAS Stirling,https://en.wikipedia.org/wiki/HMAS_Stirling
+8,Andersen Air Force Base,Amerika Serikat,Guam (AS),udara,13.5840,144.9240,aktif,Pangkalan pembom strategis AS di Pasifik,Wikipedia: Andersen AFB,https://en.wikipedia.org/wiki/Andersen_Air_Force_Base
+9,Naval Base Guam,Amerika Serikat,Guam (AS),laut,13.4443,144.6530,aktif,Pangkalan kapal selam AS,Wikipedia: Naval Base Guam,https://en.wikipedia.org/wiki/Naval_Base_Guam
+10,NSF Diego Garcia,Amerika Serikat (+ Inggris),Wilayah Samudra Hindia Britania,gabungan,-7.3195,72.4229,aktif,Pangkalan udara & laut AS di Samudra Hindia,Wikipedia: Diego Garcia,https://en.wikipedia.org/wiki/Naval_Support_Facility_Diego_Garcia
+11,Changi Naval Base,Singapura (+ AS akses),Singapura,laut,1.3200,104.0200,aktif,Kapal AS (LCS/kapal induk) rutin berlabuh; MoU AS-Singapura 1990/2019,Wikipedia: Changi Naval Base,https://en.wikipedia.org/wiki/Changi_Naval_Base
+12,Sembawang Wharves,Amerika Serikat (logistik),Singapura,laut,1.4600,103.8300,aktif,Markas COMLOG WESTPAC AL AS,Wikipedia: Sembawang Wharves,https://en.wikipedia.org/wiki/Sembawang_Wharves
+13,Paya Lebar Air Base,Singapura,Singapura,udara,1.3604,103.9096,aktif,Pangkalan tempur RSAF; detasemen AS,Wikipedia: Paya Lebar Air Base,https://en.wikipedia.org/wiki/Paya_Lebar_Air_Base
+14,Tengah Air Base,Singapura,Singapura,udara,1.3873,103.7086,aktif,Pangkalan tempur RSAF,Wikipedia: Tengah Air Base,https://en.wikipedia.org/wiki/Tengah_Air_Base
+15,RMAF Butterworth,Malaysia (+ Australia FPDA),Malaysia,udara,5.4660,100.3910,aktif,Detasemen Australia sejak 1958 (Five Power Defence Arrangements),Wikipedia: RMAF Butterworth,https://en.wikipedia.org/wiki/RMAF_Butterworth
+16,Pangkalan TLDM Lumut,Malaysia,Malaysia,laut,4.2360,100.6300,aktif,Pangkalan utama AL Malaysia di Selat Malaka,Wikipedia: Lumut Naval Base,https://en.wikipedia.org/wiki/Lumut_Naval_Base
+17,Pangkalan TLDM Sepanggar,Malaysia,Malaysia,laut,6.0700,116.1100,aktif,Pangkalan kapal selam Scorpene Malaysia (Kota Kinabalu),Wikipedia: Sepanggar Naval Base,https://en.wikipedia.org/wiki/Sepanggar_Bay_Naval_Base
+18,Fiery Cross Reef,China,Kep. Spratly (sengketa),pos pulau buatan,9.5500,112.8900,aktif,Landasan 3 km + radar + dermaga di karang reklamasi,CSIS AMTI,https://amti.csis.org/fiery-cross-reef/
+19,Subi Reef,China,Kep. Spratly (sengketa),pos pulau buatan,10.9200,114.0800,aktif,Landasan + hanggar; dekat Pulau Thitu Filipina,CSIS AMTI,https://amti.csis.org/subi-reef/
+20,Mischief Reef,China,Kep. Spratly (sengketa),pos pulau buatan,9.9000,115.5300,aktif,Dalam ZEE Filipina menurut putusan arbitrase 2016,CSIS AMTI,https://amti.csis.org/mischief-reef/
+21,Woody Island (Yongxing),China,Kep. Paracel (sengketa),pos pulau,16.8340,112.3390,aktif,Markas 'Kota Sansha'; rudal & pesawat tempur,CSIS AMTI,https://amti.csis.org/woody-island/
+22,Pangkalan AL Yulin,China,China (Hainan),laut,18.2200,109.5200,aktif,Pangkalan kapal selam nuklir Armada Laut Selatan,Wikipedia: Yulin Naval Base,https://en.wikipedia.org/wiki/Yulin_Naval_Base
+23,Pangkalan AL Ream,Kamboja (dibangun China),Kamboja,laut,10.5100,103.6300,aktif,Dermaga baru dibiayai China; kapal AL China berlabuh sejak 2023,Wikipedia: Ream Naval Base,https://en.wikipedia.org/wiki/Ream_Naval_Base
+24,Antonio Bautista Air Base,Filipina (+ AS EDCA),Filipina,udara,9.7420,118.7590,aktif,Puerto Princesa Palawan; lokasi EDCA AS,Wikipedia: EDCA,https://en.wikipedia.org/wiki/Enhanced_Defense_Cooperation_Agreement
+25,Pulau Balabac (lokasi EDCA),Filipina (+ AS EDCA),Filipina,udara,7.9900,117.0600,dibangun,Lokasi EDCA baru 2023 di ujung selatan Palawan,Wikipedia: EDCA,https://en.wikipedia.org/wiki/Enhanced_Defense_Cooperation_Agreement
+26,Mactan-Benito Ebuen Air Base,Filipina (+ AS EDCA),Filipina,udara,10.3100,123.9800,aktif,Cebu; lokasi EDCA,Wikipedia: EDCA,https://en.wikipedia.org/wiki/Enhanced_Defense_Cooperation_Agreement
+27,Subic Bay,Filipina (+ AS akses),Filipina,laut,14.7900,120.2800,aktif,Bekas pangkalan AL AS (sampai 1992); akses kembali,Wikipedia: Subic Bay,https://en.wikipedia.org/wiki/Subic_Bay
+28,Basa Air Base,Filipina (+ AS EDCA),Filipina,udara,14.9870,120.4920,aktif,Lokasi EDCA; Pampanga,Wikipedia: EDCA,https://en.wikipedia.org/wiki/Enhanced_Defense_Cooperation_Agreement
+29,Pulau Thitu (Pag-asa),Filipina,Kep. Spratly (sengketa),pos pulau,11.0510,114.2840,aktif,Pulau berpenduduk dengan landasan Filipina,Wikipedia: Thitu Island,https://en.wikipedia.org/wiki/Thitu_Island
+30,Cam Ranh Bay,Vietnam,Vietnam,laut,11.9900,109.2200,aktif,Pelabuhan internasional; kunjungan kapal AS/Rusia/India/Jepang,Wikipedia: Cam Ranh Bay,https://en.wikipedia.org/wiki/Cam_Ranh_Bay
+31,Pulau Spratly (Truong Sa Lon),Vietnam,Kep. Spratly (sengketa),pos pulau,8.6440,111.9200,aktif,Pos terbesar Vietnam di Spratly; landasan diperpanjang,CSIS AMTI,https://amti.csis.org/spratly-island/
+32,INS Baaz (Campbell Bay),India,India (Nicobar Besar),udara/laut,6.9850,93.9230,aktif,Pangkalan paling selatan India; ~160 km dari Pulau Rondo Aceh,Wikipedia: INS Baaz,https://en.wikipedia.org/wiki/INS_Baaz
+33,Andaman & Nicobar Command (Port Blair),India,India,gabungan,11.6500,92.7300,aktif,Komando gabungan tiga matra India,Wikipedia: Andaman and Nicobar Command,https://en.wikipedia.org/wiki/Andaman_and_Nicobar_Command
+34,Lombrum Naval Base (Manus),Papua Nugini (+ AS/Australia),Papua Nugini,laut,-2.0330,147.3700,dibangun,Direnovasi AS & Australia sejak 2018,Wikipedia: Lombrum Naval Base,https://en.wikipedia.org/wiki/Lombrum_Naval_Base
+35,HMPNGS Basilisk (Port Moresby),Papua Nugini (+ AS DCA 2023),Papua Nugini,laut,-9.4600,147.1900,aktif,Akses AS lewat Defense Cooperation Agreement 2023,Wikipedia: PNG-US DCA,https://en.wikipedia.org/wiki/Papua_New_Guinea%E2%80%93United_States_relations
+36,British Garrison Brunei,Inggris,Brunei,darat,4.6060,114.3260,aktif,Batalion Gurkha Inggris sejak 1962,Wikipedia: British Forces Brunei,https://en.wikipedia.org/wiki/British_Forces_Brunei
+37,U-Tapao,Thailand (+ AS akses),Thailand,udara/laut,12.6800,101.0050,aktif,Bekas pangkalan B-52 AS era Vietnam; latihan Cobra Gold,Wikipedia: U-Tapao,https://en.wikipedia.org/wiki/U-Tapao_International_Airport

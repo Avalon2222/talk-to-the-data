@@ -1,0 +1,66 @@
+id,nama,matra,jenis,kota,provinsi,lat,lon,keterangan,sumber,url_sumber
+1,Mabes TNI Cilangkap,Gabungan,Markas Besar,Jakarta Timur,DKI Jakarta,-6.3362,106.8998,Markas Besar TNI,Wikipedia: Tentara Nasional Indonesia,https://id.wikipedia.org/wiki/Tentara_Nasional_Indonesia
+2,Kogabwilhan I,Gabungan,Kogabwilhan,Tanjung Pinang,Kepulauan Riau,0.9300,104.4400,Komando Gabungan Wilayah Pertahanan I (wilayah barat),Wikipedia: Kogabwilhan,https://id.wikipedia.org/wiki/Komando_Gabungan_Wilayah_Pertahanan
+3,Kogabwilhan II,Gabungan,Kogabwilhan,Balikpapan,Kalimantan Timur,-1.2550,116.8200,Komando Gabungan Wilayah Pertahanan II (wilayah tengah),Wikipedia: Kogabwilhan,https://id.wikipedia.org/wiki/Komando_Gabungan_Wilayah_Pertahanan
+4,Kogabwilhan III,Gabungan,Kogabwilhan,Timika,Papua Tengah,-4.5469,136.8870,Komando Gabungan Wilayah Pertahanan III (wilayah timur),Wikipedia: Kogabwilhan,https://id.wikipedia.org/wiki/Komando_Gabungan_Wilayah_Pertahanan
+5,Kodam Jaya/Jayakarta,AD,Kodam,Jakarta,DKI Jakarta,-6.2088,106.8456,Kodam ibu kota,Wikipedia: Daftar Kodam,https://id.wikipedia.org/wiki/Komando_Daerah_Militer
+6,Kodam Iskandar Muda,AD,Kodam,Banda Aceh,Aceh,5.5483,95.3238,,Wikipedia: Daftar Kodam,https://id.wikipedia.org/wiki/Komando_Daerah_Militer
+7,Kodam I/Bukit Barisan,AD,Kodam,Medan,Sumatera Utara,3.5952,98.6722,,Wikipedia: Daftar Kodam,https://id.wikipedia.org/wiki/Komando_Daerah_Militer
+8,Kodam II/Sriwijaya,AD,Kodam,Palembang,Sumatera Selatan,-2.9761,104.7754,,Wikipedia: Daftar Kodam,https://id.wikipedia.org/wiki/Komando_Daerah_Militer
+9,Kodam III/Siliwangi,AD,Kodam,Bandung,Jawa Barat,-6.9175,107.6191,,Wikipedia: Daftar Kodam,https://id.wikipedia.org/wiki/Komando_Daerah_Militer
+10,Kodam IV/Diponegoro,AD,Kodam,Semarang,Jawa Tengah,-6.9932,110.4203,,Wikipedia: Daftar Kodam,https://id.wikipedia.org/wiki/Komando_Daerah_Militer
+11,Kodam V/Brawijaya,AD,Kodam,Surabaya,Jawa Timur,-7.2575,112.7521,,Wikipedia: Daftar Kodam,https://id.wikipedia.org/wiki/Komando_Daerah_Militer
+12,Kodam VI/Mulawarman,AD,Kodam,Balikpapan,Kalimantan Timur,-1.2654,116.8312,,Wikipedia: Daftar Kodam,https://id.wikipedia.org/wiki/Komando_Daerah_Militer
+13,Kodam IX/Udayana,AD,Kodam,Denpasar,Bali,-8.6705,115.2126,,Wikipedia: Daftar Kodam,https://id.wikipedia.org/wiki/Komando_Daerah_Militer
+14,Kodam XII/Tanjungpura,AD,Kodam,Kubu Raya,Kalimantan Barat,-0.0263,109.3425,,Wikipedia: Daftar Kodam,https://id.wikipedia.org/wiki/Komando_Daerah_Militer
+15,Kodam XIII/Merdeka,AD,Kodam,Manado,Sulawesi Utara,1.4748,124.8421,,Wikipedia: Daftar Kodam,https://id.wikipedia.org/wiki/Komando_Daerah_Militer
+16,Kodam XIV/Hasanuddin,AD,Kodam,Makassar,Sulawesi Selatan,-5.1477,119.4327,,Wikipedia: Daftar Kodam,https://id.wikipedia.org/wiki/Komando_Daerah_Militer
+17,Kodam XVI/Pattimura,AD,Kodam,Ambon,Maluku,-3.6954,128.1814,,Wikipedia: Daftar Kodam,https://id.wikipedia.org/wiki/Komando_Daerah_Militer
+18,Kodam XVII/Cenderawasih,AD,Kodam,Jayapura,Papua,-2.5337,140.7181,,Wikipedia: Daftar Kodam,https://id.wikipedia.org/wiki/Komando_Daerah_Militer
+19,Kodam XVIII/Kasuari,AD,Kodam,Manokwari,Papua Barat,-0.8615,134.0620,,Wikipedia: Daftar Kodam,https://id.wikipedia.org/wiki/Komando_Daerah_Militer
+20,Markas Kostrad,AD,Komando Utama,Jakarta Pusat,DKI Jakarta,-6.1754,106.8272,Komando Cadangan Strategis TNI AD,Wikipedia: Kostrad,https://id.wikipedia.org/wiki/Komando_Cadangan_Strategis_Angkatan_Darat
+21,Koarmada I,AL,Koarmada,Tanjung Pinang,Kepulauan Riau,0.9186,104.4650,Pindah dari Jakarta ke Tanjung Pinang (2022),Wikipedia: Koarmada I,https://id.wikipedia.org/wiki/Komando_Armada_I
+22,Koarmada II,AL,Koarmada,Surabaya,Jawa Timur,-7.2037,112.7347,Markas di Ujung Surabaya,Wikipedia: Koarmada II,https://id.wikipedia.org/wiki/Komando_Armada_II
+23,Koarmada III,AL,Koarmada,Sorong,Papua Barat Daya,-0.8762,131.2558,Dibentuk 2018,Wikipedia: Koarmada III,https://id.wikipedia.org/wiki/Komando_Armada_III
+24,Lantamal I Belawan,AL,Lantamal,Medan,Sumatera Utara,3.7817,98.6963,,Wikipedia: Daftar Lantamal,https://id.wikipedia.org/wiki/Pangkalan_Utama_TNI_Angkatan_Laut
+25,Lantamal II Padang,AL,Lantamal,Padang,Sumatera Barat,-0.9492,100.3543,,Wikipedia: Daftar Lantamal,https://id.wikipedia.org/wiki/Pangkalan_Utama_TNI_Angkatan_Laut
+26,Lantamal III Jakarta,AL,Lantamal,Jakarta Utara,DKI Jakarta,-6.1100,106.8800,,Wikipedia: Daftar Lantamal,https://id.wikipedia.org/wiki/Pangkalan_Utama_TNI_Angkatan_Laut
+27,Lantamal IV Batam,AL,Lantamal,Batam,Kepulauan Riau,1.0456,104.0305,Sebelumnya di Tanjung Pinang,Wikipedia: Daftar Lantamal,https://id.wikipedia.org/wiki/Pangkalan_Utama_TNI_Angkatan_Laut
+28,Lantamal V Surabaya,AL,Lantamal,Surabaya,Jawa Timur,-7.1950,112.7450,,Wikipedia: Daftar Lantamal,https://id.wikipedia.org/wiki/Pangkalan_Utama_TNI_Angkatan_Laut
+29,Lantamal VI Makassar,AL,Lantamal,Makassar,Sulawesi Selatan,-5.1100,119.4100,,Wikipedia: Daftar Lantamal,https://id.wikipedia.org/wiki/Pangkalan_Utama_TNI_Angkatan_Laut
+30,Lantamal VII Kupang,AL,Lantamal,Kupang,Nusa Tenggara Timur,-10.1772,123.6070,,Wikipedia: Daftar Lantamal,https://id.wikipedia.org/wiki/Pangkalan_Utama_TNI_Angkatan_Laut
+31,Lantamal VIII Manado,AL,Lantamal,Bitung,Sulawesi Utara,1.4404,125.1217,,Wikipedia: Daftar Lantamal,https://id.wikipedia.org/wiki/Pangkalan_Utama_TNI_Angkatan_Laut
+32,Lantamal IX Ambon,AL,Lantamal,Ambon,Maluku,-3.6700,128.1700,,Wikipedia: Daftar Lantamal,https://id.wikipedia.org/wiki/Pangkalan_Utama_TNI_Angkatan_Laut
+33,Lantamal X Jayapura,AL,Lantamal,Jayapura,Papua,-2.5300,140.7000,,Wikipedia: Daftar Lantamal,https://id.wikipedia.org/wiki/Pangkalan_Utama_TNI_Angkatan_Laut
+34,Lantamal XI Merauke,AL,Lantamal,Merauke,Papua Selatan,-8.4932,140.4018,,Wikipedia: Daftar Lantamal,https://id.wikipedia.org/wiki/Pangkalan_Utama_TNI_Angkatan_Laut
+35,Lantamal XII Pontianak,AL,Lantamal,Pontianak,Kalimantan Barat,-0.0200,109.3300,,Wikipedia: Daftar Lantamal,https://id.wikipedia.org/wiki/Pangkalan_Utama_TNI_Angkatan_Laut
+36,Lantamal XIII Tarakan,AL,Lantamal,Tarakan,Kalimantan Utara,3.3000,117.6300,,Wikipedia: Daftar Lantamal,https://id.wikipedia.org/wiki/Pangkalan_Utama_TNI_Angkatan_Laut
+37,Lantamal XIV Sorong,AL,Lantamal,Sorong,Papua Barat Daya,-0.8800,131.2500,,Wikipedia: Daftar Lantamal,https://id.wikipedia.org/wiki/Pangkalan_Utama_TNI_Angkatan_Laut
+38,Lanal Ranai (Natuna),AL,Lanal,Ranai,Kepulauan Riau,3.9500,108.3800,Pangkalan terpadu Natuna; diperkuat sejak 2016,Wikipedia: Natuna,https://id.wikipedia.org/wiki/Kabupaten_Natuna
+39,Lanud Halim Perdanakusuma,AU,Lanud,Jakarta Timur,DKI Jakarta,-6.2665,106.8910,Lanud tipe A; Koopsud I,Wikipedia: Daftar Lanud,https://id.wikipedia.org/wiki/Daftar_pangkalan_udara_TNI_Angkatan_Udara
+40,Lanud Iswahjudi,AU,Lanud,Magetan,Jawa Timur,-7.6158,111.4343,Home base F-16 dan Rafale (rencana),Wikipedia: Daftar Lanud,https://id.wikipedia.org/wiki/Daftar_pangkalan_udara_TNI_Angkatan_Udara
+41,Lanud Abdulrachman Saleh,AU,Lanud,Malang,Jawa Timur,-7.9266,112.7145,Pesawat angkut C-130/Super Tucano,Wikipedia: Daftar Lanud,https://id.wikipedia.org/wiki/Daftar_pangkalan_udara_TNI_Angkatan_Udara
+42,Lanud Supadio,AU,Lanud,Kubu Raya,Kalimantan Barat,-0.1507,109.4039,Hawk 209 skadron,Wikipedia: Daftar Lanud,https://id.wikipedia.org/wiki/Daftar_pangkalan_udara_TNI_Angkatan_Udara
+43,Lanud Sultan Hasanuddin,AU,Lanud,Maros,Sulawesi Selatan,-5.0617,119.5542,Home base Su-27/Su-30,Wikipedia: Daftar Lanud,https://id.wikipedia.org/wiki/Daftar_pangkalan_udara_TNI_Angkatan_Udara
+44,Lanud Roesmin Nurjadin,AU,Lanud,Pekanbaru,Riau,0.4608,101.4448,Skadron F-16,Wikipedia: Daftar Lanud,https://id.wikipedia.org/wiki/Daftar_pangkalan_udara_TNI_Angkatan_Udara
+45,Lanud Soewondo,AU,Lanud,Medan,Sumatera Utara,3.5581,98.6717,,Wikipedia: Daftar Lanud,https://id.wikipedia.org/wiki/Daftar_pangkalan_udara_TNI_Angkatan_Udara
+46,Lanud Sam Ratulangi,AU,Lanud,Manado,Sulawesi Utara,1.5493,124.9259,,Wikipedia: Daftar Lanud,https://id.wikipedia.org/wiki/Daftar_pangkalan_udara_TNI_Angkatan_Udara
+47,Lanud Manuhua,AU,Lanud,Biak,Papua,-1.1900,136.1078,Landasan panjang bekas PD II,Wikipedia: Daftar Lanud,https://id.wikipedia.org/wiki/Daftar_pangkalan_udara_TNI_Angkatan_Udara
+48,Lanud Silas Papare,AU,Lanud,Jayapura,Papua,-2.5769,140.5163,,Wikipedia: Daftar Lanud,https://id.wikipedia.org/wiki/Daftar_pangkalan_udara_TNI_Angkatan_Udara
+49,Lanud El Tari,AU,Lanud,Kupang,Nusa Tenggara Timur,-10.1716,123.6710,,Wikipedia: Daftar Lanud,https://id.wikipedia.org/wiki/Daftar_pangkalan_udara_TNI_Angkatan_Udara
+50,Lanud Adi Soemarmo,AU,Lanud,Solo,Jawa Tengah,-7.5161,110.7569,,Wikipedia: Daftar Lanud,https://id.wikipedia.org/wiki/Daftar_pangkalan_udara_TNI_Angkatan_Udara
+51,Lanud Raden Sadjad,AU,Lanud,Ranai,Kepulauan Riau,3.9087,108.3879,Natuna; ditingkatkan sejak 2016,Wikipedia: Daftar Lanud,https://id.wikipedia.org/wiki/Daftar_pangkalan_udara_TNI_Angkatan_Udara
+52,Lanud Hang Nadim,AU,Lanud,Batam,Kepulauan Riau,1.1210,104.1190,,Wikipedia: Daftar Lanud,https://id.wikipedia.org/wiki/Daftar_pangkalan_udara_TNI_Angkatan_Udara
+53,Lanud Sultan Iskandar Muda,AU,Lanud,Aceh Besar,Aceh,5.5230,95.4203,,Wikipedia: Daftar Lanud,https://id.wikipedia.org/wiki/Daftar_pangkalan_udara_TNI_Angkatan_Udara
+54,Lanud Sri Mulyono Herlambang,AU,Lanud,Palembang,Sumatera Selatan,-2.8976,104.6996,,Wikipedia: Daftar Lanud,https://id.wikipedia.org/wiki/Daftar_pangkalan_udara_TNI_Angkatan_Udara
+55,Lanud Dhomber,AU,Lanud,Balikpapan,Kalimantan Timur,-1.2683,116.8945,,Wikipedia: Daftar Lanud,https://id.wikipedia.org/wiki/Daftar_pangkalan_udara_TNI_Angkatan_Udara
+56,Lanud Pattimura,AU,Lanud,Ambon,Maluku,-3.7103,128.0894,,Wikipedia: Daftar Lanud,https://id.wikipedia.org/wiki/Daftar_pangkalan_udara_TNI_Angkatan_Udara
+57,Lanud J.A. Dimara,AU,Lanud,Merauke,Papua Selatan,-8.5202,140.4184,,Wikipedia: Daftar Lanud,https://id.wikipedia.org/wiki/Daftar_pangkalan_udara_TNI_Angkatan_Udara
+58,Lanud Anang Busra,AU,Lanud,Tarakan,Kalimantan Utara,3.3267,117.5656,,Wikipedia: Daftar Lanud,https://id.wikipedia.org/wiki/Daftar_pangkalan_udara_TNI_Angkatan_Udara
+59,Lanud Leo Wattimena,AU,Lanud,Morotai,Maluku Utara,2.0459,128.3249,Bekas pangkalan Sekutu PD II,Wikipedia: Daftar Lanud,https://id.wikipedia.org/wiki/Daftar_pangkalan_udara_TNI_Angkatan_Udara
+60,Lanud Jalaluddin,AU,Lanud,Gorontalo,Gorontalo,0.6371,122.8497,,Wikipedia: Daftar Lanud,https://id.wikipedia.org/wiki/Daftar_pangkalan_udara_TNI_Angkatan_Udara
+61,Lanud Haluoleo,AU,Lanud,Kendari,Sulawesi Tenggara,-4.0816,122.4181,,Wikipedia: Daftar Lanud,https://id.wikipedia.org/wiki/Daftar_pangkalan_udara_TNI_Angkatan_Udara
+62,Lanud Suryadarma,AU,Lanud,Subang,Jawa Barat,-6.5294,107.7658,Kalijati; skadron helikopter,Wikipedia: Daftar Lanud,https://id.wikipedia.org/wiki/Daftar_pangkalan_udara_TNI_Angkatan_Udara
+63,Lanud Atang Sendjaja,AU,Lanud,Bogor,Jawa Barat,-6.5401,106.7571,Skadron helikopter,Wikipedia: Daftar Lanud,https://id.wikipedia.org/wiki/Daftar_pangkalan_udara_TNI_Angkatan_Udara
+64,Lanud Husein Sastranegara,AU,Lanud,Bandung,Jawa Barat,-6.9006,107.5763,,Wikipedia: Daftar Lanud,https://id.wikipedia.org/wiki/Daftar_pangkalan_udara_TNI_Angkatan_Udara
+65,Lanud I Gusti Ngurah Rai,AU,Lanud,Badung,Bali,-8.7482,115.1672,,Wikipedia: Daftar Lanud,https://id.wikipedia.org/wiki/Daftar_pangkalan_udara_TNI_Angkatan_Udara
