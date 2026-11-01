@@ -61,7 +61,7 @@ API key gratis, tanpa kartu kredit: [Groq](https://console.groq.com/keys) (bawaa
 Tanpa secrets, key juga bisa diisi di sidebar untuk satu sesi. Halaman Datasets jalan tanpa key sama sekali.
 
 Buka `http://localhost:8501`. Jalankan tes dengan `python -m pytest tests/ -v` (63 tes, tanpa internet,
-tanpa API key).
+tanpa API key; otomatis jalan di GitHub Actions setiap push dan pull request).
 
 Memperbarui snapshot data dari ketujuh repo (butuh internet):
 
