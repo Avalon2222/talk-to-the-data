@@ -32,7 +32,7 @@ def test_id_dataset_unik_dan_prompt_ringkas():
     for id in katalog.DATASET:
         assert f"`{id}`" in skema
     prompt = alat.prompt_sistem()
-    assert "query_data" in prompt and len(prompt) < 9000  # ≈ 2.200 token; tier gratis dibatasi per menit
+    assert "query_data" in prompt and len(prompt) < 16000  # ≈ 4.000 token; tier gratis dibatasi per menit
 
 
 def test_turunan_pesawat():
@@ -45,6 +45,41 @@ def test_gempa_dari_json():
     usgs, bmkg = katalog.muat("gempa_usgs"), katalog.muat("gempa_bmkg")
     assert usgs["magnitudo"].between(2.5, 10).all() and usgs["lat"].between(-12, 7).all()
     assert bmkg["kedalaman_km"].gt(0).all() and bmkg["lon"].between(94, 142).all()
+
+
+def test_turunan_proyek_baru():
+    api = katalog.muat("titik_api")
+    assert api["provinsi"].notna().all()
+    assert 0.3 < (api["provinsi"] != katalog.DI_LUAR_PROVINSI).mean() < 1  # sebagian titik memang di laut
+    assert "Kalimantan Tengah" in set(api["provinsi"].dropna())
+    kapal = katalog.muat("posisi_kapal")
+    assert {"bendera", "kategori", "status_navigasi"} <= set(kapal.columns)
+    assert kapal.loc[kapal["mmsi"].astype(str).str.startswith("525"), "bendera"].eq("Indonesia").all()
+    sat = katalog.muat("katalog_satelit")
+    assert sat["militer"].dtype == bool and sat["militer"].sum() > 1000
+    assert not sat["kategori"].str.contains(r"[?*]").any()
+    assert "Indonesia" in set(sat["negara"])
+    udara = katalog.muat("udara_per_jam")
+    assert udara["kategori_ispu"].notna().all()
+
+
+@pytest.mark.parametrize("pm25,kategori", [(10, "Baik"), (15.5, "Baik"), (15.6, "Sedang"), (60, "Tidak Sehat"),
+                                           (200, "Sangat Tidak Sehat"), (300, "Berbahaya"), (float("nan"), None)])
+def test_kategori_ispu(pm25, kategori):
+    assert katalog.kategori_ispu(pm25) == kategori
+
+
+def test_penentu_provinsi_cincin_sederhana(tmp_path):
+    import json
+
+    from src import wilayah
+    kotak = {"type": "Polygon", "coordinates": [[[0, 0], [10, 0], [10, 10], [0, 10], [0, 0]],
+                                                 [[4, 4], [6, 4], [6, 6], [4, 6], [4, 4]]]}
+    path = tmp_path / "p.geojson"
+    path.write_text(json.dumps({"type": "FeatureCollection", "features": [
+        {"type": "Feature", "properties": {"provinsi": "Kotak"}, "geometry": kotak}]}))
+    hasil = wilayah.PenentuProvinsi(path).tentukan([1, 5, 11], [1, 5, 1])
+    assert list(hasil) == ["Kotak", None, None]  # titik di lubang dan di luar tidak dihitung
 
 
 def test_deskripsi_dataset():
@@ -146,6 +181,14 @@ def test_url_sumber():
     d = katalog.DATASET["gempa_usgs"]
     assert sinkron_data.url_sumber(d) == "https://raw.githubusercontent.com/Avalon2222/ring-of-fire-pulse/main/data/sample/usgs.json"
     assert sinkron_data.url_sumber(katalog.DATASET["apbd_provinsi"]).endswith("/follow-the-money/main/data/apbd_provinsi.csv")
+
+
+def test_berkas_pendukung_ikut_disinkron():
+    d = katalog.DATASET["titik_api"]
+    daftar = sinkron_data.berkas(d)
+    assert daftar[0] == (d.path, "data/sample/titik_api_7hari.csv.gz")
+    assert daftar[1][1] == "data/provinsi.geojson" and daftar[1][0].name == "provinsi.geojson"
+    assert sinkron_data.url_sumber(d, asal=daftar[1][1]).endswith("/burning-archipelago/main/data/provinsi.geojson")
 
 
 def test_salin_lokal(tmp_path, monkeypatch):

@@ -20,7 +20,7 @@ from pathlib import Path
 
 import pandas as pd
 
-from src import maskapai
+from src import maskapai, mmsi, wilayah
 
 DIR_DATA = Path(__file__).resolve().parent.parent / "data"
 AKUN_GITHUB = "Avalon2222"
@@ -36,10 +36,14 @@ class Dataset:
     kolom: dict[str, str]     # nama kolom → arti singkat; hanya kolom ini yang dipakai
     waktu: tuple[str, ...] = ()
     format: str = "csv"       # csv | usgs | bmkg
+    pendukung: tuple[tuple[str, str], ...] = ()   # (file, path asal) yang dibutuhkan kolom turunan
 
     @property
     def path(self) -> Path:
         return DIR_DATA / self.proyek / self.file
+
+    def path_pendukung(self, file: str) -> Path:
+        return DIR_DATA / self.proyek / file
 
 
 @dataclass(frozen=True)
@@ -60,8 +64,8 @@ class Proyek:
 
 
 def _ds(proyek: str, id: str, file: str, deskripsi: str, kolom: dict[str, str], asal: str | None = None,
-        waktu: tuple[str, ...] = (), format: str = "csv") -> Dataset:
-    return Dataset(id, proyek, file, asal or f"data/{file}", deskripsi, kolom, waktu, format)
+        waktu: tuple[str, ...] = (), format: str = "csv", pendukung: tuple[tuple[str, str], ...] = ()) -> Dataset:
+    return Dataset(id, proyek, file, asal or f"data/{file}", deskripsi, kolom, waktu, format, pendukung)
 
 
 # ---------------------------------------------------------------------------
@@ -228,6 +232,144 @@ _daftar(Proyek(
     ),
 ))
 
+_daftar(Proyek(
+    "roof-vs-paycheck", "Roof vs Paycheck", "Count the years before the key turns.",
+    "Upah minimum 2026 di 13 kota Indonesia dibandingkan harga rumah subsidi, rumah seken, apartemen, kos, dan kontrakan.",
+    (
+        _ds("roof-vs-paycheck", "kota_upah_rumah", "kota.csv",
+            "Satu baris per kota (13 kota). Harga rumah dalam JUTA rupiah, upah/kos/kontrakan dalam rupiah per bulan. "
+            "Kode mutu: A laporan resmi, B rentang artikel, C listing, E perkiraan. Lama menabung bisa dihitung dengan "
+            "kolom hitung, misalnya 'rumah_seken_juta * 1000000 / (umk_2026 * 12 * 0.3)' (nabung 30% upah).",
+            {"kota": "nama kota", "provinsi": "provinsi", "zona_flpp": "zona harga rumah subsidi",
+             "umk_2026": "upah minimum 2026, Rp/bulan", "rumah_subsidi_juta": "batas harga rumah subsidi FLPP, juta Rp",
+             "rumah_seken_juta": "median rumah seken ≤60 m², juta Rp", "rumah_seken_mutu": "kode mutu harga rumah seken",
+             "apartemen_per_m2_juta": "harga apartemen per m², juta Rp (kosong = tidak ada data)",
+             "kos_min": "kos standar terendah, Rp/bulan", "kos_max": "kos standar tertinggi, Rp/bulan",
+             "kontrakan": "kontrakan 1-2 kamar sederhana, Rp/bulan"}),
+        _ds("roof-vs-paycheck", "asumsi_kpr", "asumsi.csv",
+            "Asumsi awal simulasi: BI-Rate, bunga KPR tetap dan mengambang, DP, tenor, kenaikan harga rumah, sewa, upah.",
+            {"parameter": "nama parameter", "nilai": "nilai", "satuan": "satuan", "sumber": "sumber"}),
+    ),
+))
+
+_daftar(Proyek(
+    "the-air-we-breathe", "The Air We Breathe", "Every breath is a data point.",
+    "Kualitas udara per jam di 51 titik Jabodetabek dari Open-Meteo (model CAMS), 60 hari terakhir saat snapshot plus prakiraan 2 hari.",
+    (
+        _ds("the-air-we-breathe", "udara_per_jam", "jam.csv.gz",
+            "PM2.5, PM10, NO2, O3 dan cuaca per jam per titik (±76 ribu baris). Nilai adalah keluaran model CAMS 0,4°, "
+            "jadi titik dalam satu sel grid bernilai sama dan cenderung lebih rendah dari sensor. prakiraan=True berarti "
+            "baris prakiraan, bukan riwayat. kategori_ispu dihitung dari PM2.5 per jam (ISPU resmi memakai rata-rata 24 jam).",
+            {"titik": "nama titik (kecamatan/kawasan)", "kota": "Jakarta/Bogor/Depok/Tangerang/Bekasi",
+             "wilayah": "wilayah administratif", "lat": "lintang", "lon": "bujur", "waktu": "waktu (UTC)",
+             "pm2_5": "PM2.5 µg/m³", "pm10": "PM10 µg/m³", "no2": "NO2 µg/m³", "o3": "ozon µg/m³",
+             "kategori_ispu": "Baik/Sedang/Tidak Sehat/Sangat Tidak Sehat/Berbahaya", "suhu": "suhu °C",
+             "rh": "kelembapan %", "hujan": "hujan mm", "angin": "kecepatan angin km/j",
+             "prakiraan": "True bila baris prakiraan"},
+            asal="data/sample/jam.csv.gz", waktu=("waktu",)),
+    ),
+))
+
+_daftar(Proyek(
+    "burning-archipelago", "The Burning Archipelago", "First the smoke, then the silence.",
+    "Titik api NASA FIRMS 7 hari (snapshot) dan kehilangan tutupan pohon per provinsi 2001-2025 dari Global Forest Watch.",
+    (
+        _ds("burning-archipelago", "titik_api", "titik_api_7hari.csv.gz",
+            "Deteksi titik panas VIIRS (NOAA-20/21) di kotak Indonesia selama 7 hari (±48 ribu titik). Satu titik = satu "
+            "piksel 375 m yang panas, bukan satu kebakaran. provinsi 'Laut / luar negeri' = di laut atau negara tetangga "
+            "(sebagian artefak sensor); untuk hitungan per provinsi, buang nilai itu dan pakai keyakinan Nominal/Tinggi.",
+            {"waktu": "waktu deteksi (UTC)", "lat": "lintang", "lon": "bujur", "provinsi": "provinsi (dari poligon)",
+             "frp": "fire radiative power, MW", "keyakinan": "Rendah/Nominal/Tinggi", "siang_malam": "Siang/Malam",
+             "satelit": "NOAA-20/NOAA-21"},
+            asal="data/sample/titik_api_7hari.csv.gz", waktu=("waktu",),
+            pendukung=(("provinsi.geojson", "data/provinsi.geojson"),)),
+        _ds("burning-archipelago", "hilang_tutupan_pohon", "gfw_tahunan.csv",
+            "Kehilangan tutupan pohon per provinsi per tahun 2001-2025 (GFW/Hansen, kanopi ≥30%), termasuk bagian akibat "
+            "kebakaran dan emisi. Nama provinsi versi GADM (34 provinsi; 'Jakarta Raya', 'Yogyakarta', 'Bangka Belitung'). "
+            "Tutupan pohon tidak sama dengan hutan; data 2011+ memakai metode yang lebih peka.",
+            {"provinsi_gfw": "provinsi (versi GADM)", "tahun": "tahun", "hilang_ha": "kehilangan tutupan pohon, hektar",
+             "hilang_api_ha": "bagian akibat kebakaran, hektar", "emisi_mg": "emisi kotor, megagram CO2e"}),
+        _ds("burning-archipelago", "tutupan_pohon", "gfw_tutupan.csv",
+            "Luas wilayah dan tutupan pohon tahun 2000 dan 2010 per provinsi, serta pertumbuhan 2000-2020 (hektar).",
+            {"provinsi_gfw": "provinsi (versi GADM)", "luas_ha": "luas wilayah ha", "tutupan_2000_ha": "tutupan pohon 2000 ha",
+             "tutupan_2010_ha": "tutupan pohon 2010 ha", "tumbuh_ha": "pertumbuhan tutupan 2000-2020 ha"}),
+    ),
+))
+
+_daftar(Proyek(
+    "global-conflict-tracker", "Global Conflict Tracker", "The world, counted in casualties.",
+    "Kekerasan bersenjata terorganisasi di seluruh dunia 1989-2026 dari UCDP (GED final s.d. 2025; data 2026 berstatus 'awal').",
+    (
+        _ds("global-conflict-tracker", "korban_negara", "korban_negara_tahun.csv",
+            "Kejadian dan korban jiwa per negara × tahun × jenis kekerasan × status. Jumlahkan lintas jenis untuk total "
+            "negara. Nama negara dalam bahasa Indonesia (misalnya 'Afganistan', 'Etiopia').",
+            {"negara": "negara (nama Indonesia)", "iso3": "kode ISO3", "wilayah": "Afrika/Amerika/Asia/Eropa/Timur Tengah",
+             "tahun": "tahun", "jenis": "Konflik negara/Konflik non-negara/Kekerasan sepihak", "status": "final/awal",
+             "kejadian": "jumlah kejadian", "korban": "korban jiwa (estimasi terbaik)", "korban_min": "estimasi terendah",
+             "korban_max": "estimasi tertinggi", "korban_sipil": "korban sipil yang disebut sumber (cenderung terlalu rendah)"}),
+        _ds("global-conflict-tracker", "konflik", "konflik_tahun.csv",
+            "Kejadian dan korban per konflik bernama UCDP per tahun, dengan negara tempat kejadian terbanyak.",
+            {"konflik": "nama konflik UCDP", "jenis": "jenis kekerasan", "tahun": "tahun", "status": "final/awal",
+             "kejadian": "jumlah kejadian", "korban": "korban jiwa", "korban_sipil": "korban sipil",
+             "negara_utama": "negara dengan kejadian terbanyak"}),
+        _ds("global-conflict-tracker", "konflik_grid", "grid_kejadian.csv",
+            "Kejadian dan korban per sel grid 0,5° per tahun, untuk peta lokasi konflik.",
+            {"tahun": "tahun", "lat": "lintang pusat sel", "lon": "bujur pusat sel", "jenis": "jenis kekerasan",
+             "negara": "negara", "status": "final/awal", "kejadian": "jumlah kejadian", "korban": "korban jiwa"}),
+    ),
+))
+
+_daftar(Proyek(
+    "strait-watch", "Strait Watch", "The world's busiest chokepoint, live.",
+    "Lalu lintas kapal Selat Malaka: transit harian per selat sejak 2019 (IMF PortWatch) dan potret posisi kapal AIS.",
+    (
+        _ds("strait-watch", "transit_selat_harian", "portwatch_harian.csv",
+            "Jumlah kapal niaga yang melintas per hari per selat, dipecah per jenis, sejak 1 Januari 2019. Selat: Malaka, "
+            "Sunda, Lombok, Makassar, Ombai, plus Hormuz, Suez, Taiwan sebagai pembanding.",
+            {"tanggal": "tanggal", "selat": "nama selat (bahasa Indonesia)", "n_total": "total kapal melintas",
+             "n_tanker": "tanker", "n_container": "kontainer", "n_dry_bulk": "curah kering", "n_general_cargo": "kargo umum",
+             "n_roro": "Ro-Ro", "capacity": "kapasitas total DWT", "capacity_tanker": "kapasitas tanker DWT"},
+            waktu=("tanggal",)),
+        _ds("strait-watch", "chokepoint_dunia", "portwatch_chokepoint.csv",
+            "28 chokepoint maritim dunia: lokasi dan jumlah kapal per jenis dalam setahun (database PortWatch).",
+            {"portname": "nama chokepoint (bahasa Inggris)", "lat": "lintang", "lon": "bujur",
+             "vessel_count_total": "kapal per tahun", "vessel_count_tanker": "tanker per tahun",
+             "vessel_count_container": "kontainer per tahun", "vessel_count_dry_bulk": "curah kering per tahun",
+             "industry_top1": "komoditas utama"}),
+        _ds("strait-watch", "posisi_kapal", "posisi.csv",
+            "Potret posisi kapal AIS di Selat Malaka selama sekitar satu jam (2 November 2026). Satu kapal muncul di beberapa "
+            "snapshot; hitung kapal unik dengan nunique pada mmsi. Bendera dari kode MMSI, bukan kepemilikan.",
+            {"mmsi": "ID kapal", "nama": "nama kapal", "bendera": "negara bendera", "kategori": "Kargo/Tanker/Penumpang/...",
+             "tujuan": "tujuan (diisi awak)", "panjang_m": "panjang meter", "lat": "lintang", "lon": "bujur",
+             "sog_knot": "kecepatan knot", "status_navigasi": "status navigasi", "waktu": "waktu snapshot (UTC)"},
+            asal="data/sample/posisi.csv", waktu=("waktu",),
+            pendukung=(("kapal_statis.csv", "data/sample/kapal_statis.csv"),)),
+        _ds("strait-watch", "pelabuhan_selat", "pelabuhan.csv",
+            "Pelabuhan dan pangkalan angkatan laut di sekitar Selat Malaka.",
+            {"nama": "nama", "kota": "kota", "negara": "negara", "jenis": "pelabuhan/pangkalan", "lat": "lintang", "lon": "bujur"}),
+    ),
+))
+
+_daftar(Proyek(
+    "who-watches-indonesia", "Who Watches Indonesia?", "Look up. Someone is already looking down.",
+    "Katalog satelit dunia (GCAT) dan satelit milik Indonesia; aplikasi aslinya menghitung lintasan live di atas Indonesia.",
+    (
+        _ds("who-watches-indonesia", "katalog_satelit", "katalog_satelit.csv",
+            "Semua satelit (payload) bernomor NORAD yang pernah diluncurkan (±27 ribu), dengan negara, pemilik, kelas "
+            "operator, dan kategori misi. Termasuk yang sudah mati atau jatuh; posisi live tidak ada di sini.",
+            {"norad": "nomor NORAD", "nama_gcat": "nama", "negara": "negara (nama Indonesia)", "pemilik": "kode pemilik",
+             "militer": "True bila dioperasikan militer", "kelas": "A amatir, B komersial, C sipil, D militer",
+             "kategori": "COM komunikasi, IMG pencitraan, IMG-R radar, SIG intai sinyal, NAV, MET, SCI, TECH, ...",
+             "program": "program/konstelasi", "orbit_gcat": "kode orbit (LLEO, LEO, MEO, GEO, HEO)",
+             "tanggal_luncur": "tanggal peluncuran", "massa_kg": "massa kg"},
+            waktu=("tanggal_luncur",), pendukung=(("kode_negara.csv", "data/kode_negara.csv"),)),
+        _ds("who-watches-indonesia", "satelit_indonesia", "satelit_indonesia.csv",
+            "Sembilan satelit Indonesia yang masih dilacak: operator, fungsi, orbit, tanggal luncur.",
+            {"nama": "nama satelit", "operator": "operator", "fungsi": "fungsi", "orbit": "orbit",
+             "diluncurkan": "tanggal luncur", "catatan": "catatan"}),
+    ),
+))
+
 DATASET: dict[str, Dataset] = {d.id: d for p in PROYEK.values() for d in p.dataset}
 
 
@@ -261,9 +403,46 @@ def _baca_bmkg(path: Path) -> pd.DataFrame:
     return pd.DataFrame(baris)
 
 
+DI_LUAR_PROVINSI = "Laut / luar negeri"
+
+# Batas atas PM2.5 (µg/m³) tiap kategori ISPU (Permen LHK P.14/2020).
+ISPU_PM25 = [(15.5, "Baik"), (55.4, "Sedang"), (150.4, "Tidak Sehat"), (250.4, "Sangat Tidak Sehat"), (float("inf"), "Berbahaya")]
+
+
+def kategori_ispu(pm25: float | None) -> str | None:
+    if pm25 is None or pm25 != pm25:
+        return None
+    for batas, nama in ISPU_PM25:
+        if pm25 <= batas:
+            return nama
+    return None
+
+
 def _turunan(id: str, df: pd.DataFrame) -> pd.DataFrame:
     """Kolom tambahan yang tidak ada di file asal."""
-    if id == "pesawat":
+    d = DATASET[id]
+    if id == "udara_per_jam":
+        df = df.copy()
+        df["kategori_ispu"] = df["pm2_5"].map(kategori_ispu)
+    elif id == "titik_api":
+        df = df.rename(columns={"waktu_utc": "waktu"})
+        prov = wilayah.PenentuProvinsi(d.path_pendukung("provinsi.geojson")).tentukan(df["lon"], df["lat"])
+        df["provinsi"] = pd.Series(prov, index=df.index).fillna(DI_LUAR_PROVINSI)
+    elif id == "posisi_kapal":
+        statis = pd.read_csv(d.path_pendukung("kapal_statis.csv")).drop_duplicates("mmsi", keep="last")
+        df = df.merge(statis[["mmsi", "tipe_kode", "tujuan", "panjang_m"]], on="mmsi", how="left")
+        df["waktu"] = df["waktu_snapshot"]
+        df["bendera"] = df["mmsi"].map(mmsi.negara_bendera)
+        df["kategori"] = df["tipe_kode"].map(mmsi.kategori_tipe)
+        df["status_navigasi"] = df["status_nav_kode"].map(mmsi.status_navigasi)
+    elif id == "katalog_satelit":
+        negara = pd.read_csv(d.path_pendukung("kode_negara.csv"))
+        df = df.merge(negara[["kode_gcat", "negara"]], left_on="negara_kode", right_on="kode_gcat", how="left")
+        df["negara"] = df["negara"].fillna(df["negara_kode"])
+        df["kelas"] = df["kelas"].fillna("-").astype(str)
+        df["militer"] = df["kelas"].str.contains("D")
+        df["kategori"] = df["kategori_gcat"].fillna("").astype(str).str.split("/").str[0].str.rstrip("?*")
+    elif id == "pesawat":
         df = df.copy()
         df["waktu"] = pd.to_datetime(df["waktu_snapshot"], unit="s")
         cs = df["callsign"].fillna("").astype(str)
@@ -285,7 +464,10 @@ def muat(id: str) -> pd.DataFrame:
     elif d.format == "bmkg":
         df = _baca_bmkg(d.path)
     else:
-        df = pd.read_csv(d.path)
+        with open(d.path, "rb") as f:
+            awal = f.read(1)
+        # Beberapa CSV asal diawali satu baris komentar "# Sumber: ..." (misalnya katalog GCAT).
+        df = pd.read_csv(d.path, skiprows=1 if awal == b"#" else 0)
     df = _turunan(id, df)
     for k in d.waktu:
         df[k] = pd.to_datetime(df[k], utc=True, errors="coerce").dt.tz_convert(None)

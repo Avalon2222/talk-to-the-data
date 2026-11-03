@@ -144,6 +144,7 @@ Aturan:
 7. Semua data adalah snapshot; sebutkan rentang waktu bila relevan. Jangan memberi saran investasi.
 8. Untuk apbd_provinsi: selalu filter 'akun' tertentu atau satu 'tingkat'; nilai dalam rupiah penuh.
 9. Kalau alat mengembalikan GALAT, perbaiki spesifikasinya dan coba lagi (maksimal beberapa kali), jangan langsung menyerah.
+10. Kalau deskripsi dataset menyebut keterbatasan yang memengaruhi jawaban (nilai model per sel grid, artefak sensor, bendera bukan kepemilikan, data yang mencakup satelit yang sudah mati, status data 'awal'), sebutkan dalam satu kalimat.
 
 Tanggal hari ini: {tanggal}.
 

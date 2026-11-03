@@ -200,3 +200,15 @@ def test_klien_beralih_ke_model_cadangan(monkeypatch):
     with pytest.raises(llm.GalatLLM) as e:
         klien.chat([])
     assert e.value.kode == 503
+
+
+def test_klien_429_pindah_ke_model_lain(monkeypatch):
+    def post_palsu(url, headers, json, timeout):
+        if json["model"] == "utama":
+            return ResponsPalsu(429, "quota exceeded", {"retry-after": "30"})
+        return ResponsPalsu(200, json_body={"choices": [{"message": {"content": "ok"}}]})
+
+    monkeypatch.setattr(requests, "post", post_palsu)
+    klien = llm.Klien("gemini", api_key="k", model="utama")
+    klien.cadangan = ["lain"]
+    assert klien.chat([])["content"] == "ok" and klien.model_terpakai == "lain"

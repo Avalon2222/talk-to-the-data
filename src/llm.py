@@ -39,7 +39,8 @@ PROVIDER = {
         "url_kunci": "https://aistudio.google.com/apikey",
     },
 }
-# Model cadangan dipakai bila model utama sedang penuh (HTTP 503) atau sudah ditarik (HTTP 404).
+# Model cadangan dipakai bila model utama sedang penuh (HTTP 503), kuotanya habis (HTTP 429; di tier gratis
+# Gemini kuota dihitung per model), atau sudah ditarik (HTTP 404).
 TUNGGU_503_DETIK = (2, 4)
 MAKS_RIWAYAT = 8        # pesan lama yang ikut dikirim (hemat token: tier gratis dibatasi per menit)
 MAKS_PUTARAN = 4        # berapa kali LLM boleh memanggil alat untuk satu pertanyaan
@@ -119,7 +120,7 @@ class Klien:
                     if e.kode == 503 and percobaan < len(TUNGGU_503_DETIK):
                         time.sleep(TUNGGU_503_DETIK[percobaan])
                         continue
-                    if e.kode in (503, 404):
+                    if e.kode in (503, 429, 404):
                         break      # coba model berikutnya
                     raise
         assert galat_terakhir is not None

@@ -1,5 +1,5 @@
 """
-sinkron_data.py - Menyalin ulang snapshot data dari ketujuh repo proyek.
+sinkron_data.py - Menyalin ulang snapshot data dari semua repo proyek di katalog.
 
 Sumber bawaan: GitHub (raw.githubusercontent.com, branch main). Alternatif: folder lokal yang
 berisi clone tiap repo (satu folder per repo, nama sama dengan id proyek).
@@ -26,27 +26,38 @@ from src import katalog  # noqa: E402
 RAW = "https://raw.githubusercontent.com/{akun}/{repo}/main/{path}"
 
 
-def url_sumber(d: katalog.Dataset, akun: str = katalog.AKUN_GITHUB) -> str:
-    return RAW.format(akun=akun, repo=d.proyek, path=d.asal)
+def url_sumber(d: katalog.Dataset, akun: str = katalog.AKUN_GITHUB, asal: str | None = None) -> str:
+    return RAW.format(akun=akun, repo=d.proyek, path=asal or d.asal)
+
+
+def berkas(d: katalog.Dataset) -> list[tuple[Path, str]]:
+    """File utama dataset beserta file pendukungnya (GeoJSON, tabel statis, kode negara)."""
+    return [(d.path, d.asal)] + [(d.path_pendukung(f), asal) for f, asal in d.pendukung]
 
 
 def unduh(d: katalog.Dataset) -> int:
     import requests
 
-    resp = requests.get(url_sumber(d), timeout=60)
-    resp.raise_for_status()
-    d.path.parent.mkdir(parents=True, exist_ok=True)
-    d.path.write_bytes(resp.content)
-    return len(resp.content)
+    total = 0
+    for tujuan, asal in berkas(d):
+        resp = requests.get(url_sumber(d, asal=asal), timeout=60)
+        resp.raise_for_status()
+        tujuan.parent.mkdir(parents=True, exist_ok=True)
+        tujuan.write_bytes(resp.content)
+        total += len(resp.content)
+    return total
 
 
 def salin_lokal(d: katalog.Dataset, akar: Path) -> int:
-    sumber = akar / d.proyek / d.asal
-    if not sumber.exists():
-        raise FileNotFoundError(sumber)
-    d.path.parent.mkdir(parents=True, exist_ok=True)
-    shutil.copyfile(sumber, d.path)
-    return d.path.stat().st_size
+    total = 0
+    for tujuan, asal in berkas(d):
+        sumber = akar / d.proyek / asal
+        if not sumber.exists():
+            raise FileNotFoundError(sumber)
+        tujuan.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copyfile(sumber, tujuan)
+        total += tujuan.stat().st_size
+    return total
 
 
 def main(argv: list[str] | None = None) -> int:

@@ -1,13 +1,15 @@
 # 💬 Talk to the Data
 
 > **The data finally talks back.**
-> Chatbot yang menjawab pertanyaan bahasa sehari-hari dari data tujuh proyek portofolio ini: APBD 38
-> provinsi, harga Bitcoin dan transaksi paus-nya, gempa dan gunung api, pesawat di langit Indonesia, pusat
-> data, dan geografi pertahanan. Setiap jawaban dihitung dari data lewat query terstruktur, lalu disajikan
+> Chatbot yang menjawab pertanyaan bahasa sehari-hari dari data 13 proyek portofolio ini: APBD 38 provinsi,
+> harga Bitcoin dan transaksi paus-nya, gempa dan gunung api, pesawat di langit Indonesia, kapal di Selat
+> Malaka, satelit yang melintas, titik api dan hutan yang hilang, polusi udara Jabodetabek, upah minimum vs
+> harga rumah, konflik bersenjata dunia, pusat data, dan geografi pertahanan. Setiap jawaban dihitung dari
+> data lewat query terstruktur, lalu disajikan
 > sebagai teks, grafik Plotly, dan tabel sumbernya. Dibangun dengan Python, pandas, Plotly, dan Streamlit di
 > atas API LLM tier gratis (Groq atau Gemini).
 
-*An all-in-one chatbot over seven open-data projects. Ask in plain Indonesian or English; a large language
+*An all-in-one chatbot over thirteen open-data projects. Ask in plain Indonesian or English; a large language
 model turns the question into a small structured query, pandas runs it, Plotly draws it, and the answer comes
 back with the exact rows it was built from. No made-up numbers: if the data can't answer, it says so. Built
 with Python, pandas, Plotly and Streamlit on a free-tier LLM API.*
@@ -35,11 +37,11 @@ Tantangan teknisnya menarik justru karena model bahasa **tidak boleh dipercaya b
 | Bagian | Isi |
 |---|---|
 | 💬 Chat | Tanya dalam bahasa Indonesia atau Inggris. Jawaban = teks + grafik (bar, line, scatter, pie, peta) + expander **Sumber & data** berisi proyek asal, dataset, tabel hasil query, dan tombol download CSV |
-| 🗂️ Datasets | Ringkasan 22 dataset dari 7 proyek (baris, kolom, rentang waktu) dan **query builder** yang memakai mesin yang sama dengan chatbot, tanpa API key |
+| 🗂️ Datasets | Ringkasan 37 dataset dari 13 proyek (baris, kolom, rentang waktu) dan **query builder** yang memakai mesin yang sama dengan chatbot, tanpa API key |
 | 🧭 How it works | Alur tool calling, potongan kode intinya, dan daftar keterbatasan |
 | 🎓 Learning mode | Toggle di sidebar: tiap jawaban menampilkan JSON yang dikirim model ke alat, hasil yang dikirim balik, dan percobaan yang gagal lalu diperbaiki |
 
-Sidebar: delapan pertanyaan contoh sekali klik, pilihan provider (Groq atau Gemini), API key untuk sesi
+Sidebar: empat belas pertanyaan contoh sekali klik, pilihan provider (Groq atau Gemini), API key untuk sesi
 saat ini bila secrets kosong, dan tombol Clear chat.
 
 ![Sumber dan data](docs/screenshots/02_sumber.png)
@@ -60,10 +62,10 @@ API key gratis, tanpa kartu kredit: [Groq](https://console.groq.com/keys) (bawaa
 `llama-3.3-70b-versatile`) atau [Google Gemini](https://aistudio.google.com/apikey) (`gemini-3.5-flash-lite`).
 Tanpa secrets, key juga bisa diisi di sidebar untuk satu sesi. Halaman Datasets jalan tanpa key sama sekali.
 
-Buka `http://localhost:8501`. Jalankan tes dengan `python -m pytest tests/ -v` (64 tes, tanpa internet,
+Buka `http://localhost:8501`. Jalankan tes dengan `python -m pytest tests/ -v` (90 tes, tanpa internet,
 tanpa API key; otomatis jalan di GitHub Actions setiap push dan pull request).
 
-Memperbarui snapshot data dari ketujuh repo (butuh internet):
+Memperbarui snapshot data dari semua repo (butuh internet):
 
 ```bash
 python scripts/sinkron_data.py                 # unduh dari GitHub
@@ -77,7 +79,7 @@ flowchart LR
     U[Pertanyaan] --> L[LLM<br/>Groq / Gemini]
     K[src/katalog.py<br/>daftar dataset + kolom] -. prompt sistem .-> L
     L -->|tool call: JSON| Q[src/query.py<br/>filter → hitung → agregasi → urut]
-    D[data/*.csv, *.json<br/>snapshot 7 proyek] --> Q
+    D[data/*.csv, *.json<br/>snapshot 13 proyek] --> Q
     Q -->|40 baris JSON| L
     L --> J[Jawaban teks + sumber]
     Q --> G[src/grafik.py<br/>Plotly]
@@ -119,6 +121,12 @@ memperbaiki sendiri. Penjelasan lengkap di [docs/BELAJAR.md](docs/BELAJAR.md).
 - Gunung api mana saja yang statusnya Siaga atau Awas?
 - Berapa BTC yang dipindahkan paus per hari, dibagi menurut pola transaksi?
 - Berita kategori apa yang paling sering muncul di hari-hari Bitcoin paling liar?
+- Di kota mana upah minimum paling lama untuk beli rumah seken, kalau nabung 30% gaji?
+- Provinsi mana yang paling banyak titik apinya minggu ini?
+- Which countries had the most conflict deaths in 2025?
+- Bagaimana tren kapal yang melintasi Selat Malaka per bulan sejak 2019?
+- Negara mana yang punya satelit militer paling banyak?
+- Kawasan mana di Jabodetabek yang rata-rata PM2.5-nya paling tinggi?
 
 ## Struktur folder
 
@@ -131,7 +139,9 @@ talk-to-the-data/
 │   ├── grafik.py              # spesifikasi grafik → Plotly
 │   ├── alat.py                # definisi tool (JSON schema) + prompt sistem
 │   ├── llm.py                 # klien API kompatibel OpenAI + loop tool calling
-│   └── maskapai.py            # callsign → maskapai (dari who-owns-the-sky)
+│   ├── maskapai.py            # callsign → maskapai (dari who-owns-the-sky)
+│   ├── mmsi.py                # MMSI → negara bendera, kode tipe kapal (dari strait-watch)
+│   └── wilayah.py             # titik → provinsi, ray casting numpy (dari burning-archipelago)
 ├── data/<id-proyek>/          # snapshot CSV/JSON dari tiap repo (lihat data/SUMBER_DATA.md)
 ├── scripts/sinkron_data.py    # perbarui snapshot dari GitHub atau clone lokal
 ├── tests/                     # pytest, tanpa internet, tanpa API key

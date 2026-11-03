@@ -28,6 +28,12 @@ CONTOH_PERTANYAAN = [
     "Gunung api mana saja yang statusnya Siaga atau Awas?",
     "Bandingkan belanja militer Indonesia dengan negara-negara tetangga.",
     "Berapa BTC yang dipindahkan paus per hari, dibagi menurut pola transaksi?",
+    "Di kota mana upah minimum paling lama untuk beli rumah seken, kalau nabung 30% gaji?",
+    "Provinsi mana yang paling banyak titik apinya minggu ini?",
+    "Which countries had the most conflict deaths in 2025?",
+    "Bagaimana tren kapal yang melintasi Selat Malaka per bulan sejak 2019?",
+    "Negara mana yang punya satelit militer paling banyak?",
+    "Kawasan mana di Jabodetabek yang rata-rata PM2.5-nya paling tinggi?",
 ]
 
 
@@ -227,8 +233,9 @@ def proses_pertanyaan(pertanyaan: str) -> None:
 if halaman == "💬 Chat":
     st.title("💬 Talk to the Data")
     st.markdown(
-        "Tanya apa saja tentang data di tujuh proyek portofolio ini: APBD provinsi, harga Bitcoin dan paus-nya, "
-        "gempa dan gunung api, pesawat di langit Indonesia, pusat data, dan geografi pertahanan. "
+        f"Tanya apa saja tentang data di {len(katalog.PROYEK)} proyek portofolio ini: APBD provinsi, harga Bitcoin dan "
+        "paus-nya, gempa dan gunung api, pesawat, kapal di Selat Malaka, satelit, titik api, polusi udara Jabodetabek, "
+        "upah vs harga rumah, konflik bersenjata dunia, pusat data, dan geografi pertahanan. "
         "Jawabannya **dihitung dari data** lewat query terstruktur, lengkap dengan grafik dan sumbernya."
     )
     if not st.session_state["tampil"]:
@@ -315,7 +322,7 @@ else:
         """
 Chatbot ini **tidak menghafal data** dan tidak boleh mengarang. Alurnya untuk satu pertanyaan:
 
-1. **Prompt sistem** berisi daftar proyek, dataset, dan nama kolom (sekitar 1.700 token), bukan isi datanya.
+1. **Prompt sistem** berisi daftar proyek, dataset, dan nama kolom (sekitar 3.000 token), bukan isi datanya.
 2. Model memutuskan dataset mana yang relevan, lalu memanggil alat **`query_data`** dengan spesifikasi JSON:
    filter → kolom hitung → kelompok + agregasi → urut → limit, plus spesifikasi grafik bila perlu.
 3. **pandas** menjalankan spesifikasi itu (`src/query.py`). Tidak ada kode bebas dari model yang dieksekusi;

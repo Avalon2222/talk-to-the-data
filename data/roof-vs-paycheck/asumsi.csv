@@ -1,0 +1,12 @@
+parameter,nilai,satuan,sumber
+bi_rate,5.75,persen,"Bank Indonesia, RDG 20-21 Oktober 2026"
+kpr_bunga_tetap,6.5,persen per tahun,"Kisaran promo bank besar 2026 (BRI 3-6,85% tetap 3-5 tahun); dipakai nilai tengah konservatif"
+kpr_tahun_tetap,3,tahun,"Masa bunga tetap umum di promo KPR"
+kpr_bunga_mengambang,11.0,persen per tahun,"BCA floating 11% (2026); Mandiri 12-13%, CIMB Niaga 13,5%, Danamon 12,5%"
+kpr_dp,10,persen harga,"LTV 100% diizinkan BI, tetapi bank umumnya minta DP 10-20%"
+kpr_tenor,20,tahun,"Tenor KPR paling umum"
+kenaikan_harga_rumah,1.0,persen per tahun,"BI Survei Harga Properti Residensial 2025: IHPR +0,83% sampai +1,07% yoy"
+kenaikan_sewa,3.0,persen per tahun,"Asumsi mendekati inflasi umum"
+kenaikan_gaji,6.5,persen per tahun,"Rata-rata kenaikan UMP 2026 (PP 49/2025)"
+porsi_nabung,30,persen gaji,"Asumsi awal; bisa digeser di sidebar"
+luas_studio,25,m2,"Ukuran studio umum 20-30 m²"
