@@ -370,6 +370,36 @@ _daftar(Proyek(
     ),
 ))
 
+_daftar(Proyek(
+    "blackout-watch", "Blackout Watch", "Someone pulled the plug.",
+    "Pemutusan internet yang disengaja di seluruh dunia 2016-2025 (dokumentasi Access Now #KeepItOn) dan gangguan "
+    "konektivitas yang terdeteksi otomatis oleh IODA dalam 30 hari terakhir.",
+    (
+        _ds("blackout-watch", "shutdown_internet", "shutdown_dunia.csv",
+            "Satu baris per pemutusan/pelambatan/pemblokiran internet unik 2016-2025 (1.888 baris, 97 negara). Nama negara "
+            "dalam bahasa Indonesia ('India', 'Myanmar', 'Indonesia'). Hitung jumlah pemutusan dengan count; 'pemicu' adalah "
+            "sebab di lapangan versi Access Now, 'alasan_pemerintah' adalah dalih resmi.",
+            {"negara": "negara (nama Indonesia)", "iso3": "kode ISO3", "wilayah": "Asia/Afrika/Eropa/Amerika/Timur Tengah/Oseania",
+             "tahun": "tahun mulai", "mulai": "tanggal mulai", "selesai": "tanggal selesai sebagai teks YYYY-MM-DD (kosong bila tidak diketahui)",
+             "durasi_hari": "lama dalam hari (kosong bila tidak diketahui)", "status": "Selesai/Berlangsung/Tidak diketahui",
+             "cakupan_wilayah": "Satu kota/kabupaten, Beberapa kota satu provinsi, atau Lintas provinsi / nasional",
+             "daerah": "nama daerah (Inggris)", "jenis": "Pemutusan/Pelambatan/Pemutusan & pelambatan",
+             "jaringan": "Broadband & seluler/Seluler/Broadband", "cakupan_layanan": "Seluruh jaringan atau Platform tertentu",
+             "pemicu": "Unjuk rasa, Konflik bersenjata, Kekerasan komunal, Instabilitas politik, Pemilu, Kontrol informasi, "
+             "Ujian sekolah, Hari besar/peringatan, Kunjungan pejabat, Lainnya, Tidak diketahui",
+             "alasan_pemerintah": "dalih resmi, misalnya Hoaks / ujaran kebencian, Keamanan / ketertiban umum, Tidak disebutkan",
+             "diperintahkan_oleh": "Pemerintah pusat/daerah/Militer/Kepolisian/...", "kekerasan": "Ya/Tidak/Tidak diketahui",
+             "platform": "platform yang diblokir dipisah ';' (Facebook, WhatsApp, TikTok, ...)", "keterangan": "ringkasan peristiwa (Inggris)"},
+            waktu=("mulai",)),
+        _ds("blackout-watch", "gangguan_internet_30hari", "ioda_ringkasan_30hari.csv",
+            "Negara dengan gangguan konektivitas internet yang terdeteksi otomatis oleh IODA dalam 30 hari terakhir (potret "
+            "mingguan). Skor tanpa satuan, hanya untuk membandingkan; nama negara dalam bahasa Inggris.",
+            {"kode": "kode negara ISO2", "nama_en": "nama negara (Inggris)", "jumlah_kejadian": "jumlah kejadian gangguan",
+             "skor_total": "skor gangguan total IODA", "skor_bgp": "skor dari sinyal BGP", "skor_ping": "skor dari ping aktif",
+             "skor_teleskop": "skor dari teleskop jaringan", "skor_google": "skor dari trafik Google"}),
+    ),
+))
+
 DATASET: dict[str, Dataset] = {d.id: d for p in PROYEK.values() for d in p.dataset}
 
 

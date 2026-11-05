@@ -1,15 +1,15 @@
 # 💬 Talk to the Data
 
 > **The data finally talks back.**
-> Chatbot yang menjawab pertanyaan bahasa sehari-hari dari data 13 proyek portofolio ini: APBD 38 provinsi,
+> Chatbot yang menjawab pertanyaan bahasa sehari-hari dari data 14 proyek portofolio ini: APBD 38 provinsi,
 > harga Bitcoin dan transaksi paus-nya, gempa dan gunung api, pesawat di langit Indonesia, kapal di Selat
 > Malaka, satelit yang melintas, titik api dan hutan yang hilang, polusi udara Jabodetabek, upah minimum vs
-> harga rumah, konflik bersenjata dunia, pusat data, dan geografi pertahanan. Setiap jawaban dihitung dari
+> harga rumah, konflik bersenjata dunia, pemutusan internet di seluruh dunia, pusat data, dan geografi pertahanan. Setiap jawaban dihitung dari
 > data lewat query terstruktur, lalu disajikan
 > sebagai teks, grafik Plotly, dan tabel sumbernya. Dibangun dengan Python, pandas, Plotly, dan Streamlit di
 > atas API LLM tier gratis (Groq atau Gemini).
 
-*An all-in-one chatbot over thirteen open-data projects. Ask in plain Indonesian or English; a large language
+*An all-in-one chatbot over fourteen open-data projects. Ask in plain Indonesian or English; a large language
 model turns the question into a small structured query, pandas runs it, Plotly draws it, and the answer comes
 back with the exact rows it was built from. No made-up numbers: if the data can't answer, it says so. Built
 with Python, pandas, Plotly and Streamlit on a free-tier LLM API.*
@@ -37,11 +37,11 @@ Tantangan teknisnya menarik justru karena model bahasa **tidak boleh dipercaya b
 | Bagian | Isi |
 |---|---|
 | 💬 Chat | Tanya dalam bahasa Indonesia atau Inggris. Jawaban = teks + grafik (bar, line, scatter, pie, peta) + expander **Sumber & data** berisi proyek asal, dataset, tabel hasil query, dan tombol download CSV |
-| 🗂️ Datasets | Ringkasan 37 dataset dari 13 proyek (baris, kolom, rentang waktu) dan **query builder** yang memakai mesin yang sama dengan chatbot, tanpa API key |
+| 🗂️ Datasets | Ringkasan 39 dataset dari 14 proyek (baris, kolom, rentang waktu) dan **query builder** yang memakai mesin yang sama dengan chatbot, tanpa API key |
 | 🧭 How it works | Alur tool calling, potongan kode intinya, dan daftar keterbatasan |
 | 🎓 Learning mode | Toggle di sidebar: tiap jawaban menampilkan JSON yang dikirim model ke alat, hasil yang dikirim balik, dan percobaan yang gagal lalu diperbaiki |
 
-Sidebar: empat belas pertanyaan contoh sekali klik, pilihan provider (Groq atau Gemini), API key untuk sesi
+Sidebar: enam belas pertanyaan contoh sekali klik, pilihan provider (Groq atau Gemini), API key untuk sesi
 saat ini bila secrets kosong, dan tombol Clear chat.
 
 ![Sumber dan data](docs/screenshots/02_sumber.png)
@@ -79,7 +79,7 @@ flowchart LR
     U[Pertanyaan] --> L[LLM<br/>Groq / Gemini]
     K[src/katalog.py<br/>daftar dataset + kolom] -. prompt sistem .-> L
     L -->|tool call: JSON| Q[src/query.py<br/>filter → hitung → agregasi → urut]
-    D[data/*.csv, *.json<br/>snapshot 13 proyek] --> Q
+    D[data/*.csv, *.json<br/>snapshot 14 proyek] --> Q
     Q -->|40 baris JSON| L
     L --> J[Jawaban teks + sumber]
     Q --> G[src/grafik.py<br/>Plotly]
