@@ -81,7 +81,7 @@ def _daftar(p: Proyek) -> None:
 
 _daftar(Proyek(
     "dc-impact-dashboard", "Data Center Impact Dashboard", "The machines are thirsty.",
-    "Data center Indonesia (estimasi listrik dan air), PUE Google, listrik/air Meta, prediksi PUE dari iklim.",
+    "Data center Indonesia, estimasi listrik dan air, PUE Google, listrik/air Meta, prediksi PUE.",
     (
         _ds("dc-impact-dashboard", "data_center", "data_center_indonesia.csv",
             "Daftar pusat data di Indonesia: operator, lokasi, kapasitas IT (MW), status, tahun beroperasi.",
@@ -127,7 +127,7 @@ _daftar(Proyek(
 
 _daftar(Proyek(
     "indonesia-defense-gis", "Indonesia Defense WebGIS", "The archipelago, under the all-seeing eye.",
-    "Geografi pertahanan Indonesia: markas TNI, pulau terluar, ALKI, pangkalan asing, anggaran, alutsista.",
+    "Markas TNI, pulau terluar, ALKI, pangkalan asing, anggaran, dan alutsista Indonesia.",
     (
         _ds("indonesia-defense-gis", "markas_tni", "markas_tni.csv",
             "Markas dan pangkalan utama TNI (AD, AL, AU, gabungan).",
@@ -258,7 +258,8 @@ _daftar(Proyek(
              "kos_min": "kos standar terendah, Rp/bulan", "kos_max": "kos standar tertinggi, Rp/bulan",
              "kontrakan": "kontrakan 1-2 kamar sederhana, Rp/bulan"}),
         _ds("roof-vs-paycheck", "asumsi_kpr", "asumsi.csv",
-            "Asumsi awal simulasi: BI-Rate, bunga KPR tetap dan mengambang, DP, tenor, kenaikan harga rumah, sewa, upah.",
+            "Asumsi awal simulasi: BI-Rate, bunga KPR tetap dan mengambang, DP, tenor, kenaikan harga rumah, sewa, "
+            "upah.",
             {"parameter": "nama parameter", "nilai": "nilai", "satuan": "satuan", "sumber": "sumber"}),
     ),
 ))
@@ -268,9 +269,8 @@ _daftar(Proyek(
     "Kualitas udara per jam di 51 titik Jabodetabek (Open-Meteo, model CAMS): 60 hari terakhir plus prakiraan 2 hari.",
     (
         _ds("the-air-we-breathe", "udara_per_jam", "jam.csv.gz",
-            "PM2.5, PM10, NO2, O3 dan cuaca per jam per titik dari model CAMS 0,4° (satu sel grid bernilai sama, "
-            "cenderung lebih rendah dari sensor). prakiraan=True = baris prakiraan. kategori_ispu dari PM2.5 per jam "
-            "(ISPU resmi memakai rata-rata 24 jam).",
+            "PM2.5, PM10, NO2, O3 dan cuaca per jam per titik (model CAMS 0,4°, cenderung di bawah sensor). "
+            "prakiraan=True = baris prakiraan. kategori_ispu dari PM2.5 per jam.",
             {"titik": "nama titik (kecamatan/kawasan)", "kota": "Jakarta/Bogor/Depok/Tangerang/Bekasi",
              "wilayah": "wilayah administratif", "lat": "lintang", "lon": "bujur", "waktu": "waktu (UTC)",
              "pm2_5": "PM2.5 µg/m³", "pm10": "PM10 µg/m³", "no2": "NO2 µg/m³", "o3": "ozon µg/m³",
@@ -286,9 +286,8 @@ _daftar(Proyek(
     "Titik api NASA FIRMS 7 hari dan kehilangan tutupan pohon per provinsi 2001-2025 (Global Forest Watch).",
     (
         _ds("burning-archipelago", "titik_api", "titik_api_7hari.csv.gz",
-            "Titik panas VIIRS (NOAA-20/21) di Indonesia selama 7 hari; satu titik = piksel 375 m yang panas, bukan "
-            "satu kebakaran. provinsi 'Laut / luar negeri' = di laut/negara tetangga; untuk hitungan per provinsi "
-            "buang nilai itu dan pakai keyakinan Nominal/Tinggi.",
+            "Titik panas VIIRS 7 hari; satu titik = piksel 375 m, bukan satu kebakaran. Per provinsi: buang 'Laut / "
+            "luar negeri', pakai keyakinan Nominal/Tinggi.",
             {"waktu": "waktu deteksi (UTC)", "lat": "lintang", "lon": "bujur", "provinsi": "provinsi (dari poligon)",
              "frp": "fire radiative power, MW", "keyakinan": "Rendah/Nominal/Tinggi", "siang_malam": "Siang/Malam",
              "satelit": "NOAA-20/NOAA-21"},
@@ -296,8 +295,7 @@ _daftar(Proyek(
             pendukung=(("provinsi.geojson", "data/provinsi.geojson"),)),
         _ds("burning-archipelago", "hilang_tutupan_pohon", "gfw_tahunan.csv",
             "Kehilangan tutupan pohon per provinsi per tahun 2001-2025 (GFW/Hansen, kanopi ≥30%), termasuk akibat "
-            "kebakaran dan emisi. Provinsi versi GADM (34; 'Jakarta Raya', 'Yogyakarta', 'Bangka Belitung'). Tutupan "
-            "pohon ≠ hutan; data 2011+ memakai metode lebih peka.",
+            "kebakaran. Provinsi versi GADM ('Jakarta Raya', 'Yogyakarta', 'Bangka Belitung').",
             {"provinsi_gfw": "provinsi (versi GADM)", "tahun": "tahun", "hilang_ha": "kehilangan tutupan pohon, hektar",
              "hilang_api_ha": "bagian akibat kebakaran, hektar", "emisi_mg": "emisi kotor, megagram CO2e"}),
         _ds("burning-archipelago", "tutupan_pohon", "gfw_tutupan.csv",
@@ -335,8 +333,8 @@ _daftar(Proyek(
     "Lalu lintas kapal Selat Malaka: transit harian per selat sejak 2019 (IMF PortWatch) dan potret posisi kapal AIS.",
     (
         _ds("strait-watch", "transit_selat_harian", "portwatch_harian.csv",
-            "Jumlah kapal niaga yang melintas per hari per selat, dipecah per jenis, sejak 1 Januari 2019. Selat: Malaka, "
-            "Sunda, Lombok, Makassar, Ombai, plus Hormuz, Suez, Taiwan sebagai pembanding.",
+            "Kapal niaga melintas per hari per selat dan jenis sejak 2019: Malaka, Sunda, Lombok, Makassar, Ombai, "
+            "plus Hormuz, Suez, Taiwan.",
             {"tanggal": "tanggal", "selat": "nama selat (bahasa Indonesia)", "n_total": "total kapal melintas",
              "n_tanker": "tanker", "n_container": "kontainer", "n_dry_bulk": "curah kering", "n_general_cargo": "kargo umum",
              "n_roro": "Ro-Ro", "capacity": "kapasitas total DWT", "capacity_tanker": "kapasitas tanker DWT"},
@@ -348,8 +346,8 @@ _daftar(Proyek(
              "vessel_count_container": "kontainer per tahun", "vessel_count_dry_bulk": "curah kering per tahun",
              "industry_top1": "komoditas utama"}),
         _ds("strait-watch", "posisi_kapal", "posisi.csv",
-            "Potret posisi kapal AIS Selat Malaka ±1 jam (2 November 2026). Satu kapal muncul di beberapa snapshot; "
-            "hitung kapal unik dengan nunique pada mmsi. Bendera dari kode MMSI, bukan kepemilikan.",
+            "Potret posisi kapal AIS Selat Malaka ±1 jam (2 Nov 2026). Hitung kapal unik dengan nunique pada mmsi. "
+            "Bendera dari kode MMSI.",
             {"mmsi": "ID kapal", "nama": "nama kapal", "bendera": "negara bendera", "kategori": "Kargo/Tanker/Penumpang/...",
              "tujuan": "tujuan (diisi awak)", "panjang_m": "panjang meter", "lat": "lintang", "lon": "bujur",
              "sog_knot": "kecepatan knot", "status_navigasi": "status navigasi", "waktu": "waktu snapshot (UTC)"},
@@ -366,8 +364,7 @@ _daftar(Proyek(
     "Katalog satelit dunia (GCAT) dan satelit milik Indonesia.",
     (
         _ds("who-watches-indonesia", "katalog_satelit", "katalog_satelit.csv",
-            "Semua satelit (payload) bernomor NORAD yang pernah diluncurkan (±27 ribu): negara, pemilik, kelas "
-            "operator, kategori misi. Termasuk yang mati/jatuh; tanpa posisi live.",
+            "Semua satelit bernomor NORAD (±27 ribu): negara, pemilik, kelas operator, misi; termasuk yang mati.",
             {"norad": "nomor NORAD", "nama_gcat": "nama", "negara": "negara (nama Indonesia)", "pemilik": "kode pemilik",
              "militer": "True bila dioperasikan militer", "kelas": "A amatir, B komersial, C sipil, D militer",
              "kategori": "COM komunikasi, IMG pencitraan, IMG-R radar, SIG intai sinyal, NAV, MET, SCI, TECH, ...",
@@ -383,12 +380,11 @@ _daftar(Proyek(
 
 _daftar(Proyek(
     "blackout-watch", "Blackout Watch", "Someone pulled the plug.",
-    "Pemutusan internet sengaja di dunia 2016-2025 (Access Now #KeepItOn) dan gangguan 30 hari terakhir (IODA).",
+    "Pemutusan internet dunia 2016-2025 (Access Now) dan gangguan 30 hari terakhir (IODA).",
     (
         _ds("blackout-watch", "shutdown_internet", "shutdown_dunia.csv",
-            "Satu baris per pemutusan/pelambatan/pemblokiran internet unik 2016-2025. Negara dalam bahasa Indonesia "
-            "('India', 'Myanmar'). Hitung dengan count; 'pemicu' = sebab di lapangan (Access Now), "
-            "'alasan_pemerintah' = dalih resmi.",
+            "Pemutusan/pelambatan/pemblokiran internet 2016-2025; nama negara bahasa Indonesia. 'pemicu' = sebab di "
+            "lapangan, 'alasan_pemerintah' = dalih resmi.",
             {"negara": "negara (nama Indonesia)", "iso3": "kode ISO3", "wilayah": "Asia/Afrika/Eropa/Amerika/Timur Tengah/Oseania",
              "tahun": "tahun mulai", "mulai": "tanggal mulai", "selesai": "tanggal selesai sebagai teks YYYY-MM-DD (kosong bila tidak diketahui)",
              "durasi_hari": "lama dalam hari (kosong bila tidak diketahui)", "status": "Selesai/Berlangsung/Tidak diketahui",
@@ -402,8 +398,8 @@ _daftar(Proyek(
              "platform": "platform yang diblokir dipisah ';' (Facebook, WhatsApp, TikTok, ...)", "keterangan": "ringkasan peristiwa (Inggris)"},
             waktu=("mulai",)),
         _ds("blackout-watch", "gangguan_internet_30hari", "ioda_ringkasan_30hari.csv",
-            "Negara dengan gangguan internet yang terdeteksi IODA 30 hari terakhir (potret mingguan). Skor tanpa "
-            "satuan, untuk membandingkan; nama negara bahasa Inggris.",
+            "Negara dengan gangguan internet terdeteksi IODA 30 hari terakhir. Skor tanpa satuan; nama negara bahasa"
+            " Inggris.",
             {"kode": "kode negara ISO2", "nama_en": "nama negara (Inggris)", "jumlah_kejadian": "jumlah kejadian gangguan",
              "skor_total": "skor gangguan total IODA", "skor_bgp": "skor dari sinyal BGP", "skor_ping": "skor dari ping aktif",
              "skor_teleskop": "skor dari teleskop jaringan", "skor_google": "skor dari trafik Google"}),
@@ -412,18 +408,17 @@ _daftar(Proyek(
 
 _daftar(Proyek(
     "cut-the-cable", "Cut the Cable", "Cut one cable. Watch who goes dark.",
-    "Kabel internet bawah laut di sekitar Indonesia dan landing station-nya (TeleGeography).",
+    "Kabel bawah laut di dan sekitar Indonesia beserta landing station-nya (TeleGeography).",
     (
         _ds("cut-the-cable", "kabel_bawah_laut", "kabel.csv",
-            "Kabel bawah laut relevan untuk Indonesia: 74 mendarat di Indonesia plus 44 kabel kawasan yang hanya "
-            "lewat. Kolom negara berisi semua negara pendaratan dipisah '|', pakai op 'contains' (mis. 'Singapore').",
+            "Kabel bawah laut terkait Indonesia: 74 mendarat di Indonesia, 44 hanya lewat. Kolom negara dipisah '|',"
+            " pakai op 'contains'.",
             {"nama": "nama kabel", "kategori": "internasional/domestik/transit (transit = tidak mendarat di Indonesia)",
              "status": "aktif/rencana", "tahun_rfs": "tahun siap pakai (RFS)", "panjang_km": "panjang km",
              "pemilik": "pemilik/konsorsium", "pemasok": "pabrikan", "n_landing": "jumlah landing station",
              "n_landing_indonesia": "landing station di Indonesia", "negara": "negara pendaratan, dipisah |"}),
         _ds("cut-the-cable", "landing_station_kabel", "landing_station.csv",
-            "Landing station yang disinggahi kabel di atas: 361 titik, 146 di Indonesia. n_kabel = semua kabel dunia "
-            "yang mendarat di titik itu.",
+            "Landing station kabel di atas: 361 titik, 146 di Indonesia.",
             {"nama": "nama (kota, negara)", "kota": "kota", "negara": "negara", "lat": "lintang", "lon": "bujur",
              "wilayah": "wilayah Indonesia (Sumatra & Kepulauan Riau, Jawa, Kalimantan, Sulawesi, Bali & Nusa Tenggara, "
                         "Maluku, Papua); kosong untuk luar negeri",
@@ -495,6 +490,26 @@ _daftar(Proyek(
             {"diumumkan": "tanggal pengumuman", "pembeli": "NHS England, Ministry of Defence, ...", "judul": "judul kontrak",
              "nilai_gbp": "nilai kontrak (GBP)", "framework": "True bila framework multi-pemasok"},
             waktu=("diumumkan",)),
+    ),
+))
+
+_daftar(Proyek(
+    "pltr-war-index", "PLTR War Index", "Every war has a ticker.",
+    "Saham Palantir, saham dan ETF pertahanan, serta 48 peristiwa perang sejak IPO 2020 (event study).",
+    (
+        _ds("pltr-war-index", "harga_saham_perang", "harga_saham.csv",
+            "Harga harian sejak 30 Sep 2020: PLTR, SPY, QQQ, ITA (ETF pertahanan), LMT, NOC, RTX, GD. "
+            "Selalu filter ticker.",
+            {"tanggal": "tanggal bursa", "ticker": "PLTR, SPY, QQQ, ITA, LMT, NOC, RTX, GD", "close": "harga penutupan USD",
+             "adj_close": "harga disesuaikan dividen/split USD", "volume": "volume saham"},
+            waktu=("tanggal",)),
+        _ds("pltr-war-index", "peristiwa_perang", "peristiwa_perang.csv",
+            "Perang, eskalasi, serangan AS, dan gencatan senjata 2020-2026 yang diuji terhadap saham PLTR.",
+            {"tanggal": "tanggal peristiwa", "peristiwa": "nama peristiwa",
+             "kategori": "perang_baru, eskalasi, keterlibatan_as, deeskalasi",
+             "kawasan": "Timur Tengah, Eropa & Kaukasus, Asia, Afrika, Amerika", "keterangan": "konteks singkat",
+             "sumber": "tautan sumber"},
+            waktu=("tanggal",)),
     ),
 ))
 

@@ -1,0 +1,49 @@
+tanggal,peristiwa,kategori,kawasan,keterangan,sumber
+2020-11-04,Perang Tigray dimulai,perang_baru,Afrika,Pemerintah Etiopia melancarkan operasi militer ke wilayah Tigray.,https://en.wikipedia.org/wiki/Tigray_war
+2020-11-10,Gencatan senjata Nagorno-Karabakh,deeskalasi,Eropa & Kaukasus,Armenia dan Azerbaijan menandatangani gencatan senjata yang dimediasi Rusia.,https://en.wikipedia.org/wiki/2020_Nagorno-Karabakh_ceasefire_agreement
+2021-02-01,Kudeta militer Myanmar,eskalasi,Asia,Militer Myanmar mengambil alih kekuasaan dan menahan pemimpin sipil.,https://en.wikipedia.org/wiki/2021_Myanmar_coup_d%27%C3%A9tat
+2021-05-10,Perang Israel-Gaza Mei 2021,eskalasi,Timur Tengah,Hamas menembakkan roket dan Israel membalas dengan serangan udara selama 11 hari.,https://en.wikipedia.org/wiki/2021_Israel%E2%80%93Palestine_crisis
+2021-05-21,Gencatan senjata Gaza Mei 2021,deeskalasi,Timur Tengah,Gencatan senjata hasil mediasi Mesir mengakhiri perang 11 hari.,https://en.wikipedia.org/wiki/2021_Israel%E2%80%93Palestine_crisis
+2021-08-15,Taliban menguasai Kabul,eskalasi,Asia,Pemerintah Afganistan runtuh saat pasukan AS menyelesaikan penarikan.,https://en.wikipedia.org/wiki/Fall_of_Kabul_(2021)
+2022-02-24,Rusia menginvasi Ukraina,perang_baru,Eropa & Kaukasus,Invasi skala penuh Rusia ke Ukraina dimulai dini hari waktu Kyiv.,https://en.wikipedia.org/wiki/Russian_invasion_of_Ukraine
+2022-08-04,Latihan militer China mengepung Taiwan,eskalasi,Asia,China menggelar latihan tembak langsung setelah kunjungan Nancy Pelosi ke Taipei.,https://en.wikipedia.org/wiki/2022_Chinese_military_exercises_around_Taiwan
+2022-09-21,Rusia umumkan mobilisasi parsial,eskalasi,Eropa & Kaukasus,Putin memobilisasi ratusan ribu cadangan dan menyinggung senjata nuklir.,https://en.wikipedia.org/wiki/2022_Russian_mobilization
+2022-10-10,Rudal Rusia menghantam kota-kota Ukraina,eskalasi,Eropa & Kaukasus,Gelombang serangan rudal ke Kyiv dan kota lain dua hari setelah Jembatan Krimea meledak.,https://en.wikipedia.org/wiki/October_2022_missile_strikes_on_Ukraine
+2022-11-15,Rudal jatuh di Przewodow Polandia,eskalasi,Eropa & Kaukasus,Ledakan rudal di desa Polandia sempat memicu kekhawatiran konflik dengan NATO.,https://en.wikipedia.org/wiki/2022_missile_explosion_in_Poland
+2023-04-15,Perang saudara Sudan pecah,perang_baru,Afrika,Pertempuran antara tentara Sudan dan RSF meletus di Khartoum.,https://en.wikipedia.org/wiki/Sudanese_civil_war_(2023%E2%80%93present)
+2023-06-24,Pemberontakan Wagner di Rusia,eskalasi,Eropa & Kaukasus,Pasukan Wagner bergerak ke arah Moskow sebelum mundur dalam sehari.,https://en.wikipedia.org/wiki/Wagner_Group_rebellion
+2023-09-19,Ofensif Azerbaijan di Nagorno-Karabakh,eskalasi,Eropa & Kaukasus,Azerbaijan merebut Nagorno-Karabakh dalam operasi satu hari.,https://en.wikipedia.org/wiki/2023_Azerbaijani_offensive_in_Nagorno-Karabakh
+2023-10-07,Serangan Hamas ke Israel,perang_baru,Timur Tengah,Serangan 7 Oktober memicu perang Israel-Hamas di Gaza.,https://en.wikipedia.org/wiki/October_7_attacks
+2023-10-27,Israel memulai invasi darat Gaza,eskalasi,Timur Tengah,Israel memperluas operasi darat ke Jalur Gaza.,https://en.wikipedia.org/wiki/Israeli_invasion_of_the_Gaza_Strip
+2023-11-24,Jeda kemanusiaan pertama di Gaza,deeskalasi,Timur Tengah,Gencatan senjata sementara dengan pertukaran sandera dan tahanan.,https://en.wikipedia.org/wiki/2023_Gaza_war_ceasefire
+2024-01-12,AS dan Inggris menyerang Houthi di Yaman,keterlibatan_as,Timur Tengah,Serangan udara balasan atas serangan Houthi ke kapal di Laut Merah.,https://en.wikipedia.org/wiki/Operation_Poseidon_Archer
+2024-01-28,Serangan drone Tower 22 di Yordania,eskalasi,Timur Tengah,Tiga tentara AS tewas akibat serangan drone milisi pro-Iran.,https://en.wikipedia.org/wiki/Tower_22_drone_attack
+2024-04-13,Iran menyerang Israel secara langsung,eskalasi,Timur Tengah,Lebih dari 300 drone dan rudal Iran diluncurkan ke Israel.,https://en.wikipedia.org/wiki/April_2024_Iranian_strikes_on_Israel
+2024-04-19,Israel membalas ke Isfahan,eskalasi,Timur Tengah,Serangan terbatas Israel ke pangkalan udara dekat Isfahan.,https://en.wikipedia.org/wiki/April_2024_Israeli_strikes_on_Iran
+2024-08-06,Ukraina masuk ke Kursk,eskalasi,Eropa & Kaukasus,Pasukan Ukraina melancarkan serangan lintas batas ke wilayah Rusia.,https://en.wikipedia.org/wiki/August_2024_Kursk_Oblast_incursion
+2024-09-17,Ledakan pager massal di Lebanon,eskalasi,Timur Tengah,Ribuan pager milik anggota Hizbullah meledak serentak.,https://en.wikipedia.org/wiki/2024_Lebanon_electronic_device_attacks
+2024-09-27,Hassan Nasrallah tewas,eskalasi,Timur Tengah,Pemimpin Hizbullah tewas dalam serangan udara Israel di Beirut.,https://en.wikipedia.org/wiki/Assassination_of_Hassan_Nasrallah
+2024-10-01,Iran menembakkan rudal balistik ke Israel,eskalasi,Timur Tengah,Sekitar 180 rudal balistik diluncurkan ke Israel.,https://en.wikipedia.org/wiki/October_2024_Iranian_strikes_on_Israel
+2024-10-26,Israel menyerang Iran,eskalasi,Timur Tengah,Gelombang serangan udara Israel ke fasilitas militer Iran.,https://en.wikipedia.org/wiki/October_2024_Israeli_strikes_on_Iran
+2024-11-21,Rusia menembakkan rudal Oreshnik,eskalasi,Eropa & Kaukasus,Rudal balistik jarak menengah baru menghantam Dnipro.,https://en.wikipedia.org/wiki/Oreshnik_(missile)
+2024-11-27,Gencatan senjata Israel-Hizbullah,deeskalasi,Timur Tengah,Gencatan senjata 60 hari yang dimediasi AS dan Prancis berlaku.,https://en.wikipedia.org/wiki/2024_Israel%E2%80%93Hezbollah_ceasefire_agreement
+2024-12-08,Rezim Assad runtuh,eskalasi,Timur Tengah,Oposisi merebut Damaskus dan Bashar al-Assad melarikan diri ke Rusia.,https://en.wikipedia.org/wiki/Fall_of_the_Assad_regime
+2025-01-19,Gencatan senjata Gaza Januari 2025,deeskalasi,Timur Tengah,Gencatan senjata tiga tahap mulai berlaku sehari sebelum pelantikan Trump.,https://en.wikipedia.org/wiki/2025_Gaza_war_ceasefire
+2025-03-15,AS melancarkan serangan besar ke Houthi,keterlibatan_as,Timur Tengah,Kampanye udara AS terhadap Houthi di Yaman dimulai.,https://en.wikipedia.org/wiki/Operation_Rough_Rider
+2025-03-18,Israel melanjutkan perang di Gaza,eskalasi,Timur Tengah,Serangan udara Israel mengakhiri gencatan senjata Januari.,https://en.wikipedia.org/wiki/March_2025_Israeli_attacks_on_the_Gaza_Strip
+2025-05-07,Operasi Sindoor India ke Pakistan,eskalasi,Asia,India menyerang sasaran di Pakistan setelah serangan Pahalgam; bentrok empat hari.,https://en.wikipedia.org/wiki/2025_India%E2%80%93Pakistan_conflict
+2025-05-10,Gencatan senjata India-Pakistan,deeskalasi,Asia,Kedua negara sepakat menghentikan serangan.,https://en.wikipedia.org/wiki/2025_India%E2%80%93Pakistan_conflict
+2025-06-01,Operasi Spiderweb Ukraina,eskalasi,Eropa & Kaukasus,Drone Ukraina menghantam pesawat pengebom strategis di pangkalan jauh di Rusia.,https://en.wikipedia.org/wiki/Operation_Spiderweb
+2025-06-13,Israel menyerang Iran (perang 12 hari),perang_baru,Timur Tengah,Israel menyerang fasilitas nuklir dan militer Iran; Iran membalas dengan rudal.,https://en.wikipedia.org/wiki/Twelve-Day_War
+2025-06-22,AS mengebom fasilitas nuklir Iran,keterlibatan_as,Timur Tengah,Pengebom B-2 AS menyerang Fordow Natanz dan Isfahan.,https://en.wikipedia.org/wiki/2025_United_States_strikes_on_Iranian_nuclear_sites
+2025-06-24,Gencatan senjata Iran-Israel,deeskalasi,Timur Tengah,Gencatan senjata yang diumumkan Trump mengakhiri perang 12 hari.,https://en.wikipedia.org/wiki/Twelve-Day_War_ceasefire
+2025-07-24,Bentrok perbatasan Thailand-Kamboja,eskalasi,Asia,Pertempuran terbuka di perbatasan termasuk serangan udara Thailand.,https://en.wikipedia.org/wiki/2025_Cambodian%E2%80%93Thai_border_crisis
+2025-09-02,AS mulai menyerang kapal di Karibia,keterlibatan_as,Amerika,Serangan pertama ke kapal yang dituduh membawa narkoba dari Venezuela.,https://www.cfr.org/articles/guide-trumps-second-term-military-strikes-and-actions
+2025-09-10,Drone Rusia masuk wilayah udara Polandia,eskalasi,Eropa & Kaukasus,Jet NATO menembak jatuh drone Rusia di atas Polandia untuk pertama kalinya.,https://en.wikipedia.org/wiki/2025_Russian_drone_incursion_into_Poland
+2025-10-10,Gencatan senjata Gaza Oktober 2025,deeskalasi,Timur Tengah,Fase pertama rencana damai Gaza berlaku dan pasukan Israel mundur sebagian.,https://en.wikipedia.org/wiki/Gaza_peace_plan
+2026-01-03,AS menyerang Venezuela dan menangkap Maduro,keterlibatan_as,Amerika,Operasi Absolute Resolve: serangan udara dan penangkapan Nicolas Maduro.,https://en.wikipedia.org/wiki/2026_United_States_intervention_in_Venezuela
+2026-02-28,AS dan Israel memulai perang dengan Iran,perang_baru,Timur Tengah,Operasi Epic Fury: ratusan serangan dalam beberapa jam; Iran membalas ke Israel dan negara Teluk.,https://en.wikipedia.org/wiki/2026_Iran_war
+2026-04-08,Gencatan senjata perang Iran,deeskalasi,Timur Tengah,Gencatan senjata AS-Iran mulai berlaku.,https://en.wikipedia.org/wiki/2026_Iran_war_ceasefire
+2026-06-15,Kerangka damai AS-Iran dan rencana buka Hormuz,deeskalasi,Timur Tengah,Kesepakatan kerangka damai dengan mediasi Pakistan (Memorandum Islamabad).,https://www.thenationalnews.com/news/mena/2026/06/15/us-and-iran-agree-peace-framework-and-set-plan-to-reopen-strait-of-hormuz/
+2026-07-08,Gencatan senjata Iran runtuh,eskalasi,Timur Tengah,Serangan ke kapal di Selat Hormuz dibalas serangan AS; gencatan senjata dinyatakan berakhir.,https://en.wikipedia.org/wiki/2026_Iran_war_ceasefire
+2026-09-01,AS melanjutkan serangan ke Iran,keterlibatan_as,Timur Tengah,CENTCOM menyerang sasaran IRGC setelah serangan terhadap personel AS.,https://washingtonexaminer.com/policy/defense/4707999/us-new-strikes-iran-irgc-attacks-service-members
