@@ -187,7 +187,7 @@ _daftar(Proyek(
 
 _daftar(Proyek(
     "who-owns-the-sky", "Who Owns the Sky?", "Every plane leaves a trail.",
-    "Posisi pesawat di atas Indonesia dari data ADS-B publik (OpenSky), snapshot sekitar 60 kali selama ±20 menit.",
+    "Posisi pesawat di atas Indonesia dari ADS-B publik (OpenSky), ±60 snapshot selama ±20 menit.",
     (
         _ds("who-owns-the-sky", "pesawat", "snapshots.csv",
             "Posisi pesawat per snapshot; satu pesawat muncul berkali-kali, hitung unik dengan nunique icao24.",
@@ -207,9 +207,9 @@ _daftar(Proyek(
     "APBD (anggaran dan realisasi) 38 provinsi Indonesia dari DJPK Kemenkeu, 2022-2025, plus penduduk dan luas.",
     (
         _ds("follow-the-money", "apbd_provinsi", "apbd_provinsi.csv",
-            "APBD provinsi per akun, dalam RUPIAH PENUH. tingkat 1 = total (Pendapatan/Belanja/Pembiayaan Daerah), 2 "
-            "= kelompok (PAD, TKDD, Belanja Pegawai, ...), 3 = rincian (Pajak Daerah, ...). Selalu filter satu "
-            "tingkat atau satu akun; jangan menjumlahkan lintas tingkat.",
+            "APBD provinsi per akun, RUPIAH PENUH. tingkat 1 = total (Pendapatan/Belanja/Pembiayaan), 2 = kelompok "
+            "(PAD, TKDD, Belanja Pegawai, ...), 3 = rincian. Filter satu tingkat/akun; jangan jumlahkan lintas "
+            "tingkat.",
             {"kode_bps": "kode provinsi BPS", "provinsi": "nama provinsi", "tahun": "tahun anggaran", "akun": "nama akun",
              "induk": "akun induk", "tingkat": "1 total, 2 kelompok, 3 rincian", "anggaran": "anggaran, rupiah",
              "realisasi": "realisasi, rupiah"}),
@@ -247,9 +247,9 @@ _daftar(Proyek(
     "Upah minimum 2026 di 13 kota vs harga rumah subsidi, rumah seken, apartemen, kos, dan kontrakan.",
     (
         _ds("roof-vs-paycheck", "kota_upah_rumah", "kota.csv",
-            "Satu baris per kota (13 kota). Harga rumah dalam JUTA rupiah, upah/kos/kontrakan dalam rupiah per bulan. "
-            "Kode mutu: A laporan resmi, B rentang artikel, C listing, E perkiraan. Lama menabung: kolom hitung "
-            "'rumah_seken_juta*1000000/(umk_2026*12*0.3)' (30% upah).",
+            "Satu baris per kota (13). Harga rumah dalam JUTA rupiah; upah/kos/kontrakan rupiah per bulan. Mutu: A "
+            "resmi, B artikel, C listing, E perkiraan. Lama menabung: kolom hitung "
+            "'rumah_seken_juta*1000000/(umk_2026*12*0.3)'.",
             {"kota": "nama kota", "provinsi": "provinsi", "zona_flpp": "zona harga rumah subsidi",
              "umk_2026": "upah minimum 2026, Rp/bulan", "rumah_subsidi_juta": "batas harga rumah subsidi FLPP, juta Rp",
              "rumah_seken_juta": "median rumah seken ≤60 m², juta Rp", "rumah_seken_mutu": "kode mutu harga rumah seken",
@@ -265,11 +265,11 @@ _daftar(Proyek(
 
 _daftar(Proyek(
     "the-air-we-breathe", "The Air We Breathe", "Every breath is a data point.",
-    "Kualitas udara per jam di 51 titik Jabodetabek (Open-Meteo, model CAMS): 60 hari terakhir plus prakiraan 2 hari.",
+    "Kualitas udara per jam di 51 titik Jabodetabek (Open-Meteo/CAMS): 60 hari terakhir + prakiraan 2 hari.",
     (
         _ds("the-air-we-breathe", "udara_per_jam", "jam.csv.gz",
-            "PM2.5, PM10, NO2, O3 dan cuaca per jam per titik (model CAMS 0,4°, cenderung di bawah sensor). "
-            "prakiraan=True = baris prakiraan. kategori_ispu dari PM2.5 per jam.",
+            "PM2.5, PM10, NO2, O3 dan cuaca per jam per titik (model CAMS 0,4°, di bawah sensor). prakiraan=True = "
+            "baris prakiraan; kategori_ispu dari PM2.5.",
             {"titik": "nama titik (kecamatan/kawasan)", "kota": "Jakarta/Bogor/Depok/Tangerang/Bekasi",
              "wilayah": "wilayah administratif", "lat": "lintang", "lon": "bujur", "waktu": "waktu (UTC)",
              "pm2_5": "PM2.5 µg/m³", "pm10": "PM10 µg/m³", "no2": "NO2 µg/m³", "o3": "ozon µg/m³",
@@ -294,7 +294,7 @@ _daftar(Proyek(
             pendukung=(("provinsi.geojson", "data/provinsi.geojson"),)),
         _ds("burning-archipelago", "hilang_tutupan_pohon", "gfw_tahunan.csv",
             "Kehilangan tutupan pohon per provinsi per tahun 2001-2025 (GFW/Hansen, kanopi ≥30%), termasuk akibat "
-            "kebakaran. Provinsi versi GADM ('Jakarta Raya', 'Yogyakarta', 'Bangka Belitung').",
+            "kebakaran. Nama provinsi versi GADM ('Jakarta Raya').",
             {"provinsi_gfw": "provinsi (versi GADM)", "tahun": "tahun", "hilang_ha": "kehilangan tutupan pohon, hektar",
              "hilang_api_ha": "bagian akibat kebakaran, hektar", "emisi_mg": "emisi kotor, megagram CO2e"}),
         _ds("burning-archipelago", "tutupan_pohon", "gfw_tutupan.csv",
@@ -309,8 +309,8 @@ _daftar(Proyek(
     "Kekerasan bersenjata terorganisasi di dunia 1989-2026 (UCDP; data 2026 berstatus 'awal').",
     (
         _ds("global-conflict-tracker", "korban_negara", "korban_negara_tahun.csv",
-            "Kejadian dan korban jiwa per negara × tahun × jenis kekerasan × status; jumlahkan lintas jenis untuk total. "
-            "Nama negara bahasa Indonesia ('Afganistan', 'Etiopia').",
+            "Kejadian dan korban jiwa per negara × tahun × jenis kekerasan × status; jumlahkan lintas jenis untuk "
+            "total. Nama negara bahasa Indonesia ('Afganistan').",
             {"negara": "negara (nama Indonesia)", "iso3": "kode ISO3", "wilayah": "Afrika/Amerika/Asia/Eropa/Timur Tengah",
              "tahun": "tahun", "jenis": "Konflik negara/Konflik non-negara/Kekerasan sepihak", "status": "final/awal",
              "kejadian": "jumlah kejadian", "korban": "korban jiwa (estimasi terbaik)", "korban_min": "estimasi terendah",
@@ -329,7 +329,7 @@ _daftar(Proyek(
 
 _daftar(Proyek(
     "strait-watch", "Strait Watch", "The world's busiest chokepoint, live.",
-    "Lalu lintas kapal Selat Malaka: transit harian per selat sejak 2019 (IMF PortWatch) dan potret posisi kapal AIS.",
+    "Lalu lintas kapal Selat Malaka: transit harian per selat sejak 2019 (IMF PortWatch) dan posisi kapal AIS.",
     (
         _ds("strait-watch", "transit_selat_harian", "portwatch_harian.csv",
             "Kapal niaga melintas per hari per selat dan jenis sejak 2019: Malaka, Sunda, Lombok, Makassar, Ombai, "
@@ -345,8 +345,8 @@ _daftar(Proyek(
              "vessel_count_container": "kontainer per tahun", "vessel_count_dry_bulk": "curah kering per tahun",
              "industry_top1": "komoditas utama"}),
         _ds("strait-watch", "posisi_kapal", "posisi.csv",
-            "Potret posisi kapal AIS Selat Malaka ±1 jam (2 Nov 2026). Hitung kapal unik dengan nunique pada mmsi. "
-            "Bendera dari kode MMSI.",
+            "Potret posisi kapal AIS Selat Malaka ±1 jam (2 Nov 2026); kapal unik = nunique mmsi. Bendera dari kode "
+            "MMSI.",
             {"mmsi": "ID kapal", "nama": "nama kapal", "bendera": "negara bendera", "kategori": "Kargo/Tanker/Penumpang/...",
              "tujuan": "tujuan (diisi awak)", "panjang_m": "panjang meter", "lat": "lintang", "lon": "bujur",
              "sog_knot": "kecepatan knot", "status_navigasi": "status navigasi", "waktu": "waktu snapshot (UTC)"},
@@ -382,7 +382,7 @@ _daftar(Proyek(
     "Pemutusan internet dunia 2016-2025 (Access Now) dan gangguan 30 hari terakhir (IODA).",
     (
         _ds("blackout-watch", "shutdown_internet", "shutdown_dunia.csv",
-            "Pemutusan/pelambatan/pemblokiran internet 2016-2025; negara bahasa Indonesia. pemicu = sebab lapangan, "
+            "Pemutusan/pelambatan/pemblokiran internet 2016-2025; negara bahasa Indonesia. pemicu = sebab, "
             "alasan_pemerintah = dalih resmi.",
             {"negara": "negara (nama Indonesia)", "iso3": "kode ISO3", "wilayah": "Asia/Afrika/Eropa/Amerika/Timur Tengah/Oseania",
              "tahun": "tahun mulai", "mulai": "tanggal mulai", "selesai": "tanggal selesai sebagai teks YYYY-MM-DD (kosong bila tidak diketahui)",
@@ -397,8 +397,8 @@ _daftar(Proyek(
              "platform": "platform yang diblokir dipisah ';' (Facebook, WhatsApp, TikTok, ...)", "keterangan": "ringkasan peristiwa (Inggris)"},
             waktu=("mulai",)),
         _ds("blackout-watch", "gangguan_internet_30hari", "ioda_ringkasan_30hari.csv",
-            "Negara dengan gangguan internet terdeteksi IODA 30 hari terakhir. Skor tanpa satuan; nama negara bahasa"
-            " Inggris.",
+            "Negara dengan gangguan internet terdeteksi IODA 30 hari terakhir. Skor tanpa satuan; nama negara "
+            "Inggris.",
             {"kode": "kode negara ISO2", "nama_en": "nama negara (Inggris)", "jumlah_kejadian": "jumlah kejadian gangguan",
              "skor_total": "skor gangguan total IODA", "skor_bgp": "skor dari sinyal BGP", "skor_ping": "skor dari ping aktif",
              "skor_teleskop": "skor dari teleskop jaringan", "skor_google": "skor dari trafik Google"}),
@@ -410,8 +410,8 @@ _daftar(Proyek(
     "Kabel bawah laut di dan sekitar Indonesia beserta landing station-nya (TeleGeography).",
     (
         _ds("cut-the-cable", "kabel_bawah_laut", "kabel.csv",
-            "Kabel bawah laut terkait Indonesia: 74 mendarat di Indonesia, 44 hanya lewat. Kolom negara dipisah '|',"
-            " pakai op 'contains'.",
+            "Kabel bawah laut terkait Indonesia: 74 mendarat, 44 hanya lewat. Kolom negara dipisah '|', pakai "
+            "contains.",
             {"nama": "nama kabel", "kategori": "internasional/domestik/transit (transit = tidak mendarat di Indonesia)",
              "status": "aktif/rencana", "tahun_rfs": "tahun siap pakai (RFS)", "panjang_km": "panjang km",
              "pemilik": "pemilik/konsorsium", "pemasok": "pabrikan", "n_landing": "jumlah landing station",
@@ -496,8 +496,7 @@ _daftar(Proyek(
     "Saham Palantir, saham dan ETF pertahanan, serta 48 peristiwa perang sejak IPO 2020 (event study).",
     (
         _ds("pltr-war-index", "harga_saham_perang", "harga_saham.csv",
-            "Harga harian sejak 30 Sep 2020: PLTR, SPY, QQQ, ITA (ETF pertahanan), LMT, NOC, RTX, GD. "
-            "Selalu filter ticker.",
+            "Harga harian sejak 30 Sep 2020: PLTR, SPY, QQQ, ITA (ETF pertahanan), LMT, NOC, RTX, GD. Filter ticker.",
             {"tanggal": "tanggal bursa", "ticker": "PLTR, SPY, QQQ, ITA, LMT, NOC, RTX, GD", "close": "harga penutupan USD",
              "adj_close": "harga disesuaikan dividen/split USD", "volume": "volume saham"},
             waktu=("tanggal",)),
@@ -513,11 +512,11 @@ _daftar(Proyek(
 
 _daftar(Proyek(
     "gotham-lite", "Gotham Lite", "Everyone is connected to someone.",
-    "Graf keterkaitan OpenSanctions: entitas tersanksi dan yang terhubung dengannya, termasuk 2.041 kapal tersanksi.",
+    "Graf keterkaitan OpenSanctions: entitas tersanksi dan yang terhubung, termasuk 2.041 kapal tersanksi.",
     (
         _ds("gotham-lite", "entitas_sanksi", "simpul.csv.gz",
-            "Satu baris per entitas di graf. tersanksi 1 = ada di daftar sanksi, 0 = hanya terhubung. negara dan program dipisah"
-            " '; ', pakai contains.",
+            "Satu baris per entitas graf. tersanksi 1 = di daftar sanksi, 0 = hanya terhubung. negara/program dipisah "
+            "'; ', pakai contains.",
             {"tipe": "Person, Company, Organization, Vessel, Airplane, LegalEntity", "nama": "nama entitas",
              "negara": "kode negara ISO2 (ru, ir, kp, ...)", "tersanksi": "1 tersanksi, 0 hanya terhubung",
              "program": "program sanksi (US-SDN, EU-RUS, GB-RUS, ...)", "tanggal": "lahir/berdiri/dibangun",
@@ -527,6 +526,24 @@ _daftar(Proyek(
             {"nama": "nama kapal", "bendera": "bendera ISO2 (ru, pa, ir, ...)", "jenis_kapal": "jenis kapal",
              "imo": "nomor IMO", "mmsi": "MMSI", "tahun_dibangun": "tahun dibangun", "program": "program sanksi, dipisah ;",
              "pemilik": "pemilik/operator tercatat, dipisah ;", "jumlah_relasi": "jumlah relasi di graf"}),
+    ),
+))
+
+_daftar(Proyek(
+    "ontology-playground", "Ontology Playground", "Connect everything. Then ask it anything.",
+    "Demo ontologi ala Palantir Foundry pada perdagangan laut Indonesia; pelayaran sintetis, pelabuhan nyata.",
+    (
+        _ds("ontology-playground", "pelayaran_ontologi", "pelayaran_lengkap.csv",
+            "520 pelayaran SINTETIS 2024-2026: kapal, pemilik, pelabuhan asal/tujuan, komoditas, pengirim, muatan; "
+            "nama kapal dan perusahaan fiktif.",
+            {"id": "id pelayaran", "berangkat": "tanggal berangkat", "tiba": "tanggal tiba",
+             "status": "selesai/berlayar/dijadwalkan", "kapal": "nama kapal (fiktif)",
+             "jenis_kapal": "bulk carrier/tanker/LNG carrier/kapal kontainer/general cargo/ro-ro", "bendera": "bendera kapal",
+             "dwt": "bobot mati kapal, ton", "pemilik": "pemilik kapal (fiktif)", "asal": "pelabuhan asal",
+             "negara_asal": "negara pelabuhan asal", "tujuan": "pelabuhan tujuan", "negara_tujuan": "negara pelabuhan tujuan",
+             "komoditas": "komoditas yang diangkut", "kategori_komoditas": "energi/mineral/perkebunan/pangan/industri/manufaktur/perikanan/kehutanan",
+             "pengirim": "perusahaan pengirim (fiktif)", "muatan": "muatan, ton (unit untuk kendaraan)", "jarak_km": "jarak laut, km"},
+            waktu=("berangkat", "tiba")),
     ),
 ))
 
