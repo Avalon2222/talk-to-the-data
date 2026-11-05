@@ -21,6 +21,7 @@ path asal, dan arti kolom ada di satu tempat: `src/katalog.py`. Dokumentasi asli
 | `strait-watch/` | [strait-watch](https://github.com/Avalon2222/strait-watch) | `portwatch_harian.csv`, `portwatch_chokepoint.csv`, `posisi.csv`, `kapal_statis.csv`, `pelabuhan.csv` | Transit kapal harian per selat sejak 2019, 28 chokepoint dunia, potret posisi kapal AIS | IMF PortWatch, aisstream.io, Wikipedia |
 | `who-watches-indonesia/` | [who-watches-indonesia](https://github.com/Avalon2222/who-watches-indonesia) | `katalog_satelit.csv`, `kode_negara.csv`, `satelit_indonesia.csv` | ±27 ribu satelit dunia dan 9 satelit Indonesia | GCAT (CC BY 4.0), Wikipedia |
 | `blackout-watch/` | [blackout-watch](https://github.com/Avalon2222/blackout-watch) | `shutdown_dunia.csv`, `ioda_ringkasan_30hari.csv` | 1.888 pemutusan internet 2016-2025 di 97 negara, gangguan terdeteksi 30 hari terakhir | Access Now #KeepItOn STOP, IODA (Georgia Tech) |
+| `cut-the-cable/` | [cut-the-cable](https://github.com/Avalon2222/cut-the-cable) | `kabel.csv`, `landing_station.csv` | 118 kabel bawah laut yang mendarat di Indonesia atau lewat perairan sekitar, 361 landing station (146 di Indonesia) | Submarine Cable Map / TeleGeography (CC BY-NC-SA 3.0) |
 
 Catatan:
 

@@ -29,7 +29,7 @@ Yang akan kamu kuasai setelah selesai:
 │  JSON spesifikasi → filter → hitung → agregasi → urut → Plotly       │
 ├─────────────────────────────────────────────────────────────────────┤
 │  LAPISAN 1: KATALOG + DATA  src/katalog.py, data/*                   │
-│  39 dataset, arti kolom, pemuat (CSV, CSV.GZ, JSON USGS, JSON BMKG)  │
+│  41 dataset, arti kolom, pemuat (CSV, CSV.GZ, JSON USGS, JSON BMKG)  │
 └─────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -186,7 +186,7 @@ anggaran.
 
 Buka `src/katalog.py`. Tiap `Dataset` punya `kolom: dict[nama, arti]`, dan **hanya kolom itu** yang dibawa
 ke DataFrame (`muat` membuang sisanya). `snapshots.csv` dari who-owns-the-sky punya 17 kolom; chatbot hanya
-melihat 12 yang berguna. Lalu `skema_ringkas()` menyusun semuanya jadi teks sekitar 3.000 token untuk 14 proyek:
+melihat 12 yang berguna. Lalu `skema_ringkas()` menyusun semuanya jadi teks sekitar 3.000 token untuk 15 proyek:
 
 ```python
 from src import alat

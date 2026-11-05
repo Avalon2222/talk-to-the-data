@@ -400,6 +400,29 @@ _daftar(Proyek(
     ),
 ))
 
+_daftar(Proyek(
+    "cut-the-cable", "Cut the Cable", "Cut one cable. Watch who goes dark.",
+    "Kabel internet bawah laut yang mendarat di Indonesia atau lewat perairan sekitar, beserta landing station-nya "
+    "(Submarine Cable Map/TeleGeography). Aplikasi aslinya menyimulasikan dampak kabel putus; di sini hanya datanya.",
+    (
+        _ds("cut-the-cable", "kabel_bawah_laut", "kabel.csv",
+            "Satu baris per kabel bawah laut yang relevan untuk Indonesia: 74 mendarat di Indonesia (44 domestik, 30 "
+            "internasional; 61 aktif, 13 rencana) plus 44 kabel kawasan yang hanya lewat tanpa mendarat. Kolom negara "
+            "berisi semua negara pendaratan dipisah '|', jadi pakai op 'contains' (misalnya 'Singapore').",
+            {"nama": "nama kabel", "kategori": "internasional/domestik/transit (transit = tidak mendarat di Indonesia)",
+             "status": "aktif/rencana", "tahun_rfs": "tahun siap pakai (RFS)", "panjang_km": "panjang km",
+             "pemilik": "pemilik/konsorsium", "pemasok": "pabrikan", "n_landing": "jumlah landing station",
+             "n_landing_indonesia": "landing station di Indonesia", "negara": "negara pendaratan, dipisah |"}),
+        _ds("cut-the-cable", "landing_station_kabel", "landing_station.csv",
+            "Landing station (titik kabel naik ke darat) di Indonesia dan luar negeri yang disinggahi kabel di atas: 361 "
+            "titik, 146 di Indonesia. n_kabel menghitung semua kabel dunia yang mendarat di titik itu.",
+            {"nama": "nama (kota, negara)", "kota": "kota", "negara": "negara", "lat": "lintang", "lon": "bujur",
+             "wilayah": "wilayah Indonesia (Sumatra & Kepulauan Riau, Jawa, Kalimantan, Sulawesi, Bali & Nusa Tenggara, "
+                        "Maluku, Papua); kosong untuk luar negeri",
+             "n_kabel_aktif": "jumlah kabel aktif yang mendarat", "n_kabel": "jumlah kabel termasuk rencana"}),
+    ),
+))
+
 DATASET: dict[str, Dataset] = {d.id: d for p in PROYEK.values() for d in p.dataset}
 
 
