@@ -81,7 +81,8 @@ def _daftar(p: Proyek) -> None:
 
 _daftar(Proyek(
     "dc-impact-dashboard", "Data Center Impact Dashboard", "The machines are thirsty.",
-    "Peta pusat data (data center) di Indonesia beserta estimasi konsumsi listrik dan air.",
+    "Peta pusat data (data center) di Indonesia beserta estimasi konsumsi listrik dan air, PUE kampus Google, "
+    "listrik dan air situs Meta, dan prediksi PUE dari iklim.",
     (
         _ds("dc-impact-dashboard", "data_center", "data_center_indonesia.csv",
             "Daftar pusat data di Indonesia: operator, lokasi, kapasitas IT (MW), status, tahun beroperasi.",
@@ -94,6 +95,18 @@ _daftar(Proyek(
             "Parameter asumsi perhitungan listrik dan air: PUE, WUE, utilisasi, konsumsi per kapita.",
             {"parameter": "nama parameter", "nilai": "nilai", "satuan": "satuan", "sumber": "sumber",
              "catatan": "penjelasan"}),
+        _ds("dc-impact-dashboard", "pue_google", "pue_google_kuartalan.csv",
+            "PUE kuartalan tiap kampus data center Google 2008-2026; 'Fleet' = seluruh armada.",
+            {"kampus": "kampus Google (atau Fleet)", "tahun": "tahun", "kuartal": "kuartal 1-4",
+             "pue_kuartalan": "PUE kuartal itu", "pue_ttm": "PUE 12 bulan terakhir"}),
+        _ds("dc-impact-dashboard", "meta_listrik_air", "meta_listrik_air_tahunan.csv",
+            "Listrik (MWh) dan air (megaliter) tahunan tiap situs data center Meta 2020-2024.",
+            {"situs": "situs Meta", "tahun": "tahun", "listrik_mwh": "listrik MWh", "air_megaliter": "air megaliter"}),
+        _ds("dc-impact-dashboard", "prediksi_pue_lokasi", "prediksi_lokasi.csv",
+            "Prediksi PUE/WUE kelas hyperscale dari model iklim untuk lokasi data center Indonesia.",
+            {"kabupaten_kota": "kabupaten/kota", "provinsi": "provinsi", "lat": "lintang", "lon": "bujur",
+             "pue_prediksi": "PUE prediksi", "wue_prediksi": "WUE prediksi L/kWh", "suhu_rata": "suhu rata-rata °C",
+             "rh_rata": "kelembapan %", "bola_basah_rata": "suhu bola basah °C"}),
     ),
 ))
 

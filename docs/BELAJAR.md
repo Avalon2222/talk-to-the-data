@@ -29,7 +29,7 @@ Yang akan kamu kuasai setelah selesai:
 │  JSON spesifikasi → filter → hitung → agregasi → urut → Plotly       │
 ├─────────────────────────────────────────────────────────────────────┤
 │  LAPISAN 1: KATALOG + DATA  src/katalog.py, data/*                   │
-│  42 dataset, arti kolom, pemuat (CSV, CSV.GZ, JSON USGS, JSON BMKG)  │
+│  45 dataset, arti kolom, pemuat (CSV, CSV.GZ, JSON USGS, JSON BMKG)  │
 └─────────────────────────────────────────────────────────────────────┘
 ```
 

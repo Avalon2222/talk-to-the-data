@@ -7,7 +7,7 @@ path asal, dan arti kolom ada di satu tempat: `src/katalog.py`. Dokumentasi asli
 
 | Folder | Repo asal | File | Isi | Sumber asli |
 |---|---|---|---|---|
-| `dc-impact-dashboard/` | [dc-impact-dashboard](https://github.com/Avalon2222/dc-impact-dashboard) | `data_center_indonesia.csv`, `parameter_asumsi.csv` | 27 pusat data, parameter PUE/WUE | Liputan industri, pernyataan operator, Uptime Institute |
+| `dc-impact-dashboard/` | [dc-impact-dashboard](https://github.com/Avalon2222/dc-impact-dashboard) | `data_center_indonesia.csv`, `parameter_asumsi.csv`, `pue_google_kuartalan.csv`, `meta_listrik_air_tahunan.csv`, `prediksi_lokasi.csv` | 27 pusat data, parameter PUE/WUE, PUE kuartalan 35 kampus Google 2008-2026, listrik & air 18 situs Meta 2020-2024, prediksi PUE per lokasi | Liputan industri, pernyataan operator, Google Data Center Efficiency, Meta Environmental Data Index, NASA POWER |
 | `btc-news-volatility/` | [btc-news-volatility](https://github.com/Avalon2222/btc-news-volatility) | `btc_harga_harian.csv`, `berita_besar.csv` | Harga harian BTC-USD sejak 2020, 102 peristiwa | Coinbase, kurasi manual dari Wikipedia/berita |
 | `indonesia-defense-gis/` | [indonesia-defense-gis](https://github.com/Avalon2222/indonesia-defense-gis) | `markas_tni.csv`, `pangkalan_asing.csv`, `pulau_terluar_perbatasan.csv`, `alki.csv`, `anggaran_indonesia.csv`, `anggaran_kawasan.csv`, `alutsista.csv` | Geografi dan anggaran pertahanan | Wikipedia, SIPRI, IISS, Kemenkeu |
 | `ring-of-fire-pulse/` | [ring-of-fire-pulse](https://github.com/Avalon2222/ring-of-fire-pulse) | `usgs.json`, `bmkg_terkini.json`, `gunung_api.csv`, `magma_level.csv` | Gempa 30 hari, 15 gempa M≥5 BMKG, 69 gunung api + level | USGS FDSN, BMKG, MAGMA ESDM, Smithsonian GVP |

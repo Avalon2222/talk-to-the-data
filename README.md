@@ -15,11 +15,11 @@
 
 - **Ask** about budgets, Bitcoin, earthquakes, ships, satellites, air quality, conflicts, hoaxes, and more.
 - **Verify** every answer: the source project, dataset, and result table are one click away.
-- **Query** 42 datasets without any API key using the built-in query builder.
+- **Query** 45 datasets without any API key using the built-in query builder.
 - **Inspect** the tool-calling loop in learning mode, including failed attempts and how they were fixed.
 
 **Built with:** Python, pandas, Plotly, Folium, Streamlit, LLM tool calling (Groq or Gemini free tier)  
-**Data:** The 42 datasets of the other portfolio projects  
+**Data:** The 45 datasets of the other portfolio projects  
 **Engineering:** Answers are computed by a structured pandas query engine, never by the model itself. pytest suite with CI on GitHub Actions
 
 *The rest of this README is in Indonesian.*
@@ -47,7 +47,7 @@ Tantangan teknisnya menarik justru karena model bahasa **tidak boleh dipercaya b
 | Bagian | Isi |
 |---|---|
 | 💬 Chat | Tanya dalam bahasa Indonesia atau Inggris. Jawaban = teks + grafik (bar, line, scatter, pie, peta) + expander **Sumber & data** berisi proyek asal, dataset, tabel hasil query, dan tombol download CSV |
-| 🗂️ Datasets | Ringkasan 42 dataset dari 16 proyek (baris, kolom, rentang waktu) dan **query builder** yang memakai mesin yang sama dengan chatbot, tanpa API key |
+| 🗂️ Datasets | Ringkasan 45 dataset dari 16 proyek (baris, kolom, rentang waktu) dan **query builder** yang memakai mesin yang sama dengan chatbot, tanpa API key |
 | 🧭 How it works | Alur tool calling, potongan kode intinya, dan daftar keterbatasan |
 | 🎓 Learning mode | Toggle di sidebar: tiap jawaban menampilkan JSON yang dikirim model ke alat, hasil yang dikirim balik, dan percobaan yang gagal lalu diperbaiki |
 
