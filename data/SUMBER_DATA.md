@@ -26,6 +26,7 @@ path asal, dan arti kolom ada di satu tempat: `src/katalog.py`. Dokumentasi asli
 | `who-uses-palantir/` | [who-uses-palantir](https://github.com/Avalon2222/who-uses-palantir) | `pengguna_palantir.csv`, `kontroversi.csv`, `pendapatan_palantir.csv` | 48 lembaga pemakai Palantir di 19 negara + 3 organisasi internasional, 26 kontroversi, pendapatan Palantir 2019-2025 per segmen dan wilayah | Kurasi dari sumber publik (pengumuman resmi, pengadaan, media); SEC EDGAR 10-K |
 | `palantir-contracts/` | [palantir-contracts](https://github.com/Avalon2222/palantir-contracts) | `as_transaksi.csv`, `as_idv.csv`, `uk_kontrak.csv` | 1.807 transaksi kontrak federal AS ke Palantir 2008-2026, 37 kontrak payung dengan plafon, 29 pengumuman kontrak sektor publik Inggris | USAspending.gov API; Contracts Finder API (OGL v3.0) |
 | `pltr-war-index/` | [pltr-war-index](https://github.com/Avalon2222/pltr-war-index) | `harga_saham.csv`, `peristiwa_perang.csv` | Harga harian PLTR, SPY, QQQ, ITA, LMT, NOC, RTX, GD sejak IPO Palantir 2020; 48 peristiwa perang, serangan AS, dan gencatan senjata 2020-2026 | Yahoo Finance; kurasi manual dengan tautan sumber per peristiwa |
+| `gotham-lite/` | [gotham-lite](https://github.com/Avalon2222/gotham-lite) | `simpul.csv.gz`, `kapal_tersanksi.csv` | 84.735 entitas graf keterkaitan OpenSanctions (orang, perusahaan, kapal, pesawat; tersanksi atau terhubung ke yang tersanksi) dan ringkasan 2.041 kapal tersanksi dengan pemilik/operator tercatat | OpenSanctions, koleksi default (CC BY-NC 4.0) |
 
 Catatan:
 

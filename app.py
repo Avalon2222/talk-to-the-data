@@ -39,6 +39,7 @@ CONTOH_PERTANYAAN = [
     "Berapa artikel cek fakta berlabel PENIPUAN per tahun sejak 2020?",
     "Negara mana yang paling banyak lembaganya memakai Palantir, dan mana yang sedang mundur?",
     "Instansi AS mana yang paling banyak membayar Palantir sejak 2020?",
+    "Bendera apa yang paling banyak dipakai kapal tersanksi, dan berapa persen yang tanker?",
 ]
 
 

@@ -190,8 +190,7 @@ _daftar(Proyek(
     "Posisi pesawat di atas Indonesia dari data ADS-B publik (OpenSky), snapshot sekitar 60 kali selama ±20 menit.",
     (
         _ds("who-owns-the-sky", "pesawat", "snapshots.csv",
-            "Posisi pesawat per snapshot (satu baris = satu pesawat pada satu waktu). Satu pesawat muncul "
-            "berkali-kali; untuk menghitung pesawat unik pakai nunique pada icao24.",
+            "Posisi pesawat per snapshot; satu pesawat muncul berkali-kali, hitung unik dengan nunique icao24.",
             {"icao24": "ID transponder unik pesawat", "callsign": "callsign penerbangan", "maskapai": "maskapai (tebakan dari callsign)",
              "negara_maskapai": "negara maskapai", "negara_asal": "negara registrasi pesawat", "waktu": "waktu snapshot (UTC)",
              "lat": "lintang", "lon": "bujur", "alt_baro_m": "ketinggian meter", "di_darat": "True bila di darat",
@@ -249,8 +248,8 @@ _daftar(Proyek(
     (
         _ds("roof-vs-paycheck", "kota_upah_rumah", "kota.csv",
             "Satu baris per kota (13 kota). Harga rumah dalam JUTA rupiah, upah/kos/kontrakan dalam rupiah per bulan. "
-            "Kode mutu: A laporan resmi, B rentang artikel, C listing, E perkiraan. Lama menabung bisa dihitung dengan "
-            "kolom hitung, misalnya 'rumah_seken_juta * 1000000 / (umk_2026 * 12 * 0.3)' (nabung 30% upah).",
+            "Kode mutu: A laporan resmi, B rentang artikel, C listing, E perkiraan. Lama menabung: kolom hitung "
+            "'rumah_seken_juta*1000000/(umk_2026*12*0.3)' (30% upah).",
             {"kota": "nama kota", "provinsi": "provinsi", "zona_flpp": "zona harga rumah subsidi",
              "umk_2026": "upah minimum 2026, Rp/bulan", "rumah_subsidi_juta": "batas harga rumah subsidi FLPP, juta Rp",
              "rumah_seken_juta": "median rumah seken ≤60 m², juta Rp", "rumah_seken_mutu": "kode mutu harga rumah seken",
@@ -310,8 +309,8 @@ _daftar(Proyek(
     "Kekerasan bersenjata terorganisasi di dunia 1989-2026 (UCDP; data 2026 berstatus 'awal').",
     (
         _ds("global-conflict-tracker", "korban_negara", "korban_negara_tahun.csv",
-            "Kejadian dan korban jiwa per negara × tahun × jenis kekerasan × status. Jumlahkan lintas jenis untuk total "
-            "negara. Nama negara dalam bahasa Indonesia (misalnya 'Afganistan', 'Etiopia').",
+            "Kejadian dan korban jiwa per negara × tahun × jenis kekerasan × status; jumlahkan lintas jenis untuk total. "
+            "Nama negara bahasa Indonesia ('Afganistan', 'Etiopia').",
             {"negara": "negara (nama Indonesia)", "iso3": "kode ISO3", "wilayah": "Afrika/Amerika/Asia/Eropa/Timur Tengah",
              "tahun": "tahun", "jenis": "Konflik negara/Konflik non-negara/Kekerasan sepihak", "status": "final/awal",
              "kejadian": "jumlah kejadian", "korban": "korban jiwa (estimasi terbaik)", "korban_min": "estimasi terendah",
@@ -383,8 +382,8 @@ _daftar(Proyek(
     "Pemutusan internet dunia 2016-2025 (Access Now) dan gangguan 30 hari terakhir (IODA).",
     (
         _ds("blackout-watch", "shutdown_internet", "shutdown_dunia.csv",
-            "Pemutusan/pelambatan/pemblokiran internet 2016-2025; nama negara bahasa Indonesia. 'pemicu' = sebab di "
-            "lapangan, 'alasan_pemerintah' = dalih resmi.",
+            "Pemutusan/pelambatan/pemblokiran internet 2016-2025; negara bahasa Indonesia. pemicu = sebab lapangan, "
+            "alasan_pemerintah = dalih resmi.",
             {"negara": "negara (nama Indonesia)", "iso3": "kode ISO3", "wilayah": "Asia/Afrika/Eropa/Amerika/Timur Tengah/Oseania",
              "tahun": "tahun mulai", "mulai": "tanggal mulai", "selesai": "tanggal selesai sebagai teks YYYY-MM-DD (kosong bila tidak diketahui)",
              "durasi_hari": "lama dalam hari (kosong bila tidak diketahui)", "status": "Selesai/Berlangsung/Tidak diketahui",
@@ -432,8 +431,7 @@ _daftar(Proyek(
     (
         _ds("disinfo-radar", "hoaks_cek_fakta", "hoaks_turnbackhoax.csv",
             "Satu baris per artikel cek fakta. Label dari awalan judul: SALAH (hoaks), PENIPUAN (scam), KLARIFIKASI, "
-            "BENAR, HOAX/DISINFORMASI (gaya lama = hoaks). Kategori kosong untuk artikel lama. Tren: hitung baris per"
-            " bulan/tahun; topik: cari kata di judul (contains).",
+            "BENAR, HOAX (gaya lama). Kategori kosong untuk artikel lama; topik: contains di judul.",
             {"id": "nomor artikel", "tanggal": "tanggal terbit", "judul": "judul artikel, diawali label dalam kurung siku",
              "label": "label pemeriksa fakta (SALAH, PENIPUAN, KLARIFIKASI, BENAR, HOAX, ...)",
              "kategori": "kategori Turnbackhoax (Politik, Kesehatan, Bencana, Bantuan, Lowongan, ...)", "url": "tautan artikel"},
@@ -510,6 +508,25 @@ _daftar(Proyek(
              "kawasan": "Timur Tengah, Eropa & Kaukasus, Asia, Afrika, Amerika", "keterangan": "konteks singkat",
              "sumber": "tautan sumber"},
             waktu=("tanggal",)),
+    ),
+))
+
+_daftar(Proyek(
+    "gotham-lite", "Gotham Lite", "Everyone is connected to someone.",
+    "Graf keterkaitan OpenSanctions: entitas tersanksi dan yang terhubung dengannya, termasuk 2.041 kapal tersanksi.",
+    (
+        _ds("gotham-lite", "entitas_sanksi", "simpul.csv.gz",
+            "Satu baris per entitas di graf. tersanksi 1 = ada di daftar sanksi, 0 = hanya terhubung. negara dan program dipisah"
+            " '; ', pakai contains.",
+            {"tipe": "Person, Company, Organization, Vessel, Airplane, LegalEntity", "nama": "nama entitas",
+             "negara": "kode negara ISO2 (ru, ir, kp, ...)", "tersanksi": "1 tersanksi, 0 hanya terhubung",
+             "program": "program sanksi (US-SDN, EU-RUS, GB-RUS, ...)", "tanggal": "lahir/berdiri/dibangun",
+             "bendera": "bendera kapal ISO2", "jenis_kapal": "jenis kapal"}),
+        _ds("gotham-lite", "kapal_tersanksi", "kapal_tersanksi.csv",
+            "Satu baris per kapal tersanksi: bendera, jenis, IMO/MMSI, tahun dibangun, program, pemilik/operator tercatat.",
+            {"nama": "nama kapal", "bendera": "bendera ISO2 (ru, pa, ir, ...)", "jenis_kapal": "jenis kapal",
+             "imo": "nomor IMO", "mmsi": "MMSI", "tahun_dibangun": "tahun dibangun", "program": "program sanksi, dipisah ;",
+             "pemilik": "pemilik/operator tercatat, dipisah ;", "jumlah_relasi": "jumlah relasi di graf"}),
     ),
 ))
 
