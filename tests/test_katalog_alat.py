@@ -202,3 +202,11 @@ def test_salin_lokal(tmp_path, monkeypatch):
     assert tujuan.read_text().startswith("alki,")
     with pytest.raises(FileNotFoundError):
         sinkron_data.salin_lokal(d, tmp_path / "kosong")
+
+
+def test_turunan_palantir_nilai_usd():
+    df = katalog.muat("lembaga_palantir")
+    assert "nilai_juta_usd" in df.columns
+    nhs = df[df["lembaga"].str.contains("Federated Data Platform")].iloc[0]
+    assert nhs["nilai_juta_usd"] == 429.0  # £330 juta x 1,30
+    assert df["nilai_juta_usd"].isna().sum() > 0  # kontrak tanpa nilai tetap kosong, tidak dijadikan 0

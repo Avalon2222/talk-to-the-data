@@ -164,7 +164,7 @@ _daftar(Proyek(
 
 _daftar(Proyek(
     "ring-of-fire-pulse", "The Pulse of the Ring of Fire", "The ground never sleeps.",
-    "Gempa dan gunung api Indonesia dari BMKG, USGS, dan MAGMA ESDM (snapshot 30 hari terakhir saat data diambil).",
+    "Gempa dan gunung api Indonesia dari BMKG, USGS, dan MAGMA ESDM (snapshot 30 hari terakhir).",
     (
         _ds("ring-of-fire-pulse", "gempa_usgs", "usgs.json",
             "Gempa M≥2,5 di wilayah Indonesia dari katalog USGS, sekitar 30 hari terakhir (snapshot).",
@@ -270,7 +270,7 @@ _daftar(Proyek(
     "Kualitas udara per jam di 51 titik Jabodetabek dari Open-Meteo (model CAMS), 60 hari terakhir saat snapshot plus prakiraan 2 hari.",
     (
         _ds("the-air-we-breathe", "udara_per_jam", "jam.csv.gz",
-            "PM2.5, PM10, NO2, O3 dan cuaca per jam per titik (±76 ribu baris). Nilai adalah keluaran model CAMS 0,4°, "
+            "PM2.5, PM10, NO2, O3 dan cuaca per jam per titik. Nilai adalah keluaran model CAMS 0,4°, "
             "jadi titik dalam satu sel grid bernilai sama dan cenderung lebih rendah dari sensor. prakiraan=True berarti "
             "baris prakiraan, bukan riwayat. kategori_ispu dihitung dari PM2.5 per jam (ISPU resmi memakai rata-rata 24 jam).",
             {"titik": "nama titik (kecamatan/kawasan)", "kota": "Jakarta/Bogor/Depok/Tangerang/Bekasi",
@@ -288,7 +288,7 @@ _daftar(Proyek(
     "Titik api NASA FIRMS 7 hari (snapshot) dan kehilangan tutupan pohon per provinsi 2001-2025 dari Global Forest Watch.",
     (
         _ds("burning-archipelago", "titik_api", "titik_api_7hari.csv.gz",
-            "Deteksi titik panas VIIRS (NOAA-20/21) di kotak Indonesia selama 7 hari (±48 ribu titik). Satu titik = satu "
+            "Deteksi titik panas VIIRS (NOAA-20/21) di kotak Indonesia selama 7 hari. Satu titik = satu "
             "piksel 375 m yang panas, bukan satu kebakaran. provinsi 'Laut / luar negeri' = di laut atau negara tetangga "
             "(sebagian artefak sensor); untuk hitungan per provinsi, buang nilai itu dan pakai keyakinan Nominal/Tinggi.",
             {"waktu": "waktu deteksi (UTC)", "lat": "lintang", "lon": "bujur", "provinsi": "provinsi (dari poligon)",
@@ -365,7 +365,7 @@ _daftar(Proyek(
 
 _daftar(Proyek(
     "who-watches-indonesia", "Who Watches Indonesia?", "Look up. Someone is already looking down.",
-    "Katalog satelit dunia (GCAT) dan satelit milik Indonesia; aplikasi aslinya menghitung lintasan live di atas Indonesia.",
+    "Katalog satelit dunia (GCAT) dan satelit milik Indonesia.",
     (
         _ds("who-watches-indonesia", "katalog_satelit", "katalog_satelit.csv",
             "Semua satelit (payload) bernomor NORAD yang pernah diluncurkan (±27 ribu), dengan negara, pemilik, kelas "
@@ -389,7 +389,7 @@ _daftar(Proyek(
     "konektivitas yang terdeteksi otomatis oleh IODA dalam 30 hari terakhir.",
     (
         _ds("blackout-watch", "shutdown_internet", "shutdown_dunia.csv",
-            "Satu baris per pemutusan/pelambatan/pemblokiran internet unik 2016-2025 (1.888 baris, 97 negara). Nama negara "
+            "Satu baris per pemutusan/pelambatan/pemblokiran internet unik 2016-2025. Nama negara "
             "dalam bahasa Indonesia ('India', 'Myanmar', 'Indonesia'). Hitung jumlah pemutusan dengan count; 'pemicu' adalah "
             "sebab di lapangan versi Access Now, 'alasan_pemerintah' adalah dalih resmi.",
             {"negara": "negara (nama Indonesia)", "iso3": "kode ISO3", "wilayah": "Asia/Afrika/Eropa/Amerika/Timur Tengah/Oseania",
@@ -416,11 +416,11 @@ _daftar(Proyek(
 _daftar(Proyek(
     "cut-the-cable", "Cut the Cable", "Cut one cable. Watch who goes dark.",
     "Kabel internet bawah laut yang mendarat di Indonesia atau lewat perairan sekitar, beserta landing station-nya "
-    "(Submarine Cable Map/TeleGeography). Aplikasi aslinya menyimulasikan dampak kabel putus; di sini hanya datanya.",
+    "(Submarine Cable Map/TeleGeography).",
     (
         _ds("cut-the-cable", "kabel_bawah_laut", "kabel.csv",
-            "Satu baris per kabel bawah laut yang relevan untuk Indonesia: 74 mendarat di Indonesia (44 domestik, 30 "
-            "internasional; 61 aktif, 13 rencana) plus 44 kabel kawasan yang hanya lewat tanpa mendarat. Kolom negara "
+            "Satu baris per kabel bawah laut yang relevan untuk Indonesia: 74 mendarat di Indonesia plus 44"
+            "  kabel kawasan yang hanya lewat tanpa mendarat. Kolom negara "
             "berisi semua negara pendaratan dipisah '|', jadi pakai op 'contains' (misalnya 'Singapore').",
             {"nama": "nama kabel", "kategori": "internasional/domestik/transit (transit = tidak mendarat di Indonesia)",
              "status": "aktif/rencana", "tahun_rfs": "tahun siap pakai (RFS)", "panjang_km": "panjang km",
@@ -438,8 +438,7 @@ _daftar(Proyek(
 
 _daftar(Proyek(
     "disinfo-radar", "Disinfo Radar", "Every lie leaves a fingerprint.",
-    "Arsip artikel cek fakta Turnbackhoax (Mafindo) sejak 2015: judul, label pemeriksa fakta, kategori, tanggal; "
-    "aplikasi aslinya mengelompokkannya menjadi topik dengan TF-IDF + NMF.",
+    "Arsip artikel cek fakta Turnbackhoax (Mafindo) sejak 2015: judul, label pemeriksa fakta, kategori, tanggal.",
     (
         _ds("disinfo-radar", "hoaks_cek_fakta", "hoaks_turnbackhoax.csv",
             "Satu baris per artikel cek fakta Turnbackhoax. Label dari awalan judul: SALAH (hoaks), PENIPUAN (scam/phishing), "
@@ -449,6 +448,33 @@ _daftar(Proyek(
              "label": "label pemeriksa fakta (SALAH, PENIPUAN, KLARIFIKASI, BENAR, HOAX, ...)",
              "kategori": "kategori Turnbackhoax (Politik, Kesehatan, Bencana, Bantuan, Lowongan, ...)", "url": "tautan artikel"},
             waktu=("tanggal",)),
+    ),
+))
+
+_daftar(Proyek(
+    "who-uses-palantir", "Who Uses Palantir", "The seeing stone has customers.",
+    "Pemakai Palantir di dunia, kontroversi, dan pendapatannya (10-K SEC).",
+    (
+        _ds("who-uses-palantir", "lembaga_palantir", "pengguna_palantir.csv",
+            "Nilai sering berupa plafon.",
+            {"negara": "negara (nama Indonesia)", "lembaga": "nama lembaga/program",
+             "sektor": "Militer & pertahanan, Intelijen, Kepolisian, Imigrasi & perbatasan, Kesehatan, Pemerintahan sipil, "
+                       "Organisasi internasional, Korporasi",
+             "produk": "Gotham, Foundry, AIP, Maven Smart System, ...", "tahun_mulai": "tahun mulai",
+             "status": "Aktif, Rintisan, Ditinjau ulang, Ditolak/diblokir, Berakhir, Status tidak jelas",
+             "nilai_juta_usd": "nilai kontrak juta USD (kurs perkiraan)", "kepastian": "Resmi atau Laporan media",
+             "sumber_url": "tautan sumber"}),
+        _ds("who-uses-palantir", "kontroversi_palantir", "kontroversi.csv",
+            "dampak 1-3 (3 = putusan/kontrak batal).",
+            {"judul": "judul kontroversi", "negara": "negara atau kawasan (Eropa, PBB)", "tahun": "tahun",
+             "jenis": "Privasi & pengawasan, Pengadaan & tender, Kedaulatan data, Transparansi, Perang & targeting, ...",
+             "hasil": "Investigasi media, Kontrak dihentikan, Putusan pengadilan, ...", "dampak": "skor 1-3",
+             "sumber_url": "tautan sumber"}),
+        _ds("who-uses-palantir", "pendapatan_palantir", "pendapatan_palantir.csv",
+            "Juta USD per tahun; filter jenis dulu.",
+            {"tahun": "tahun fiskal", "jenis": "segmen atau wilayah",
+             "kategori": "Pemerintah/Komersial (segmen); Amerika Serikat/Inggris/Prancis/Negara lain (wilayah)",
+             "nilai_juta_usd": "pendapatan juta USD"}),
     ),
 ))
 
@@ -524,6 +550,11 @@ def _turunan(id: str, df: pd.DataFrame) -> pd.DataFrame:
         df["kelas"] = df["kelas"].fillna("-").astype(str)
         df["militer"] = df["kelas"].str.contains("D")
         df["kategori"] = df["kategori_gcat"].fillna("").astype(str).str.split("/").str[0].str.rstrip("?*")
+    elif id == "lembaga_palantir":
+        # Kurs perkiraan yang sama dengan proyek asal (src/analisis.py di who-uses-palantir)
+        kurs = {"USD": 1.0, "GBP": 1.30, "EUR": 1.10, "AUD": 0.66, "CAD": 0.73}
+        df = df.copy()
+        df["nilai_juta_usd"] = (df["nilai_asli_juta"] * df["mata_uang"].map(kurs)).round(1)
     elif id == "pesawat":
         df = df.copy()
         df["waktu"] = pd.to_datetime(df["waktu_snapshot"], unit="s")

@@ -23,6 +23,7 @@ path asal, dan arti kolom ada di satu tempat: `src/katalog.py`. Dokumentasi asli
 | `blackout-watch/` | [blackout-watch](https://github.com/Avalon2222/blackout-watch) | `shutdown_dunia.csv`, `ioda_ringkasan_30hari.csv` | 1.888 pemutusan internet 2016-2025 di 97 negara, gangguan terdeteksi 30 hari terakhir | Access Now #KeepItOn STOP, IODA (Georgia Tech) |
 | `cut-the-cable/` | [cut-the-cable](https://github.com/Avalon2222/cut-the-cable) | `kabel.csv`, `landing_station.csv` | 118 kabel bawah laut yang mendarat di Indonesia atau lewat perairan sekitar, 361 landing station (146 di Indonesia) | Submarine Cable Map / TeleGeography (CC BY-NC-SA 3.0) |
 | `disinfo-radar/` | [disinfo-radar](https://github.com/Avalon2222/disinfo-radar) | `hoaks_turnbackhoax.csv` | Arsip artikel cek fakta Turnbackhoax sejak 2015: judul, label, kategori, tanggal | Turnbackhoax / Mafindo (halaman daftar artikel publik) |
+| `who-uses-palantir/` | [who-uses-palantir](https://github.com/Avalon2222/who-uses-palantir) | `pengguna_palantir.csv`, `kontroversi.csv`, `pendapatan_palantir.csv` | 48 lembaga pemakai Palantir di 19 negara + 3 organisasi internasional, 26 kontroversi, pendapatan Palantir 2019-2025 per segmen dan wilayah | Kurasi dari sumber publik (pengumuman resmi, pengadaan, media); SEC EDGAR 10-K |
 
 Catatan:
 

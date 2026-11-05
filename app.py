@@ -37,6 +37,7 @@ CONTOH_PERTANYAAN = [
     "Negara mana yang paling sering memutus internet sejak 2016, dan apa pemicu utamanya?",
     "Kapan saja internet di Indonesia pernah diputus atau dibatasi, dan karena apa?",
     "Berapa artikel cek fakta berlabel PENIPUAN per tahun sejak 2020?",
+    "Negara mana yang paling banyak lembaganya memakai Palantir, dan mana yang sedang mundur?",
 ]
 
 

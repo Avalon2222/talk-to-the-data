@@ -1,0 +1,38 @@
+tahun,jenis,kategori,nilai_juta_usd,sumber_10k,sumber_url
+2019,segmen,Komersial,397.0,10-K FY2021,https://www.sec.gov/Archives/edgar/data/1321655/000119312522050913/d273589d10k.htm
+2019,segmen,Pemerintah,345.5,10-K FY2021,https://www.sec.gov/Archives/edgar/data/1321655/000119312522050913/d273589d10k.htm
+2020,segmen,Komersial,482.5,10-K FY2021,https://www.sec.gov/Archives/edgar/data/1321655/000119312522050913/d273589d10k.htm
+2020,segmen,Pemerintah,610.2,10-K FY2021,https://www.sec.gov/Archives/edgar/data/1321655/000119312522050913/d273589d10k.htm
+2021,segmen,Komersial,644.5,10-K FY2023,https://www.sec.gov/Archives/edgar/data/1321655/000132165524000022/pltr-20231231.htm
+2021,segmen,Pemerintah,897.4,10-K FY2023,https://www.sec.gov/Archives/edgar/data/1321655/000132165524000022/pltr-20231231.htm
+2022,segmen,Komersial,834.1,10-K FY2023,https://www.sec.gov/Archives/edgar/data/1321655/000132165524000022/pltr-20231231.htm
+2022,segmen,Pemerintah,1071.8,10-K FY2023,https://www.sec.gov/Archives/edgar/data/1321655/000132165524000022/pltr-20231231.htm
+2023,segmen,Komersial,1002.8,10-K FY2025,https://www.sec.gov/Archives/edgar/data/1321655/000132165526000011/pltr-20251231.htm
+2023,segmen,Pemerintah,1222.2,10-K FY2025,https://www.sec.gov/Archives/edgar/data/1321655/000132165526000011/pltr-20251231.htm
+2024,segmen,Komersial,1295.9,10-K FY2025,https://www.sec.gov/Archives/edgar/data/1321655/000132165526000011/pltr-20251231.htm
+2024,segmen,Pemerintah,1569.6,10-K FY2025,https://www.sec.gov/Archives/edgar/data/1321655/000132165526000011/pltr-20251231.htm
+2025,segmen,Komersial,2073.2,10-K FY2025,https://www.sec.gov/Archives/edgar/data/1321655/000132165526000011/pltr-20251231.htm
+2025,segmen,Pemerintah,2402.3,10-K FY2025,https://www.sec.gov/Archives/edgar/data/1321655/000132165526000011/pltr-20251231.htm
+2019,wilayah,Amerika Serikat,295.8,10-K FY2021,https://www.sec.gov/Archives/edgar/data/1321655/000119312522050913/d273589d10k.htm
+2019,wilayah,Inggris,120.2,10-K FY2021,https://www.sec.gov/Archives/edgar/data/1321655/000119312522050913/d273589d10k.htm
+2019,wilayah,Negara lain,250.4,10-K FY2021,https://www.sec.gov/Archives/edgar/data/1321655/000119312522050913/d273589d10k.htm
+2019,wilayah,Prancis,76.2,10-K FY2021,https://www.sec.gov/Archives/edgar/data/1321655/000119312522050913/d273589d10k.htm
+2020,wilayah,Amerika Serikat,573.5,10-K FY2021,https://www.sec.gov/Archives/edgar/data/1321655/000119312522050913/d273589d10k.htm
+2020,wilayah,Inggris,132.4,10-K FY2021,https://www.sec.gov/Archives/edgar/data/1321655/000119312522050913/d273589d10k.htm
+2020,wilayah,Negara lain,289.0,10-K FY2021,https://www.sec.gov/Archives/edgar/data/1321655/000119312522050913/d273589d10k.htm
+2020,wilayah,Prancis,97.7,10-K FY2021,https://www.sec.gov/Archives/edgar/data/1321655/000119312522050913/d273589d10k.htm
+2021,wilayah,Amerika Serikat,879.2,10-K FY2023,https://www.sec.gov/Archives/edgar/data/1321655/000132165524000022/pltr-20231231.htm
+2021,wilayah,Inggris,173.4,10-K FY2023,https://www.sec.gov/Archives/edgar/data/1321655/000132165524000022/pltr-20231231.htm
+2021,wilayah,Negara lain,489.4,10-K FY2023,https://www.sec.gov/Archives/edgar/data/1321655/000132165524000022/pltr-20231231.htm
+2022,wilayah,Amerika Serikat,1161.4,10-K FY2023,https://www.sec.gov/Archives/edgar/data/1321655/000132165524000022/pltr-20231231.htm
+2022,wilayah,Inggris,220.9,10-K FY2023,https://www.sec.gov/Archives/edgar/data/1321655/000132165524000022/pltr-20231231.htm
+2022,wilayah,Negara lain,523.5,10-K FY2023,https://www.sec.gov/Archives/edgar/data/1321655/000132165524000022/pltr-20231231.htm
+2023,wilayah,Amerika Serikat,1378.2,10-K FY2025,https://www.sec.gov/Archives/edgar/data/1321655/000132165526000011/pltr-20251231.htm
+2023,wilayah,Inggris,235.3,10-K FY2025,https://www.sec.gov/Archives/edgar/data/1321655/000132165526000011/pltr-20251231.htm
+2023,wilayah,Negara lain,611.5,10-K FY2025,https://www.sec.gov/Archives/edgar/data/1321655/000132165526000011/pltr-20251231.htm
+2024,wilayah,Amerika Serikat,1900.2,10-K FY2025,https://www.sec.gov/Archives/edgar/data/1321655/000132165526000011/pltr-20251231.htm
+2024,wilayah,Inggris,304.6,10-K FY2025,https://www.sec.gov/Archives/edgar/data/1321655/000132165526000011/pltr-20251231.htm
+2024,wilayah,Negara lain,660.7,10-K FY2025,https://www.sec.gov/Archives/edgar/data/1321655/000132165526000011/pltr-20251231.htm
+2025,wilayah,Amerika Serikat,3320.0,10-K FY2025,https://www.sec.gov/Archives/edgar/data/1321655/000132165526000011/pltr-20251231.htm
+2025,wilayah,Inggris,427.4,10-K FY2025,https://www.sec.gov/Archives/edgar/data/1321655/000132165526000011/pltr-20251231.htm
+2025,wilayah,Negara lain,728.0,10-K FY2025,https://www.sec.gov/Archives/edgar/data/1321655/000132165526000011/pltr-20251231.htm
