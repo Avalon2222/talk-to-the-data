@@ -9,10 +9,20 @@
 > sebagai teks, grafik Plotly, dan tabel sumbernya. Dibangun dengan Python, pandas, Plotly, dan Streamlit di
 > atas API LLM tier gratis (Groq atau Gemini).
 
-*An all-in-one chatbot over sixteen open-data projects. Ask in plain Indonesian or English; a large language
-model turns the question into a small structured query, pandas runs it, Plotly draws it, and the answer comes
-back with the exact rows it was built from. No made-up numbers: if the data can't answer, it says so. Built
-with Python, pandas, Plotly and Streamlit on a free-tier LLM API.*
+## 🇬🇧 In English
+
+**The data finally talks back.** One chatbot over sixteen open-data projects. Ask in plain Indonesian or English; a large language model turns the question into a small structured query, pandas runs it, Plotly draws it, and the answer comes back with the exact rows it was built from. No made-up numbers: if the data can't answer, it says so.
+
+- **Ask** about budgets, Bitcoin, earthquakes, ships, satellites, air quality, conflicts, hoaxes, and more.
+- **Verify** every answer: the source project, dataset, and result table are one click away.
+- **Query** 42 datasets without any API key using the built-in query builder.
+- **Inspect** the tool-calling loop in learning mode, including failed attempts and how they were fixed.
+
+**Built with:** Python, pandas, Plotly, Folium, Streamlit, LLM tool calling (Groq or Gemini free tier)  
+**Data:** The 42 datasets of the other portfolio projects  
+**Engineering:** Answers are computed by a structured pandas query engine, never by the model itself. pytest suite with CI on GitHub Actions
+
+*The rest of this README is in Indonesian.*
 
 **🚀 Coba langsung di browser:** [talk-to-the-data.streamlit.app](https://talk-to-the-data.streamlit.app)
 
