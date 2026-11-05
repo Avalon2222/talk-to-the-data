@@ -547,6 +547,21 @@ _daftar(Proyek(
     ),
 ))
 
+_daftar(Proyek(
+    "eye-of-garuda", "Eye of Garuda", "The archipelago never sleeps. Neither does the eye.",
+    "Konsol globe pertahanan Indonesia: insiden Natuna & latihan bersama, impor senjata SIPRI per pemasok.",
+    (
+        _ds("eye-of-garuda", "insiden_latihan", "insiden.csv",
+            "Lini masa insiden Laut Natuna Utara/Ambalat dan latihan bersama multinasional 2005-2025.",
+            {"tanggal": "YYYY-MM", "kategori": "insiden/latihan", "judul": "judul peristiwa", "lat": "lintang",
+             "lon": "bujur", "keterangan": "ringkasan"},
+            waktu=("tanggal",)),
+        _ds("eye-of-garuda", "impor_senjata_sipri", "sipri_impor.csv",
+            "Impor senjata Indonesia 2000-2024 per negara pemasok, juta TIV SIPRI (dibulatkan, keyakinan rendah).",
+            {"negara": "negara pemasok", "tiv_juta_2000_2024": "nilai juta TIV", "contoh_alutsista": "contoh alutsista"}),
+    ),
+))
+
 DATASET: dict[str, Dataset] = {d.id: d for p in PROYEK.values() for d in p.dataset}
 
 
