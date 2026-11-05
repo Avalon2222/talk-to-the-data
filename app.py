@@ -36,6 +36,7 @@ CONTOH_PERTANYAAN = [
     "Kawasan mana di Jabodetabek yang rata-rata PM2.5-nya paling tinggi?",
     "Negara mana yang paling sering memutus internet sejak 2016, dan apa pemicu utamanya?",
     "Kapan saja internet di Indonesia pernah diputus atau dibatasi, dan karena apa?",
+    "Berapa artikel cek fakta berlabel PENIPUAN per tahun sejak 2020?",
 ]
 
 

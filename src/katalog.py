@@ -423,6 +423,22 @@ _daftar(Proyek(
     ),
 ))
 
+_daftar(Proyek(
+    "disinfo-radar", "Disinfo Radar", "Every lie leaves a fingerprint.",
+    "Arsip artikel cek fakta Turnbackhoax (Mafindo) sejak 2015: judul, label pemeriksa fakta, kategori, tanggal; "
+    "aplikasi aslinya mengelompokkannya menjadi topik dengan TF-IDF + NMF.",
+    (
+        _ds("disinfo-radar", "hoaks_cek_fakta", "hoaks_turnbackhoax.csv",
+            "Satu baris per artikel cek fakta Turnbackhoax. Label dari awalan judul: SALAH (hoaks), PENIPUAN (scam/phishing), "
+            "KLARIFIKASI, BENAR, HOAX/DISINFORMASI (gaya lama, berarti hoaks). Kategori kosong untuk artikel lama. "
+            "Untuk tren hitung jumlah baris per bulan/tahun; untuk topik cari kata di judul (contains).",
+            {"id": "nomor artikel", "tanggal": "tanggal terbit", "judul": "judul artikel, diawali label dalam kurung siku",
+             "label": "label pemeriksa fakta (SALAH, PENIPUAN, KLARIFIKASI, BENAR, HOAX, ...)",
+             "kategori": "kategori Turnbackhoax (Politik, Kesehatan, Bencana, Bantuan, Lowongan, ...)", "url": "tautan artikel"},
+            waktu=("tanggal",)),
+    ),
+))
+
 DATASET: dict[str, Dataset] = {d.id: d for p in PROYEK.values() for d in p.dataset}
 
 
