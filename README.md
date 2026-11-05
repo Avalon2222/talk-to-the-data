@@ -1,25 +1,25 @@
 # 💬 Talk to the Data
 
 > **The data finally talks back.**
-> Chatbot yang menjawab pertanyaan bahasa sehari-hari dari data 17 proyek portofolio ini: APBD 38 provinsi,
+> Chatbot yang menjawab pertanyaan bahasa sehari-hari dari data 18 proyek portofolio ini: APBD 38 provinsi,
 > harga Bitcoin dan transaksi paus-nya, gempa dan gunung api, pesawat di langit Indonesia, kapal di Selat
 > Malaka, satelit yang melintas, titik api dan hutan yang hilang, polusi udara Jabodetabek, upah minimum vs
-> harga rumah, konflik bersenjata dunia, pemutusan internet di seluruh dunia, hoaks yang dibantah pemeriksa fakta, siapa saja pemakai Palantir di dunia, pusat data, kabel internet bawah laut, dan geografi pertahanan. Setiap jawaban dihitung dari
+> harga rumah, konflik bersenjata dunia, pemutusan internet di seluruh dunia, hoaks yang dibantah pemeriksa fakta, siapa saja pemakai Palantir di dunia dan berapa kontrak pemerintah yang mereka menangkan, pusat data, kabel internet bawah laut, dan geografi pertahanan. Setiap jawaban dihitung dari
 > data lewat query terstruktur, lalu disajikan
 > sebagai teks, grafik Plotly, dan tabel sumbernya. Dibangun dengan Python, pandas, Plotly, dan Streamlit di
 > atas API LLM tier gratis (Groq atau Gemini).
 
 ## 🇬🇧 In English
 
-**The data finally talks back.** One chatbot over seventeen open-data projects. Ask in plain Indonesian or English; a large language model turns the question into a small structured query, pandas runs it, Plotly draws it, and the answer comes back with the exact rows it was built from. No made-up numbers: if the data can't answer, it says so.
+**The data finally talks back.** One chatbot over eighteen open-data projects. Ask in plain Indonesian or English; a large language model turns the question into a small structured query, pandas runs it, Plotly draws it, and the answer comes back with the exact rows it was built from. No made-up numbers: if the data can't answer, it says so.
 
-- **Ask** about budgets, Bitcoin, earthquakes, ships, satellites, air quality, conflicts, hoaxes, Palantir's customers, and more.
+- **Ask** about budgets, Bitcoin, earthquakes, ships, satellites, air quality, conflicts, hoaxes, Palantir's customers and contracts, and more.
 - **Verify** every answer: the source project, dataset, and result table are one click away.
-- **Query** 48 datasets without any API key using the built-in query builder.
+- **Query** 51 datasets without any API key using the built-in query builder.
 - **Inspect** the tool-calling loop in learning mode, including failed attempts and how they were fixed.
 
 **Built with:** Python, pandas, Plotly, Folium, Streamlit, LLM tool calling (Groq or Gemini free tier)  
-**Data:** The 48 datasets of the other portfolio projects  
+**Data:** The 51 datasets of the other portfolio projects  
 **Engineering:** Answers are computed by a structured pandas query engine, never by the model itself. pytest suite with CI on GitHub Actions
 
 *The rest of this README is in Indonesian.*
@@ -47,11 +47,11 @@ Tantangan teknisnya menarik justru karena model bahasa **tidak boleh dipercaya b
 | Bagian | Isi |
 |---|---|
 | 💬 Chat | Tanya dalam bahasa Indonesia atau Inggris. Jawaban = teks + grafik (bar, line, scatter, pie, peta) + expander **Sumber & data** berisi proyek asal, dataset, tabel hasil query, dan tombol download CSV |
-| 🗂️ Datasets | Ringkasan 48 dataset dari 17 proyek (baris, kolom, rentang waktu) dan **query builder** yang memakai mesin yang sama dengan chatbot, tanpa API key |
+| 🗂️ Datasets | Ringkasan 51 dataset dari 18 proyek (baris, kolom, rentang waktu) dan **query builder** yang memakai mesin yang sama dengan chatbot, tanpa API key |
 | 🧭 How it works | Alur tool calling, potongan kode intinya, dan daftar keterbatasan |
 | 🎓 Learning mode | Toggle di sidebar: tiap jawaban menampilkan JSON yang dikirim model ke alat, hasil yang dikirim balik, dan percobaan yang gagal lalu diperbaiki |
 
-Sidebar: delapan belas pertanyaan contoh sekali klik, pilihan provider (Groq atau Gemini), API key untuk sesi
+Sidebar: sembilan belas pertanyaan contoh sekali klik, pilihan provider (Groq atau Gemini), API key untuk sesi
 saat ini bila secrets kosong, dan tombol Clear chat.
 
 ![Sumber dan data](docs/screenshots/02_sumber.png)
@@ -89,7 +89,7 @@ flowchart LR
     U[Pertanyaan] --> L[LLM<br/>Groq / Gemini]
     K[src/katalog.py<br/>daftar dataset + kolom] -. prompt sistem .-> L
     L -->|tool call: JSON| Q[src/query.py<br/>filter → hitung → agregasi → urut]
-    D[data/*.csv, *.json<br/>snapshot 17 proyek] --> Q
+    D[data/*.csv, *.json<br/>snapshot 18 proyek] --> Q
     Q -->|40 baris JSON| L
     L --> J[Jawaban teks + sumber]
     Q --> G[src/grafik.py<br/>Plotly]

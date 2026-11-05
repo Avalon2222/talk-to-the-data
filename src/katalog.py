@@ -81,8 +81,7 @@ def _daftar(p: Proyek) -> None:
 
 _daftar(Proyek(
     "dc-impact-dashboard", "Data Center Impact Dashboard", "The machines are thirsty.",
-    "Peta pusat data (data center) di Indonesia beserta estimasi konsumsi listrik dan air, PUE kampus Google, "
-    "listrik dan air situs Meta, dan prediksi PUE dari iklim.",
+    "Data center Indonesia (estimasi listrik dan air), PUE Google, listrik/air Meta, prediksi PUE dari iklim.",
     (
         _ds("dc-impact-dashboard", "data_center", "data_center_indonesia.csv",
             "Daftar pusat data di Indonesia: operator, lokasi, kapasitas IT (MW), status, tahun beroperasi.",
@@ -112,7 +111,7 @@ _daftar(Proyek(
 
 _daftar(Proyek(
     "btc-news-volatility", "Bitcoin vs World News", "Every Bitcoin crash has a suspect.",
-    "Harga Bitcoin harian sejak 2020 dan daftar berita besar dunia yang bertepatan dengan hari-hari paling liar.",
+    "Harga Bitcoin harian sejak 2020 dan berita besar dunia pada hari-hari paling liar.",
     (
         _ds("btc-news-volatility", "btc_harga_harian", "btc_harga_harian.csv",
             "Harga BTC-USD harian (OHLCV) sejak 1 Januari 2020.",
@@ -128,8 +127,7 @@ _daftar(Proyek(
 
 _daftar(Proyek(
     "indonesia-defense-gis", "Indonesia Defense WebGIS", "The archipelago, under the all-seeing eye.",
-    "Geografi pertahanan Indonesia: markas TNI, pulau terluar, alur laut (ALKI), pangkalan asing di kawasan, "
-    "anggaran pertahanan, dan alutsista. Semua dari sumber publik.",
+    "Geografi pertahanan Indonesia: markas TNI, pulau terluar, ALKI, pangkalan asing, anggaran, alutsista.",
     (
         _ds("indonesia-defense-gis", "markas_tni", "markas_tni.csv",
             "Markas dan pangkalan utama TNI (AD, AL, AU, gabungan).",
@@ -210,9 +208,9 @@ _daftar(Proyek(
     "APBD (anggaran dan realisasi) 38 provinsi Indonesia dari DJPK Kemenkeu, 2022-2025, plus penduduk dan luas.",
     (
         _ds("follow-the-money", "apbd_provinsi", "apbd_provinsi.csv",
-            "APBD provinsi per akun, dalam RUPIAH PENUH. tingkat 1 = total (Pendapatan Daerah, Belanja Daerah, "
-            "Pembiayaan Daerah), tingkat 2 = kelompok (PAD, TKDD, Belanja Pegawai, Belanja Modal, ...), tingkat 3 = rincian "
-            "(Pajak Daerah, Belanja Hibah, ...). Selalu filter satu tingkat atau satu akun; jangan menjumlahkan lintas tingkat.",
+            "APBD provinsi per akun, dalam RUPIAH PENUH. tingkat 1 = total (Pendapatan/Belanja/Pembiayaan Daerah), 2 "
+            "= kelompok (PAD, TKDD, Belanja Pegawai, ...), 3 = rincian (Pajak Daerah, ...). Selalu filter satu "
+            "tingkat atau satu akun; jangan menjumlahkan lintas tingkat.",
             {"kode_bps": "kode provinsi BPS", "provinsi": "nama provinsi", "tahun": "tahun anggaran", "akun": "nama akun",
              "induk": "akun induk", "tingkat": "1 total, 2 kelompok, 3 rincian", "anggaran": "anggaran, rupiah",
              "realisasi": "realisasi, rupiah"}),
@@ -225,7 +223,7 @@ _daftar(Proyek(
 
 _daftar(Proyek(
     "btc-whale-watch", "Whale Watch", "Someone always moves first.",
-    "Transaksi Bitcoin raksasa (≥ 50 BTC) langsung dari blockchain selama ±3 hari, disandingkan dengan harga per 5 menit.",
+    "Transaksi Bitcoin raksasa (≥ 50 BTC) dari blockchain selama ±3 hari, dengan harga per 5 menit.",
     (
         _ds("btc-whale-watch", "transaksi_paus", "transaksi_paus.csv",
             "Transaksi Bitcoin dengan total output ≥ 50 BTC, 28-31 Oktober 2026.",
@@ -247,7 +245,7 @@ _daftar(Proyek(
 
 _daftar(Proyek(
     "roof-vs-paycheck", "Roof vs Paycheck", "Count the years before the key turns.",
-    "Upah minimum 2026 di 13 kota Indonesia dibandingkan harga rumah subsidi, rumah seken, apartemen, kos, dan kontrakan.",
+    "Upah minimum 2026 di 13 kota vs harga rumah subsidi, rumah seken, apartemen, kos, dan kontrakan.",
     (
         _ds("roof-vs-paycheck", "kota_upah_rumah", "kota.csv",
             "Satu baris per kota (13 kota). Harga rumah dalam JUTA rupiah, upah/kos/kontrakan dalam rupiah per bulan. "
@@ -267,12 +265,12 @@ _daftar(Proyek(
 
 _daftar(Proyek(
     "the-air-we-breathe", "The Air We Breathe", "Every breath is a data point.",
-    "Kualitas udara per jam di 51 titik Jabodetabek dari Open-Meteo (model CAMS), 60 hari terakhir saat snapshot plus prakiraan 2 hari.",
+    "Kualitas udara per jam di 51 titik Jabodetabek (Open-Meteo, model CAMS): 60 hari terakhir plus prakiraan 2 hari.",
     (
         _ds("the-air-we-breathe", "udara_per_jam", "jam.csv.gz",
-            "PM2.5, PM10, NO2, O3 dan cuaca per jam per titik. Nilai adalah keluaran model CAMS 0,4°, "
-            "jadi titik dalam satu sel grid bernilai sama dan cenderung lebih rendah dari sensor. prakiraan=True berarti "
-            "baris prakiraan, bukan riwayat. kategori_ispu dihitung dari PM2.5 per jam (ISPU resmi memakai rata-rata 24 jam).",
+            "PM2.5, PM10, NO2, O3 dan cuaca per jam per titik dari model CAMS 0,4° (satu sel grid bernilai sama, "
+            "cenderung lebih rendah dari sensor). prakiraan=True = baris prakiraan. kategori_ispu dari PM2.5 per jam "
+            "(ISPU resmi memakai rata-rata 24 jam).",
             {"titik": "nama titik (kecamatan/kawasan)", "kota": "Jakarta/Bogor/Depok/Tangerang/Bekasi",
              "wilayah": "wilayah administratif", "lat": "lintang", "lon": "bujur", "waktu": "waktu (UTC)",
              "pm2_5": "PM2.5 µg/m³", "pm10": "PM10 µg/m³", "no2": "NO2 µg/m³", "o3": "ozon µg/m³",
@@ -285,21 +283,21 @@ _daftar(Proyek(
 
 _daftar(Proyek(
     "burning-archipelago", "The Burning Archipelago", "First the smoke, then the silence.",
-    "Titik api NASA FIRMS 7 hari (snapshot) dan kehilangan tutupan pohon per provinsi 2001-2025 dari Global Forest Watch.",
+    "Titik api NASA FIRMS 7 hari dan kehilangan tutupan pohon per provinsi 2001-2025 (Global Forest Watch).",
     (
         _ds("burning-archipelago", "titik_api", "titik_api_7hari.csv.gz",
-            "Deteksi titik panas VIIRS (NOAA-20/21) di kotak Indonesia selama 7 hari. Satu titik = satu "
-            "piksel 375 m yang panas, bukan satu kebakaran. provinsi 'Laut / luar negeri' = di laut atau negara tetangga "
-            "(sebagian artefak sensor); untuk hitungan per provinsi, buang nilai itu dan pakai keyakinan Nominal/Tinggi.",
+            "Titik panas VIIRS (NOAA-20/21) di Indonesia selama 7 hari; satu titik = piksel 375 m yang panas, bukan "
+            "satu kebakaran. provinsi 'Laut / luar negeri' = di laut/negara tetangga; untuk hitungan per provinsi "
+            "buang nilai itu dan pakai keyakinan Nominal/Tinggi.",
             {"waktu": "waktu deteksi (UTC)", "lat": "lintang", "lon": "bujur", "provinsi": "provinsi (dari poligon)",
              "frp": "fire radiative power, MW", "keyakinan": "Rendah/Nominal/Tinggi", "siang_malam": "Siang/Malam",
              "satelit": "NOAA-20/NOAA-21"},
             asal="data/sample/titik_api_7hari.csv.gz", waktu=("waktu",),
             pendukung=(("provinsi.geojson", "data/provinsi.geojson"),)),
         _ds("burning-archipelago", "hilang_tutupan_pohon", "gfw_tahunan.csv",
-            "Kehilangan tutupan pohon per provinsi per tahun 2001-2025 (GFW/Hansen, kanopi ≥30%), termasuk bagian akibat "
-            "kebakaran dan emisi. Nama provinsi versi GADM (34 provinsi; 'Jakarta Raya', 'Yogyakarta', 'Bangka Belitung'). "
-            "Tutupan pohon tidak sama dengan hutan; data 2011+ memakai metode yang lebih peka.",
+            "Kehilangan tutupan pohon per provinsi per tahun 2001-2025 (GFW/Hansen, kanopi ≥30%), termasuk akibat "
+            "kebakaran dan emisi. Provinsi versi GADM (34; 'Jakarta Raya', 'Yogyakarta', 'Bangka Belitung'). Tutupan "
+            "pohon ≠ hutan; data 2011+ memakai metode lebih peka.",
             {"provinsi_gfw": "provinsi (versi GADM)", "tahun": "tahun", "hilang_ha": "kehilangan tutupan pohon, hektar",
              "hilang_api_ha": "bagian akibat kebakaran, hektar", "emisi_mg": "emisi kotor, megagram CO2e"}),
         _ds("burning-archipelago", "tutupan_pohon", "gfw_tutupan.csv",
@@ -311,7 +309,7 @@ _daftar(Proyek(
 
 _daftar(Proyek(
     "global-conflict-tracker", "Global Conflict Tracker", "The world, counted in casualties.",
-    "Kekerasan bersenjata terorganisasi di seluruh dunia 1989-2026 dari UCDP (GED final s.d. 2025; data 2026 berstatus 'awal').",
+    "Kekerasan bersenjata terorganisasi di dunia 1989-2026 (UCDP; data 2026 berstatus 'awal').",
     (
         _ds("global-conflict-tracker", "korban_negara", "korban_negara_tahun.csv",
             "Kejadian dan korban jiwa per negara × tahun × jenis kekerasan × status. Jumlahkan lintas jenis untuk total "
@@ -350,8 +348,8 @@ _daftar(Proyek(
              "vessel_count_container": "kontainer per tahun", "vessel_count_dry_bulk": "curah kering per tahun",
              "industry_top1": "komoditas utama"}),
         _ds("strait-watch", "posisi_kapal", "posisi.csv",
-            "Potret posisi kapal AIS di Selat Malaka selama sekitar satu jam (2 November 2026). Satu kapal muncul di beberapa "
-            "snapshot; hitung kapal unik dengan nunique pada mmsi. Bendera dari kode MMSI, bukan kepemilikan.",
+            "Potret posisi kapal AIS Selat Malaka ±1 jam (2 November 2026). Satu kapal muncul di beberapa snapshot; "
+            "hitung kapal unik dengan nunique pada mmsi. Bendera dari kode MMSI, bukan kepemilikan.",
             {"mmsi": "ID kapal", "nama": "nama kapal", "bendera": "negara bendera", "kategori": "Kargo/Tanker/Penumpang/...",
              "tujuan": "tujuan (diisi awak)", "panjang_m": "panjang meter", "lat": "lintang", "lon": "bujur",
              "sog_knot": "kecepatan knot", "status_navigasi": "status navigasi", "waktu": "waktu snapshot (UTC)"},
@@ -368,8 +366,8 @@ _daftar(Proyek(
     "Katalog satelit dunia (GCAT) dan satelit milik Indonesia.",
     (
         _ds("who-watches-indonesia", "katalog_satelit", "katalog_satelit.csv",
-            "Semua satelit (payload) bernomor NORAD yang pernah diluncurkan (±27 ribu), dengan negara, pemilik, kelas "
-            "operator, dan kategori misi. Termasuk yang sudah mati atau jatuh; posisi live tidak ada di sini.",
+            "Semua satelit (payload) bernomor NORAD yang pernah diluncurkan (±27 ribu): negara, pemilik, kelas "
+            "operator, kategori misi. Termasuk yang mati/jatuh; tanpa posisi live.",
             {"norad": "nomor NORAD", "nama_gcat": "nama", "negara": "negara (nama Indonesia)", "pemilik": "kode pemilik",
              "militer": "True bila dioperasikan militer", "kelas": "A amatir, B komersial, C sipil, D militer",
              "kategori": "COM komunikasi, IMG pencitraan, IMG-R radar, SIG intai sinyal, NAV, MET, SCI, TECH, ...",
@@ -385,13 +383,12 @@ _daftar(Proyek(
 
 _daftar(Proyek(
     "blackout-watch", "Blackout Watch", "Someone pulled the plug.",
-    "Pemutusan internet yang disengaja di seluruh dunia 2016-2025 (dokumentasi Access Now #KeepItOn) dan gangguan "
-    "konektivitas yang terdeteksi otomatis oleh IODA dalam 30 hari terakhir.",
+    "Pemutusan internet sengaja di dunia 2016-2025 (Access Now #KeepItOn) dan gangguan 30 hari terakhir (IODA).",
     (
         _ds("blackout-watch", "shutdown_internet", "shutdown_dunia.csv",
-            "Satu baris per pemutusan/pelambatan/pemblokiran internet unik 2016-2025. Nama negara "
-            "dalam bahasa Indonesia ('India', 'Myanmar', 'Indonesia'). Hitung jumlah pemutusan dengan count; 'pemicu' adalah "
-            "sebab di lapangan versi Access Now, 'alasan_pemerintah' adalah dalih resmi.",
+            "Satu baris per pemutusan/pelambatan/pemblokiran internet unik 2016-2025. Negara dalam bahasa Indonesia "
+            "('India', 'Myanmar'). Hitung dengan count; 'pemicu' = sebab di lapangan (Access Now), "
+            "'alasan_pemerintah' = dalih resmi.",
             {"negara": "negara (nama Indonesia)", "iso3": "kode ISO3", "wilayah": "Asia/Afrika/Eropa/Amerika/Timur Tengah/Oseania",
              "tahun": "tahun mulai", "mulai": "tanggal mulai", "selesai": "tanggal selesai sebagai teks YYYY-MM-DD (kosong bila tidak diketahui)",
              "durasi_hari": "lama dalam hari (kosong bila tidak diketahui)", "status": "Selesai/Berlangsung/Tidak diketahui",
@@ -405,8 +402,8 @@ _daftar(Proyek(
              "platform": "platform yang diblokir dipisah ';' (Facebook, WhatsApp, TikTok, ...)", "keterangan": "ringkasan peristiwa (Inggris)"},
             waktu=("mulai",)),
         _ds("blackout-watch", "gangguan_internet_30hari", "ioda_ringkasan_30hari.csv",
-            "Negara dengan gangguan konektivitas internet yang terdeteksi otomatis oleh IODA dalam 30 hari terakhir (potret "
-            "mingguan). Skor tanpa satuan, hanya untuk membandingkan; nama negara dalam bahasa Inggris.",
+            "Negara dengan gangguan internet yang terdeteksi IODA 30 hari terakhir (potret mingguan). Skor tanpa "
+            "satuan, untuk membandingkan; nama negara bahasa Inggris.",
             {"kode": "kode negara ISO2", "nama_en": "nama negara (Inggris)", "jumlah_kejadian": "jumlah kejadian gangguan",
              "skor_total": "skor gangguan total IODA", "skor_bgp": "skor dari sinyal BGP", "skor_ping": "skor dari ping aktif",
              "skor_teleskop": "skor dari teleskop jaringan", "skor_google": "skor dari trafik Google"}),
@@ -415,20 +412,18 @@ _daftar(Proyek(
 
 _daftar(Proyek(
     "cut-the-cable", "Cut the Cable", "Cut one cable. Watch who goes dark.",
-    "Kabel internet bawah laut yang mendarat di Indonesia atau lewat perairan sekitar, beserta landing station-nya "
-    "(Submarine Cable Map/TeleGeography).",
+    "Kabel internet bawah laut di sekitar Indonesia dan landing station-nya (TeleGeography).",
     (
         _ds("cut-the-cable", "kabel_bawah_laut", "kabel.csv",
-            "Satu baris per kabel bawah laut yang relevan untuk Indonesia: 74 mendarat di Indonesia plus 44"
-            "  kabel kawasan yang hanya lewat tanpa mendarat. Kolom negara "
-            "berisi semua negara pendaratan dipisah '|', jadi pakai op 'contains' (misalnya 'Singapore').",
+            "Kabel bawah laut relevan untuk Indonesia: 74 mendarat di Indonesia plus 44 kabel kawasan yang hanya "
+            "lewat. Kolom negara berisi semua negara pendaratan dipisah '|', pakai op 'contains' (mis. 'Singapore').",
             {"nama": "nama kabel", "kategori": "internasional/domestik/transit (transit = tidak mendarat di Indonesia)",
              "status": "aktif/rencana", "tahun_rfs": "tahun siap pakai (RFS)", "panjang_km": "panjang km",
              "pemilik": "pemilik/konsorsium", "pemasok": "pabrikan", "n_landing": "jumlah landing station",
              "n_landing_indonesia": "landing station di Indonesia", "negara": "negara pendaratan, dipisah |"}),
         _ds("cut-the-cable", "landing_station_kabel", "landing_station.csv",
-            "Landing station (titik kabel naik ke darat) di Indonesia dan luar negeri yang disinggahi kabel di atas: 361 "
-            "titik, 146 di Indonesia. n_kabel menghitung semua kabel dunia yang mendarat di titik itu.",
+            "Landing station yang disinggahi kabel di atas: 361 titik, 146 di Indonesia. n_kabel = semua kabel dunia "
+            "yang mendarat di titik itu.",
             {"nama": "nama (kota, negara)", "kota": "kota", "negara": "negara", "lat": "lintang", "lon": "bujur",
              "wilayah": "wilayah Indonesia (Sumatra & Kepulauan Riau, Jawa, Kalimantan, Sulawesi, Bali & Nusa Tenggara, "
                         "Maluku, Papua); kosong untuk luar negeri",
@@ -438,12 +433,12 @@ _daftar(Proyek(
 
 _daftar(Proyek(
     "disinfo-radar", "Disinfo Radar", "Every lie leaves a fingerprint.",
-    "Arsip artikel cek fakta Turnbackhoax (Mafindo) sejak 2015: judul, label pemeriksa fakta, kategori, tanggal.",
+    "Arsip cek fakta Turnbackhoax (Mafindo) sejak 2015: judul, label, kategori, tanggal.",
     (
         _ds("disinfo-radar", "hoaks_cek_fakta", "hoaks_turnbackhoax.csv",
-            "Satu baris per artikel cek fakta Turnbackhoax. Label dari awalan judul: SALAH (hoaks), PENIPUAN (scam/phishing), "
-            "KLARIFIKASI, BENAR, HOAX/DISINFORMASI (gaya lama, berarti hoaks). Kategori kosong untuk artikel lama. "
-            "Untuk tren hitung jumlah baris per bulan/tahun; untuk topik cari kata di judul (contains).",
+            "Satu baris per artikel cek fakta. Label dari awalan judul: SALAH (hoaks), PENIPUAN (scam), KLARIFIKASI, "
+            "BENAR, HOAX/DISINFORMASI (gaya lama = hoaks). Kategori kosong untuk artikel lama. Tren: hitung baris per"
+            " bulan/tahun; topik: cari kata di judul (contains).",
             {"id": "nomor artikel", "tanggal": "tanggal terbit", "judul": "judul artikel, diawali label dalam kurung siku",
              "label": "label pemeriksa fakta (SALAH, PENIPUAN, KLARIFIKASI, BENAR, HOAX, ...)",
              "kategori": "kategori Turnbackhoax (Politik, Kesehatan, Bencana, Bantuan, Lowongan, ...)", "url": "tautan artikel"},
@@ -475,6 +470,31 @@ _daftar(Proyek(
             {"tahun": "tahun fiskal", "jenis": "segmen atau wilayah",
              "kategori": "Pemerintah/Komersial (segmen); Amerika Serikat/Inggris/Prancis/Negara lain (wilayah)",
              "nilai_juta_usd": "pendapatan juta USD"}),
+    ),
+))
+
+_daftar(Proyek(
+    "palantir-contracts", "Follow the Contracts", "They see everything. Now see who pays.",
+    "Kontrak pemerintah AS (USAspending) dan Inggris (Contracts Finder) untuk Palantir 2008-2026.",
+    (
+        _ds("palantir-contracts", "kontrak_palantir_as", "as_transaksi.csv",
+            "Satu baris per transaksi kontrak federal AS; jumlahkan nilai_usd (obligasi, bisa negatif).",
+            {"tanggal": "tanggal transaksi", "award_id": "nomor kontrak", "nilai_usd": "dana diikat (USD)",
+             "instansi": "Department of Defense, Department of Homeland Security, ...",
+             "sub_instansi": "Department of the Army, U.S. Immigration and Customs Enforcement, Internal Revenue Service, ...",
+             "deskripsi": "deskripsi transaksi (Inggris)", "negara_bagian": "kode negara bagian tempat pelaksanaan"},
+            waktu=("tanggal",)),
+        _ds("palantir-contracts", "kontrak_payung_palantir", "as_idv.csv",
+            "Kontrak payung AS: plafon vs dana diikat; MULTIPLE AWARD = plafon dibagi banyak vendor.",
+            {"award_id": "nomor kontrak", "sub_instansi": "instansi", "mulai": "tanggal mulai",
+             "plafon_usd": "batas atas nilai (USD)", "diikat_usd": "dana yang sudah diikat lewat pesanan (USD)",
+             "tipe_award": "SINGLE AWARD atau MULTIPLE AWARD", "deskripsi": "deskripsi (Inggris)"},
+            waktu=("mulai",)),
+        _ds("palantir-contracts", "kontrak_palantir_uk", "uk_kontrak.csv",
+            "Kontrak sektor publik Inggris (GBP, nilai saat diumumkan); framework=True jangan dijumlah.",
+            {"diumumkan": "tanggal pengumuman", "pembeli": "NHS England, Ministry of Defence, ...", "judul": "judul kontrak",
+             "nilai_gbp": "nilai kontrak (GBP)", "framework": "True bila framework multi-pemasok"},
+            waktu=("diumumkan",)),
     ),
 ))
 

@@ -210,3 +210,13 @@ def test_turunan_palantir_nilai_usd():
     nhs = df[df["lembaga"].str.contains("Federated Data Platform")].iloc[0]
     assert nhs["nilai_juta_usd"] == 429.0  # £330 juta x 1,30
     assert df["nilai_juta_usd"].isna().sum() > 0  # kontrak tanpa nilai tetap kosong, tidak dijadikan 0
+
+
+def test_kontrak_palantir():
+    trx = katalog.muat("kontrak_palantir_as")
+    assert trx["nilai_usd"].sum() > 5e9
+    assert trx.loc[trx["instansi"] == "Department of Defense", "nilai_usd"].sum() / trx["nilai_usd"].sum() > 0.5
+    idv = katalog.muat("kontrak_payung_palantir")
+    assert set(idv["tipe_award"].dropna()) == {"SINGLE AWARD", "MULTIPLE AWARD"}
+    uk = katalog.muat("kontrak_palantir_uk")
+    assert uk["framework"].dtype == bool and uk["framework"].sum() >= 1

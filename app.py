@@ -38,6 +38,7 @@ CONTOH_PERTANYAAN = [
     "Kapan saja internet di Indonesia pernah diputus atau dibatasi, dan karena apa?",
     "Berapa artikel cek fakta berlabel PENIPUAN per tahun sejak 2020?",
     "Negara mana yang paling banyak lembaganya memakai Palantir, dan mana yang sedang mundur?",
+    "Instansi AS mana yang paling banyak membayar Palantir sejak 2020?",
 ]
 
 
