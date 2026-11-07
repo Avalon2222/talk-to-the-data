@@ -549,7 +549,7 @@ _daftar(Proyek(
 
 _daftar(Proyek(
     "eye-of-garuda", "Eye of Garuda", "The archipelago never sleeps. Neither does the eye.",
-    "Konsol globe pertahanan Indonesia: insiden Natuna & latihan bersama, impor senjata SIPRI per pemasok.",
+    "Konsol globe pertahanan Indonesia: insiden Natuna & latihan bersama, impor senjata SIPRI, pangkalan kapal selam.",
     (
         _ds("eye-of-garuda", "insiden_latihan", "insiden.csv",
             "Lini masa insiden Laut Natuna Utara/Ambalat dan latihan bersama multinasional 2005-2025.",
@@ -557,8 +557,13 @@ _daftar(Proyek(
              "lon": "bujur", "keterangan": "ringkasan"},
             waktu=("tanggal",)),
         _ds("eye-of-garuda", "impor_senjata_sipri", "sipri_impor.csv",
-            "Impor senjata Indonesia 2000-2024 per negara pemasok, juta TIV SIPRI (dibulatkan, keyakinan rendah).",
-            {"negara": "negara pemasok", "tiv_juta_2000_2024": "nilai juta TIV", "contoh_alutsista": "contoh alutsista"}),
+            "Impor senjata Indonesia 2000-2025 per negara pemasok, juta TIV dari basis data SIPRI (diperbarui bulanan).",
+            {"negara": "negara pemasok", "tiv_juta_2000_2025": "nilai juta TIV", "persen": "% dari total",
+             "tahun_puncak": "tahun pengiriman terbesar", "contoh_alutsista": "contoh alutsista"}),
+        _ds("eye-of-garuda", "pangkalan_kapal_selam", "kapal_selam.csv",
+            "16 pangkalan induk kapal selam di kawasan Indo-Pasifik: negara, jumlah, kelas, status (aktif/rencana).",
+            {"negara": "negara pemilik", "pangkalan": "nama pangkalan", "lat": "lintang", "lon": "bujur",
+             "jumlah": "jumlah kapal selam", "kelas": "kelas kapal", "status": "aktif/rencana"}),
     ),
 ))
 
