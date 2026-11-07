@@ -1,16 +1,26 @@
-negara,lat,lon,tiv_juta_2000_2024,keyakinan,contoh_alutsista,sumber,url_sumber
-Amerika Serikat,38.9,-77.0,2100,rendah,F-16 bekas (Peace Bima-Sena II) · AH-64E Apache · C-130 · CH-47 (pesanan),SIPRI Arms Transfers Database (TIV dibulatkan dari tabel importer),https://armstransfers.sipri.org/ArmsTransfer/ImportExport
-Korea Selatan,37.5,127.0,1700,rendah,Kapal selam Nagapasa (DSME 209/1400) · T-50i Golden Eagle · LPD Makassar · KT-1B,SIPRI Arms Transfers Database,https://armstransfers.sipri.org/ArmsTransfer/ImportExport
-Belanda,52.1,4.3,1000,rendah,Korvet Diponegoro (SIGMA 9113) · Fregat Martadinata (SIGMA 10514) · radar,SIPRI Arms Transfers Database,https://armstransfers.sipri.org/ArmsTransfer/ImportExport
-Rusia,55.8,37.6,1000,rendah,Su-27SK/Su-30MK2 · Mi-35P · Mi-17 · BMP-3F,SIPRI Arms Transfers Database,https://armstransfers.sipri.org/ArmsTransfer/ImportExport
-Jerman,52.5,13.4,800,rendah,Leopard 2A4/RI · Marder 1A3 · kapal selam Cakra (perbaikan),SIPRI Arms Transfers Database,https://armstransfers.sipri.org/ArmsTransfer/ImportExport
-Inggris,51.5,-0.1,500,rendah,Starstreak · desain Arrowhead 140 (Merah Putih) · Hawk (sebelumnya),SIPRI Arms Transfers Database,https://armstransfers.sipri.org/ArmsTransfer/ImportExport
-Prancis,48.9,2.3,500,rendah,"CAESAR · Mistral · AS565 Panther · Rafale & Scorpene (pesanan, pengiriman mulai 2026)",SIPRI Arms Transfers Database,https://armstransfers.sipri.org/ArmsTransfer/ImportExport
-China,39.9,116.4,300,rendah,Rudal C-705/C-802 · QW-3 · radar,SIPRI Arms Transfers Database,https://armstransfers.sipri.org/ArmsTransfer/ImportExport
-Brasil,-15.8,-47.9,300,rendah,EMB-314 Super Tucano · ASTROS II,SIPRI Arms Transfers Database,https://armstransfers.sipri.org/ArmsTransfer/ImportExport
-Spanyol,40.4,-3.7,250,rendah,CN-235 · C-295 (Airbus Spanyol),SIPRI Arms Transfers Database,https://armstransfers.sipri.org/ArmsTransfer/ImportExport
-Swiss,46.9,7.4,200,rendah,Oerlikon Skyshield,SIPRI Arms Transfers Database,https://armstransfers.sipri.org/ArmsTransfer/ImportExport
-Turki,39.9,32.9,150,rendah,Tank medium Kaplan MT/Harimau · drone (pesanan),SIPRI Arms Transfers Database,https://armstransfers.sipri.org/ArmsTransfer/ImportExport
-Italia,41.9,12.5,120,rendah,Meriam Oto Melara 76 mm · sistem kapal,SIPRI Arms Transfers Database,https://armstransfers.sipri.org/ArmsTransfer/ImportExport
-Ukraina,50.5,30.5,100,rendah,BTR-4 untuk Marinir,SIPRI Arms Transfers Database,https://armstransfers.sipri.org/ArmsTransfer/ImportExport
-Australia,-35.3,149.1,100,rendah,C-130H bekas RAAF,SIPRI Arms Transfers Database,https://armstransfers.sipri.org/ArmsTransfer/ImportExport
+negara,negara_en,lat,lon,tiv_juta_2000_2025,persen,tahun_puncak,contoh_alutsista,sumber,url_sumber
+Korea Selatan,South Korea,37.5,127.0,1423,14.4,2013,Chiron · KT-1 (trainer aircraft) · Type-209-1400 (submarine) · LPD-122m (amphibious assault ship),SIPRI Arms Transfers Database,https://armstransfers.sipri.org/ArmsTransfer/ImportExport
+Amerika Serikat,United States,38.9,-77.0,1292,13.1,2017,AIM-120C AMRAAM · Bell-412 (helicopter) · AGM-65 Maverick (air-to-surface missile) · C-130J Hercules (transport aircraft),SIPRI Arms Transfers Database,https://armstransfers.sipri.org/ArmsTransfer/ImportExport
+Rusia,Russia,55.8,37.6,1163,11.8,2013,R-77 · BMP-3 (infantry fighting vehicle) · R-73 · Kh-29 (air-to-surface missile),SIPRI Arms Transfers Database,https://armstransfers.sipri.org/ArmsTransfer/ImportExport
+Belanda,Netherlands,52.1,4.3,1127,11.4,2017,SIGMA-105 (frigate) · SIGMA-90 (frigate),SIPRI Arms Transfers Database,https://armstransfers.sipri.org/ArmsTransfer/ImportExport
+Italia,Italy,41.9,12.5,1013,10.3,2025,PPA-L-Plus (frigate) · Black Shark · Arisgator (armoured personnel carrier) · Super Rapid 76mm (naval gun),SIPRI Arms Transfers Database,https://armstransfers.sipri.org/ArmsTransfer/ImportExport
+Prancis,France,48.9,2.3,927,9.4,2025,CAESAR 155mm (self-propelled gun) · MICA · H-725 Caracal · AS-532 Cougar (transport helicopter),SIPRI Arms Transfers Database,https://armstransfers.sipri.org/ArmsTransfer/ImportExport
+Inggris,United Kingdom,51.5,-0.1,836,8.5,2014,Starstreak FIX (surface-to-air missile) · Forceshield · Brunei (frigate) · Hawk-200,SIPRI Arms Transfers Database,https://armstransfers.sipri.org/ArmsTransfer/ImportExport
+Jerman,Germany,52.5,13.4,625,6.3,2023,MHV-60 (minehunter) · Leopard-2A4 (tank) · Marder-1A3 (infantry fighting vehicle) · G-120TP (trainer aircraft),SIPRI Arms Transfers Database,https://armstransfers.sipri.org/ArmsTransfer/ImportExport
+China,China,39.9,116.4,295,3.0,2013,QW-3 · AR-1 MI (air-to-surface missile) · AR-2 MI · CH-4B (armed drone),SIPRI Arms Transfers Database,https://armstransfers.sipri.org/ArmsTransfer/ImportExport
+Spanyol,Spain,40.4,-3.7,248,2.5,2025,C-295 (transport aircraft) · C-212 (transport aircraft) · C-212MP (maritime patrol aircraft) · A-400M (transport aircraft),SIPRI Arms Transfers Database,https://armstransfers.sipri.org/ArmsTransfer/ImportExport
+Swiss,Switzerland,46.9,7.4,180,1.8,2015,Skyshield-35 (anti-aircraft gun system) · Fieldguard-3 (fire-control radar),SIPRI Arms Transfers Database,https://armstransfers.sipri.org/ArmsTransfer/ImportExport
+Australia,Australia,-35.3,149.1,141,1.4,2015,Bushmaster (armoured personnel carrier) · C-130H Hercules (transport aircraft) · Nomad-L (maritime patrol aircraft),SIPRI Arms Transfers Database,https://armstransfers.sipri.org/ArmsTransfer/ImportExport
+Brasil,Brazil,-15.8,-47.9,135,1.4,2015,ASTROS-2 (multiple rocket launcher) · EMB-314 Super Tucano (trainer/combat aircraft),SIPRI Arms Transfers Database,https://armstransfers.sipri.org/ArmsTransfer/ImportExport
+Turki,Turkiye,39.9,32.9,85,0.9,2025,MMWT (tank) · Bora (surface-to-surface missile) · Anka-S (armed drone) · Khan,SIPRI Arms Transfers Database,https://armstransfers.sipri.org/ArmsTransfer/ImportExport
+Belgia,Belgium,50.8,4.4,78,0.8,2017,CM-90 (tank turret) · Cockerill-3105 (tank turret) · M-113 (armoured personnel carrier) · M-109A1 155mm (self-propelled gun),SIPRI Arms Transfers Database,https://armstransfers.sipri.org/ArmsTransfer/ImportExport
+Denmark,Denmark,55.7,12.6,52,0.5,2022,C-FIRE · Scanter-4603 (air/sea-search radar) · ship engine 2501-4000 (ship engine) · Scanter-4100 (air/sea-search radar),SIPRI Arms Transfers Database,https://armstransfers.sipri.org/ArmsTransfer/ImportExport
+Ceko,Czechia,50.1,14.4,49,0.5,2022,RM-70 Vampire 122mm (multiple rocket launcher) · RM-70 122mm (multiple rocket launcher),SIPRI Arms Transfers Database,https://armstransfers.sipri.org/ArmsTransfer/ImportExport
+Ukraina,Ukraine,50.5,30.5,34,0.3,2008,Dozor-B (armoured personnel carrier) · R-27R/T · BTR-4K (armoured personnel carrier) · BTR-4 (infantry fighting vehicle),SIPRI Arms Transfers Database,https://armstransfers.sipri.org/ArmsTransfer/ImportExport
+Kanada,Canada,45.4,-75.7,31,0.3,2012,aircraft engine 500-1000 (aircraft engine) · aircraft engine 1001-2000 (aircraft engine) · aircraft engine 2001-3000 (aircraft engine),SIPRI Arms Transfers Database,https://armstransfers.sipri.org/ArmsTransfer/ImportExport
+Norwegia,Norway,59.9,10.8,30,0.3,2020,NASAMS-2,SIPRI Arms Transfers Database,https://armstransfers.sipri.org/ArmsTransfer/ImportExport
+Brunei,Brunei,4.9,114.9,24,0.2,2011,Waspada (missile boat),SIPRI Arms Transfers Database,https://armstransfers.sipri.org/ArmsTransfer/ImportExport
+Swedia,Sweden,59.3,18.1,21,0.2,2000,SAK-70-2 57mm (naval gun) · Skeldar (reconnaissance drone),SIPRI Arms Transfers Database,https://armstransfers.sipri.org/ArmsTransfer/ImportExport
+Polandia,Poland,52.2,21.0,18,0.2,2009,Grom-2 · KOBRA,SIPRI Arms Transfers Database,https://armstransfers.sipri.org/ArmsTransfer/ImportExport
+Austria,Austria,48.2,16.4,16,0.2,2024,Pandur-2 IFV (infantry fighting vehicle) · Pandur-2 (armoured personnel carrier) · Pandur-2 FSV (fire-support vehicle),SIPRI Arms Transfers Database,https://armstransfers.sipri.org/ArmsTransfer/ImportExport
+Israel,Israel,31.8,35.2,15,0.2,2024,UT-25 · Searcher (reconnaissance drone),SIPRI Arms Transfers Database,https://armstransfers.sipri.org/ArmsTransfer/ImportExport
