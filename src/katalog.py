@@ -649,6 +649,22 @@ _daftar(Proyek(
     app="https://garuda-ledger.vercel.app",
 ))
 
+_daftar(Proyek(
+    "disaster-ops", "Disaster Ops", "When the ground shakes and the sky burns, this is the room that stays awake.",
+    "War room bencana Indonesia (data live ada di app-nya); di sini karhutla 2019 per hari dan klimatologi debit sungai.",
+    (
+        _ds("disaster-ops", "karhutla_2019", "karhutla_2019_harian.csv",
+            "Titik panas MODIS di Indonesia per hari, 1 Jul - 30 Nov 2019 (keyakinan >= 30%).",
+            {"tanggal": "tanggal", "titik_panas": "jumlah deteksi", "frp_total_mw": "total daya pancar api, MW"},
+            waktu=("tanggal",)),
+        _ds("disaster-ops", "debit_sungai", "sungai.csv",
+            "22 sungai besar: persentil debit harian 1991-2020 dari model GloFAS (bukan pos duga air).",
+            {"nama": "sungai", "lokasi": "kota terdekat", "lat": "lintang", "lon": "bujur", "p50": "median, m3/s",
+             "p90": "persentil 90", "p99": "persentil 99"}),
+    ),
+    app="https://disaster-ops-id.vercel.app",
+))
+
 DATASET: dict[str, Dataset] = {d.id: d for p in PROYEK.values() for d in p.dataset}
 
 
