@@ -594,6 +594,36 @@ _daftar(Proyek(
     app="https://cyber-attack-map-id.vercel.app",
 ))
 
+_daftar(Proyek(
+    "nightlights-from-space", "Nightlights from Space", "Fifteen years of Indonesia after dark, seen from orbit.",
+    "Cahaya malam Indonesia 2012-2026 dari NASA Black Marble (VIIRS): pertumbuhan cahaya per provinsi dan "
+    "kabupaten/kota, listrik PLN, titik pembangunan baru, dan jejak padam setelah bencana.",
+    (
+        _ds("nightlights-from-space", "cahaya_malam_provinsi", "ringkasan_provinsi.csv",
+            "Per provinsi per tahun 2012-2026: total cahaya malam (sum of lights), luas terang, % rumah tangga "
+            "berlistrik PLN (BPS, sampai 2025), penduduk, cahaya per kapita.",
+            {"provinsi": "38 provinsi", "tahun": "tahun", "cahaya": "total cahaya", "luas_terang_km2": "luas terang",
+             "persen_wilayah_terang": "% wilayah terang", "persen_rt_pln": "% rumah tangga PLN", "penduduk": "jiwa",
+             "cahaya_per_1000_penduduk": "cahaya per 1.000 jiwa"}),
+        _ds("nightlights-from-space", "cahaya_malam_kabupaten", "cahaya_kabupaten.csv",
+            "Per kabupaten/kota (514) per tahun 2012-2026: total cahaya malam dan luas terang (0 = gelap total).",
+            {"kabupaten_kota": "nama", "provinsi": "provinsi", "tahun": "tahun", "cahaya": "total cahaya",
+             "luas_terang_km2": "luas terang"}),
+        _ds("nightlights-from-space", "hotspot_cahaya", "hotspot_tahunan.csv",
+            "Cahaya tahunan 2012-2026 di 12 titik pembangunan: IKN, IMIP Morowali, IWIP Weda Bay, Pulau Obi, kebun "
+            "buah naga Banyuwangi, Mandalika, bandara YIA, dll.",
+            {"hotspot": "nama titik", "lokasi": "lokasi", "tahun": "tahun", "cahaya": "total cahaya",
+             "luas_terang_km2": "luas terang"}),
+        _ds("nightlights-from-space", "kejadian_padam", "kejadian_padam.csv",
+            "6 kejadian padam (Seroja 2021, banjir Sumatra 2025, Lombok/Palu 2018, blackout Jawa 2019, Cianjur 2022): "
+            "titik terendah indeks cahaya (100 = normal) dan hari pulih.",
+            {"kejadian": "nama", "tanggal": "tanggal", "jenis": "gempa/siklon/blackout/banjir", "lokasi": "wilayah",
+             "indeks_terendah": "100 = normal", "hari_terendah": "hari ke-", "hari_pulih": "hari ke- kembali ke 90"},
+            waktu=("tanggal",)),
+    ),
+    app="https://nightlights-from-space.vercel.app",
+))
+
 DATASET: dict[str, Dataset] = {d.id: d for p in PROYEK.values() for d in p.dataset}
 
 

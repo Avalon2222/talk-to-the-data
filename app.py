@@ -41,6 +41,7 @@ CONTOH_PERTANYAAN = [
     "Instansi AS mana yang paling banyak membayar Palantir sejak 2020?",
     "Bendera apa yang paling banyak dipakai kapal tersanksi, dan berapa persen yang tanker?",
     "Dari negara mana saja serangan web ke Indonesia minggu ini, dan kota mana yang paling banyak host jahatnya?",
+    "Provinsi mana yang cahaya malamnya naik paling tajam sejak 2012, dan seberapa terang IKN sekarang?",
 ]
 
 

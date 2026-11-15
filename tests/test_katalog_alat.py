@@ -32,7 +32,7 @@ def test_id_dataset_unik_dan_prompt_ringkas():
     for id in katalog.DATASET:
         assert f"`{id}`" in skema
     prompt = alat.prompt_sistem()
-    assert "query_data" in prompt and len(prompt) < 19000  # ≈ 4.750 token untuk 23 proyek; tier gratis dibatasi per menit
+    assert "query_data" in prompt and len(prompt) < 20000  # ≈ 5.000 token untuk 24 proyek; tier gratis dibatasi per menit
 
 
 def test_turunan_pesawat():

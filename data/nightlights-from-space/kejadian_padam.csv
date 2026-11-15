@@ -1,0 +1,7 @@
+id,kejadian,tanggal,jenis,lokasi,indeks_terendah,hari_terendah,hari_pulih,luas_terang_km2
+seroja-2021,Siklon tropis Seroja,2021-04-04,siklon,"Kupang dan sekitarnya, NTT",20.6,2,15,196.0
+banjir-sumatra-2025,Banjir bandang dan longsor Sumatra,2025-11-26,banjir,Pesisir timur Aceh: Bireuen sampai Aceh Tamiang,63.8,26,,1865.0
+lombok-2018,Gempa Lombok,2018-08-05,gempa,"Lombok Utara dan Mataram, NTB",73.4,7,11,726.0
+palu-2018,"Gempa, tsunami, dan likuefaksi Palu",2018-09-28,gempa,"Kota Palu, Sulawesi Tengah",79.8,23,27,187.0
+blackout-jawa-2019,Blackout Jawa bagian barat,2019-08-04,blackout,Jabodetabek dan sekitarnya,87.7,15,17,2475.0
+cianjur-2022,Gempa Cianjur,2022-11-21,gempa,"Cianjur, Jawa Barat",95.8,10,11,681.0
