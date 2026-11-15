@@ -40,6 +40,7 @@ CONTOH_PERTANYAAN = [
     "Negara mana yang paling banyak lembaganya memakai Palantir, dan mana yang sedang mundur?",
     "Instansi AS mana yang paling banyak membayar Palantir sejak 2020?",
     "Bendera apa yang paling banyak dipakai kapal tersanksi, dan berapa persen yang tanker?",
+    "Dari negara mana saja serangan web ke Indonesia minggu ini, dan kota mana yang paling banyak host jahatnya?",
 ]
 
 

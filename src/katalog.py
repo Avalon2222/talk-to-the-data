@@ -53,6 +53,7 @@ class Proyek:
     hook: str
     deskripsi: str
     dataset: tuple[Dataset, ...]
+    app: str | None = None    # URL app kalau bukan Streamlit Cloud (mis. Vercel)
 
     @property
     def url_repo(self) -> str:
@@ -60,7 +61,7 @@ class Proyek:
 
     @property
     def url_app(self) -> str:
-        return f"https://{self.id}.streamlit.app"
+        return self.app or f"https://{self.id}.streamlit.app"
 
 
 def _ds(proyek: str, id: str, file: str, deskripsi: str, kolom: dict[str, str], asal: str | None = None,
@@ -565,6 +566,32 @@ _daftar(Proyek(
             {"negara": "negara pemilik", "pangkalan": "nama pangkalan", "lat": "lintang", "lon": "bujur",
              "jumlah": "jumlah kapal selam", "kelas": "kelas kapal", "status": "aktif/rencana"}),
     ),
+    app="https://eye-of-garuda.vercel.app",
+))
+
+_daftar(Proyek(
+    "cyber-attack-map-id", "Cyber Attack Map ID", "Who's knocking on Indonesia's digital door?",
+    "Peta threat intel Indonesia: asal serangan siber ke Indonesia dan host jahat/terinfeksi di jaringan Indonesia.",
+    (
+        _ds("cyber-attack-map-id", "asal_serangan_id", "asal_serangan.csv",
+            "Porsi serangan yang menyasar Indonesia per negara asal, 7 hari (Cloudflare Radar). web_l7 = lokasi IP "
+            "penyerang; ddos_l3 = lokasi data center penerima (IP DDoS sering dipalsukan). Asal Indonesia = domestik.",
+            {"lapisan": "web_l7/ddos_l3", "negara": "negara asal", "persen": "% serangan ke Indonesia",
+             "mulai": "awal periode", "akhir": "akhir periode"},
+            waktu=("mulai", "akhir")),
+        _ds("cyber-attack-map-id", "host_jahat_id", "host_indonesia.csv",
+            "Subnet /24 di Indonesia yang tercatat jahat atau terinfeksi (URLhaus, blocklist.de, Feodo), lokasi level "
+            "kota; biasanya perangkat korban yang dibajak, bukan pelaku.",
+            {"kota": "kota (DB-IP)", "lat": "lintang", "lon": "bujur",
+             "kategori": "malware/bruteforce/spam/web/botnet/scan/laporan", "sumber": "feed asal",
+             "jumlah_ip": "IP unik di subnet", "asn": "nomor AS", "terakhir": "terakhir tercatat"},
+            waktu=("terakhir",)),
+        _ds("cyber-attack-map-id", "tren_ancaman_id", "tren_harian.csv",
+            "Harian 30 hari: URL malware baru di jaringan Indonesia (URLhaus) dan porsi serangan web global yang menyasar Indonesia (%).",
+            {"tanggal": "hari", "malware_baru": "URL malware baru", "porsi_l7": "% serangan web global ke Indonesia"},
+            waktu=("tanggal",)),
+    ),
+    app="https://cyber-attack-map-id.vercel.app",
 ))
 
 DATASET: dict[str, Dataset] = {d.id: d for p in PROYEK.values() for d in p.dataset}

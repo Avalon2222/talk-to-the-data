@@ -1,0 +1,21 @@
+lapisan,kode_negara,negara,persen,mulai,akhir
+web_l7,ID,Indonesia,25.70,2026-11-08,2026-11-15
+web_l7,US,Amerika Serikat,13.14,2026-11-08,2026-11-15
+web_l7,NL,Belanda,7.68,2026-11-08,2026-11-15
+web_l7,FR,Prancis,7.55,2026-11-08,2026-11-15
+web_l7,SG,Singapura,5.64,2026-11-08,2026-11-15
+web_l7,BE,Belgia,2.78,2026-11-08,2026-11-15
+web_l7,DE,Jerman,2.60,2026-11-08,2026-11-15
+web_l7,BR,Brasil,1.89,2026-11-08,2026-11-15
+web_l7,CN,Tiongkok,1.89,2026-11-08,2026-11-15
+web_l7,AU,Australia,1.84,2026-11-08,2026-11-15
+ddos_l3,HU,Hungaria,35.06,2026-11-08,2026-11-15
+ddos_l3,ID,Indonesia,27.83,2026-11-08,2026-11-15
+ddos_l3,BG,Bulgaria,16.06,2026-11-08,2026-11-15
+ddos_l3,NL,Belanda,3.66,2026-11-08,2026-11-15
+ddos_l3,DE,Jerman,3.57,2026-11-08,2026-11-15
+ddos_l3,FI,Finlandia,2.94,2026-11-08,2026-11-15
+ddos_l3,US,Amerika Serikat,2.71,2026-11-08,2026-11-15
+ddos_l3,TR,Turki,2.19,2026-11-08,2026-11-15
+ddos_l3,EE,Estonia,2.15,2026-11-08,2026-11-15
+ddos_l3,CA,Kanada,1.06,2026-11-08,2026-11-15
