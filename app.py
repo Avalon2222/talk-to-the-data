@@ -42,6 +42,7 @@ CONTOH_PERTANYAAN = [
     "Bendera apa yang paling banyak dipakai kapal tersanksi, dan berapa persen yang tanker?",
     "Dari negara mana saja serangan web ke Indonesia minggu ini, dan kota mana yang paling banyak host jahatnya?",
     "Provinsi mana yang cahaya malamnya naik paling tajam sejak 2012, dan seberapa terang IKN sekarang?",
+    "Sepuluh vendor dengan nilai tender terbesar di Polri, dan berapa median harga menangnya terhadap HPS?",
 ]
 
 

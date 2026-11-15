@@ -624,6 +624,31 @@ _daftar(Proyek(
     app="https://nightlights-from-space.vercel.app",
 ))
 
+_daftar(Proyek(
+    "garuda-ledger", "Garuda Ledger", "Secrets have budgets. Budgets leave receipts.",
+    "Tender pertahanan & keamanan Indonesia 2013-2023 (LPSE lewat Opentender): vendor, nilai, pola statistik.",
+    (
+        _ds("garuda-ledger", "vendor_tender", "vendor.csv",
+            "Satu baris per vendor pemenang tender. mepet_hps/langganan/pola_ganda = jumlah paket menurut definisi "
+            "statistik, bukan indikasi pelanggaran. Vendor bernama sama dibedakan unit_utama.",
+            {"vendor": "nama vendor", "bentuk": "PT/CV/UD/Koperasi", "unit_utama": "matra/Mabes/Polda terbesar",
+             "instansi_utama": "Kemhan/TNI, Polri, Bakamla, BSSN, BIN, ...", "paket": "jumlah paket menang",
+             "nilai": "total nilai menang (Rp)", "satker": "jumlah satker pembeli", "tahun_awal": "menang pertama",
+             "tahun_akhir": "menang terakhir", "median_rasio_hps": "median nilai menang/HPS",
+             "mepet_hps": "paket >= 99,9% HPS", "langganan": "paket di satker yang sama >= 5 tahun",
+             "pola_ganda": "paket dengan >= 2 pola"},
+            asal="data/ekspor/vendor.csv"),
+        _ds("garuda-ledger", "tender_tahunan", "tahunan.csv",
+            "Per tahun x instansi x jenis pengadaan; median_rasio_hps = median nilai menang/HPS.",
+            {"tahun": "tahun penetapan pemenang", "instansi": "instansi pembeli",
+             "kategori": "barang/konstruksi/jasa/konsultansi", "paket": "jumlah paket", "nilai": "total nilai (Rp)",
+             "vendor": "jumlah vendor pemenang", "median_rasio_hps": "median nilai menang/HPS",
+             "mepet_hps": "paket >= 99,9% HPS", "langganan": "paket langganan", "pola_ganda": "paket dengan >= 2 pola"},
+            asal="data/ekspor/tahunan.csv"),
+    ),
+    app="https://garuda-ledger.vercel.app",
+))
+
 DATASET: dict[str, Dataset] = {d.id: d for p in PROYEK.values() for d in p.dataset}
 
 
